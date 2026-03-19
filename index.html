@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sonuşmaz Matematik</title>
+  <link rel="icon" href="logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="Sonuşmaz Matematik Logo" />
+        <span>Sonuşmaz <strong>Matematik</strong></span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menü">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Ana Sayfa</a></li>
+        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+        <li><a href="ders-notlari.html">Ders Notları</a></li>
+        <li><a href="videolar.html">Videolar</a></li>
+        <li><a href="deneme.html">Online Deneme</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="iletisim.html" class="nav-cta">İletişim</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+      <div class="hero-orb orb1"></div>
+      <div class="hero-orb orb2"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">TYT · AYT · Lise · Ortaokul</div>
+      <h1 class="hero-title">
+        Matematiği<br />
+        <span class="gold">Sonuşmaz</span> Kılıyoruz
+      </h1>
+      <p class="hero-desc">
+        Deneyimli öğretmenlerimizle her seviyede matematik eğitimi, ders notları, video dersler ve online denemeler tek çatı altında.
+      </p>
+      <div class="hero-actions">
+        <a href="ders-notlari.html" class="btn btn-primary">Ders Notlarına Bak</a>
+        <a href="videolar.html" class="btn btn-outline">Video Dersleri İzle</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">500+</span><span class="stat-label">Ders Notu</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">1200+</span><span class="stat-label">Video Ders</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">50+</span><span class="stat-label">Online Deneme</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="logo-ring">
+        <img src="logo.png" alt="Sonuşmaz Matematik" class="hero-logo-img" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ÖZELLİKLER -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Neler Sunuyoruz</span>
+        <h2>Her İhtiyacınız İçin<br /><span class="gold">Bir Çözüm</span></h2>
+      </div>
+      <div class="features-grid">
+        <a href="ders-notlari.html" class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 40 40" fill="none">
+              <rect x="6" y="4" width="22" height="30" rx="3" fill="#c8a84b" opacity=".15"/>
+              <rect x="8" y="6" width="22" height="30" rx="3" stroke="#c8a84b" stroke-width="1.5"/>
+              <line x1="14" y1="14" x2="24" y2="14" stroke="#c8a84b" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="14" y1="19" x2="24" y2="19" stroke="#c8a84b" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="14" y1="24" x2="20" y2="24" stroke="#c8a84b" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Ders Notları</h3>
+          <p>TYT, AYT, lise ve ortaokul düzeyi kapsamlı PDF ders notları. İstediğin zaman indir, çalış.</p>
+          <span class="card-link">İncele →</span>
+        </a>
+        <a href="videolar.html" class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 40 40" fill="none">
+              <rect x="4" y="8" width="32" height="22" rx="3" stroke="#c8a84b" stroke-width="1.5"/>
+              <polygon points="16,14 16,24 26,19" fill="#c8a84b"/>
+              <line x1="12" y1="34" x2="28" y2="34" stroke="#c8a84b" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Video Dersler</h3>
+          <p>YouTube kanalımızdaki yüzlerce ders videosu. Konuya göre filtrele, dilediğin zaman izle.</p>
+          <span class="card-link">İzle →</span>
+        </a>
+        <a href="deneme.html" class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 40 40" fill="none">
+              <rect x="5" y="5" width="30" height="30" rx="3" stroke="#c8a84b" stroke-width="1.5"/>
+              <line x1="13" y1="13" x2="27" y2="13" stroke="#c8a84b" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="13" cy="20" r="1.5" fill="#c8a84b"/>
+              <line x1="17" y1="20" x2="27" y2="20" stroke="#c8a84b" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="13" cy="27" r="1.5" fill="#c8a84b"/>
+              <line x1="17" y1="27" x2="27" y2="27" stroke="#c8a84b" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Online Deneme</h3>
+          <p>Gerçek sınav formatında online deneme sınavları. Anlık sonuç ve detaylı analiz.</p>
+          <span class="card-link">Dene →</span>
+        </a>
+        <a href="blog.html" class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 40 40" fill="none">
+              <path d="M8 32 L8 12 Q8 8 12 8 L28 8 Q32 8 32 12 L32 28 L20 28 L8 32 Z" stroke="#c8a84b" stroke-width="1.5" fill="none"/>
+              <line x1="14" y1="15" x2="26" y2="15" stroke="#c8a84b" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="14" y1="20" x2="22" y2="20" stroke="#c8a84b" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Blog & Duyurular</h3>
+          <p>Sınav taktikleri, çalışma rehberleri ve güncel duyurular için blogumuzu takip et.</p>
+          <span class="card-link">Oku →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEVİYELER -->
+  <section class="levels">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Eğitim Seviyeleri</span>
+        <h2>Hangi Seviyede<br /><span class="gold">Olursan Ol</span></h2>
+      </div>
+      <div class="levels-grid">
+        <div class="level-card">
+          <div class="level-num">01</div>
+          <h3>Ortaokul</h3>
+          <p>5. sınıftan 8. sınıfa kadar temel matematik becerileri ve kazanım odaklı içerikler.</p>
+        </div>
+        <div class="level-card">
+          <div class="level-num">02</div>
+          <h3>Lise</h3>
+          <p>9, 10, 11 ve 12. sınıf müfredatına uygun ders notları ve soru bankası.</p>
+        </div>
+        <div class="level-card active">
+          <div class="level-num">03</div>
+          <h3>TYT Matematik</h3>
+          <p>Temel Yeterlilik Testi için kapsamlı konu anlatımı, soru teknikleri ve denemeler.</p>
+        </div>
+        <div class="level-card">
+          <div class="level-num">04</div>
+          <h3>AYT Matematik</h3>
+          <p>Alan Yeterlilik Testi ileri düzey konuları için detaylı kaynak ve strateji rehberleri.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SON NOTLAR ÖNİZLEME -->
+  <section class="recent-notes">
+    <div class="container">
+      <div class="section-header-row">
+        <div>
+          <span class="section-tag">Son Eklenenler</span>
+          <h2>Ders <span class="gold">Notları</span></h2>
+        </div>
+        <a href="ders-notlari.html" class="btn btn-outline-sm">Tümünü Gör →</a>
+      </div>
+      <div class="notes-grid">
+        <div class="note-card">
+          <span class="note-tag tyt">TYT</span>
+          <h4>Sayılar ve Bölünebilme Kuralları</h4>
+          <p>Temel sayı teorisi, EBOB-EKOK ve bölünebilme kurallarının tamamı.</p>
+          <div class="note-footer">
+            <span>📄 PDF · 24 sayfa</span>
+            <a href="#" class="dl-btn">İndir</a>
+          </div>
+        </div>
+        <div class="note-card">
+          <span class="note-tag ayt">AYT</span>
+          <h4>Türev ve Uygulamaları</h4>
+          <p>Limit, türev kavramı, türev alma kuralları ve grafik çizimi uygulamaları.</p>
+          <div class="note-footer">
+            <span>📄 PDF · 38 sayfa</span>
+            <a href="#" class="dl-btn">İndir</a>
+          </div>
+        </div>
+        <div class="note-card">
+          <span class="note-tag lise">Lise</span>
+          <h4>Trigonometri Özet Notları</h4>
+          <p>Birim çember, özel açılar, trigonometrik denklemler ve özdeşlikler.</p>
+          <div class="note-footer">
+            <span>📄 PDF · 18 sayfa</span>
+            <a href="#" class="dl-btn">İndir</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOCALAR -->
+  <section class="teachers">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Ekibimiz</span>
+        <h2>Öğretmenlerimizle<br /><span class="gold">Tanışın</span></h2>
+      </div>
+      <div class="teachers-grid">
+        <div class="teacher-card">
+          <div class="teacher-avatar">
+            <div class="avatar-placeholder">SM</div>
+          </div>
+          <div class="teacher-info">
+            <h3>Matematik Öğretmeni</h3>
+            <span class="teacher-branch">TYT · AYT · Lise</span>
+            <p>Yılların deneyimiyle öğrencilerin matematiğe bakış açısını değiştiriyor.</p>
+          </div>
+        </div>
+        <div class="teacher-card">
+          <div class="teacher-avatar">
+            <div class="avatar-placeholder">SM</div>
+          </div>
+          <div class="teacher-info">
+            <h3>Matematik Öğretmeni</h3>
+            <span class="teacher-branch">Ortaokul · Lise · TYT</span>
+            <p>Matematiği sevdiren anlatım tarzıyla öğrencilerin favorisi.</p>
+          </div>
+        </div>
+      </div>
+      <div class="teachers-cta">
+        <a href="hakkimizda.html" class="btn btn-primary">Hakkımızda Daha Fazla</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="cta-inner">
+      <h2>Matematikte Fark Yaratmaya<br /><span class="gold">Hazır mısın?</span></h2>
+      <p>Ücretsiz ders notlarıyla hemen başla, YouTube kanalımıza abone ol.</p>
+      <div class="cta-actions">
+        <a href="ders-notlari.html" class="btn btn-primary">Ücretsiz Başla</a>
+        <a href="iletisim.html" class="btn btn-outline">Bize Ulaş</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="logo.png" alt="Logo" class="footer-logo" />
+          <span class="footer-name">Sonuşmaz Matematik</span>
+          <p>Her seviyede matematik eğitimi için güvenilir adres.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Sayfalar</h4>
+          <ul>
+            <li><a href="hakkimizda.html">Hakkımızda</a></li>
+            <li><a href="ders-notlari.html">Ders Notları</a></li>
+            <li><a href="videolar.html">Videolar</a></li>
+            <li><a href="deneme.html">Online Deneme</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Seviyeler</h4>
+          <ul>
+            <li><a href="#">Ortaokul</a></li>
+            <li><a href="#">Lise</a></li>
+            <li><a href="#">TYT</a></li>
+            <li><a href="#">AYT</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h4>Bizi Takip Edin</h4>
+          <div class="social-icons">
+            <a href="#" class="social-icon" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.75 15.5v-7l6.25 3.5-6.25 3.5z"/></svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Sonuşmaz Matematik. Tüm hakları saklıdır.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
