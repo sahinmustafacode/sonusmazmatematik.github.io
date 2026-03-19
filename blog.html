@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog & Duyurular · Sonuşmaz Matematik</title>
+  <link rel="icon" href="logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="about.css" />
+  <link rel="stylesheet" href="blog.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="Sonuşmaz Matematik Logo" />
+        <span>Sonuşmaz <strong>Matematik</strong></span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menü">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Ana Sayfa</a></li>
+        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+        <li><a href="ders-notlari.html">Ders Notları</a></li>
+        <li><a href="videolar.html">Videolar</a></li>
+        <li><a href="deneme.html">Online Deneme</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="iletisim.html" class="nav-cta">İletişim</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-bg"><div class="hero-grid"></div></div>
+    <div class="page-hero-content">
+      <span class="section-tag">Yazılar & Sorular</span>
+      <h1>Blog & Duyurular</h1>
+      <p>Sınav taktikleri, çalışma rehberleri ve öğrencilere özel günlük sorular.</p>
+    </div>
+  </section>
+
+  <!-- BLOG ALANI -->
+  <section class="blog-section">
+    <div class="container">
+      <div class="blog-layout">
+
+        <!-- ANA İÇERİK -->
+        <div class="blog-main">
+
+          <!-- FİLTRE -->
+          <div class="filter-bar" style="margin-bottom:32px;">
+            <button class="filter-btn active" data-filter="all">Tümü</button>
+            <button class="filter-btn" data-filter="soru">Günlük Soru</button>
+            <button class="filter-btn" data-filter="taktik">Sınav Taktikleri</button>
+            <button class="filter-btn" data-filter="duyuru">Duyurular</button>
+          </div>
+
+          <!-- YAYINLAR -->
+          <div class="posts-list" id="postsList">
+
+            <!-- ==================== GÜNLÜK SORU ==================== -->
+            <!--
+              YENİ SORU EKLEMEK İÇİN:
+              Aşağıdaki bloğu kopyalayın, tarih/başlık/soru metnini değiştirin.
+              formspree action URL'sini de güncelleyin (iletisim.html'den aynı URL).
+            -->
+
+            <article class="post-card" data-cat="soru">
+              <div class="post-meta">
+                <span class="post-tag soru">Günlük Soru</span>
+                <time>19 Mart 2025</time>
+              </div>
+              <h2>Günün Sorusu #1</h2>
+              <div class="post-body">
+                <p>Bir sayının 3 katının 5 fazlası, o sayının 2 katının 7 fazlasına eşittir. Bu sayı kaçtır?</p>
+                <div class="question-box">
+                  <div class="qb-label">
+                    <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#c8a84b" stroke-width="1.2"/><path d="M10 6v5l3 3" stroke="#c8a84b" stroke-width="1.2" stroke-linecap="round"/></svg>
+                    Cevabını gönder
+                  </div>
+                  <form class="answer-form" action="https://formspree.io/BURAYA_FORMSPREE_ID" method="POST">
+                    <input type="hidden" name="soru" value="Günün Sorusu #1 — 19 Mart 2025" />
+                    <div class="af-row">
+                      <input type="text" name="isim" placeholder="Adın" required />
+                      <input type="text" name="cevap" placeholder="Cevabın..." required />
+                    </div>
+                    <button type="submit" class="af-submit">
+                      <svg viewBox="0 0 20 20" fill="none"><path d="M3 10l14 0M13 6l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      Gönder
+                    </button>
+                    <p class="af-success" style="display:none;">✓ Cevabın alındı, teşekkürler!</p>
+                  </form>
+                </div>
+              </div>
+            </article>
+
+            <article class="post-card" data-cat="soru">
+              <div class="post-meta">
+                <span class="post-tag soru">Günlük Soru</span>
+                <time>18 Mart 2025</time>
+              </div>
+              <h2>Günün Sorusu #2</h2>
+              <div class="post-body">
+                <p>x² - 5x + 6 = 0 denkleminin köklerinin toplamı ve çarpımı kaçtır?</p>
+                <div class="question-box">
+                  <div class="qb-label">
+                    <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#c8a84b" stroke-width="1.2"/><path d="M10 6v5l3 3" stroke="#c8a84b" stroke-width="1.2" stroke-linecap="round"/></svg>
+                    Cevabını gönder
+                  </div>
+                  <form class="answer-form" action="https://formspree.io/BURAYA_FORMSPREE_ID" method="POST">
+                    <input type="hidden" name="soru" value="Günün Sorusu #2 — 18 Mart 2025" />
+                    <div class="af-row">
+                      <input type="text" name="isim" placeholder="Adın" required />
+                      <input type="text" name="cevap" placeholder="Cevabın..." required />
+                    </div>
+                    <button type="submit" class="af-submit">
+                      <svg viewBox="0 0 20 20" fill="none"><path d="M3 10l14 0M13 6l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      Gönder
+                    </button>
+                    <p class="af-success" style="display:none;">✓ Cevabın alındı, teşekkürler!</p>
+                  </form>
+                </div>
+              </div>
+            </article>
+
+            <!-- ==================== TAKTİK YAZI ==================== -->
+            <article class="post-card" data-cat="taktik">
+              <div class="post-meta">
+                <span class="post-tag taktik">Sınav Taktikleri</span>
+                <time>15 Mart 2025</time>
+              </div>
+              <h2>TYT'de Zamana Karşı: 40 Soruyu 40 Dakikada Çözme Stratejisi</h2>
+              <div class="post-body">
+                <p>TYT matematik bölümünde zaman yönetimi en kritik becerilerden biri. İşte sınavda zaman kaybetmeden ilerleyebilmek için kullanabileceğiniz stratejiler...</p>
+                <ul class="post-list">
+                  <li>Kolay soruları önce çözün, zor soruları işaretleyip geçin.</li>
+                  <li>Her soruya maksimum 1 dakika ayırın.</li>
+                  <li>Formül gerektiren soruları sona bırakın.</li>
+                  <li>Deneme sınavlarında süreyi takip etmeyi alışkanlık haline getirin.</li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- ==================== DUYURU ==================== -->
+            <article class="post-card" data-cat="duyuru">
+              <div class="post-meta">
+                <span class="post-tag duyuru">Duyuru</span>
+                <time>10 Mart 2025</time>
+              </div>
+              <h2>Yeni Online Grup Derslerimiz Başlıyor!</h2>
+              <div class="post-body">
+                <p>Mart ayı itibarıyla TYT ve AYT odaklı yeni online grup derslerimiz başlıyor. 3-4 kişilik küçük gruplarla, haftada 2 gün düzenli ders programı.</p>
+                <p>Yer sayısı sınırlıdır. Kayıt ve bilgi için iletişim sayfamızdan bize ulaşabilirsiniz.</p>
+                <a href="iletisim.html" class="btn btn-primary" style="margin-top:12px; font-size:0.88rem; padding:10px 22px; display:inline-flex;">Kayıt İçin İletişime Geç →</a>
+              </div>
+            </article>
+
+            <article class="post-card" data-cat="taktik">
+              <div class="post-meta">
+                <span class="post-tag taktik">Sınav Taktikleri</span>
+                <time>5 Mart 2025</time>
+              </div>
+              <h2>Matematikte Etkili Not Tutma Yöntemleri</h2>
+              <div class="post-body">
+                <p>Matematikte iyi not tutmak, tekrar yaparken büyük avantaj sağlar. İşte not tutmayı verimli hale getiren birkaç yöntem...</p>
+                <ul class="post-list">
+                  <li>Her konunun başına kısa bir özet yazın.</li>
+                  <li>Formülleri ayrı bir sayfaya toplayın.</li>
+                  <li>Yanlış yaptığınız soruları işaretleyip tekrar çözün.</li>
+                  <li>Renk kodlaması kullanarak önemli noktaları vurgulayın.</li>
+                </ul>
+              </div>
+            </article>
+
+          </div>
+
+          <!-- SONUÇ YOK -->
+          <div class="no-results" id="noResults" style="display:none;">
+            <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" stroke="#c8a84b" stroke-width="1.5"/><path d="M16 24h16" stroke="#c8a84b" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <p>Bu kategoride henüz yazı yok.</p>
+          </div>
+
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside class="blog-sidebar">
+
+          <div class="sidebar-card">
+            <h4>Hakkımızda</h4>
+            <div class="sidebar-about">
+              <img src="logo.png" alt="Logo" class="sb-logo" />
+              <p>Genç matematikçiler olarak her seviyede eğitim içeriği üretiyoruz. Sorularınız için her zaman buradayız.</p>
+            </div>
+            <a href="hakkimizda.html" class="sidebar-link">Daha Fazla Bilgi →</a>
+          </div>
+
+          <div class="sidebar-card">
+            <h4>Kategoriler</h4>
+            <ul class="sidebar-cats">
+              <li><button onclick="filterPosts('soru')" class="scat-btn"><span class="post-tag soru" style="font-size:0.7rem;">Günlük Soru</span></button></li>
+              <li><button onclick="filterPosts('taktik')" class="scat-btn"><span class="post-tag taktik" style="font-size:0.7rem;">Sınav Taktikleri</span></button></li>
+              <li><button onclick="filterPosts('duyuru')" class="scat-btn"><span class="post-tag duyuru" style="font-size:0.7rem;">Duyurular</span></button></li>
+              <li><button onclick="filterPosts('all')" class="scat-btn" style="font-size:0.82rem; color:var(--text-muted);">Tümünü Göster</button></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-card sidebar-yt">
+            <h4>YouTube Kanalı</h4>
+            <p>Video derslerimiz için kanalımıza abone olmayı unutmayın.</p>
+            <a href="https://www.youtube.com/@sonuşmazmatematik" target="_blank" class="yt-sm-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.75 15.5v-7l6.25 3.5-6.25 3.5z"/></svg>
+              Kanala Git
+            </a>
+          </div>
+
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="logo.png" alt="Logo" class="footer-logo" />
+          <span class="footer-name">Sonuşmaz Matematik</span>
+          <p>Her seviyede matematik eğitimi için güvenilir adres.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Sayfalar</h4>
+          <ul>
+            <li><a href="hakkimizda.html">Hakkımızda</a></li>
+            <li><a href="ders-notlari.html">Ders Notları</a></li>
+            <li><a href="videolar.html">Videolar</a></li>
+            <li><a href="deneme.html">Online Deneme</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Seviyeler</h4>
+          <ul>
+            <li><a href="#">Ortaokul</a></li>
+            <li><a href="#">Lise</a></li>
+            <li><a href="#">TYT</a></li>
+            <li><a href="#">AYT</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h4>Bizi Takip Edin</h4>
+          <div class="social-icons">
+            <a href="https://www.youtube.com/@sonuşmazmatematik" target="_blank" class="social-icon" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.75 15.5v-7l6.25 3.5-6.25 3.5z"/></svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Sonuşmaz Matematik. Tüm hakları saklıdır.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script src="blog.js"></script>
+</body>
+</html>

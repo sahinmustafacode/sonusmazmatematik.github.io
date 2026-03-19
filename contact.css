@@ -1,0 +1,285 @@
+/* ===== CONTACT LAYOUT ===== */
+.contact-section {
+  padding: 64px 0 96px;
+  background: var(--white);
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 56px;
+  align-items: start;
+}
+
+/* ===== FORM ===== */
+.contact-form-wrap {
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius);
+  padding: 44px 40px;
+}
+
+.cf-header {
+  margin-bottom: 32px;
+}
+
+.cf-header h2 {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.cf-header p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.cf-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.cf-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.cf-group label {
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--navy);
+}
+
+.cf-group input,
+.cf-group select,
+.cf-group textarea {
+  width: 100%;
+  padding: 11px 15px;
+  border: 1.5px solid var(--gray-100);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text);
+  background: var(--white);
+  outline: none;
+  transition: border-color var(--transition);
+  appearance: none;
+}
+
+.cf-group select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M6 8l4 4 4-4' stroke='%23888' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 18px;
+  padding-right: 38px;
+  cursor: pointer;
+}
+
+.cf-group textarea { resize: vertical; min-height: 120px; line-height: 1.6; }
+
+.cf-group input:focus,
+.cf-group select:focus,
+.cf-group textarea:focus {
+  border-color: rgba(200,168,75,0.55);
+}
+
+.cf-group input::placeholder,
+.cf-group textarea::placeholder { color: var(--text-muted); }
+
+.cf-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 32px;
+  background: var(--navy);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+  align-self: flex-start;
+}
+.cf-submit:hover { background: var(--navy-light); transform: translateY(-2px); }
+.cf-submit:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
+.cf-submit svg { width: 17px; height: 17px; }
+
+.cf-success {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  background: rgba(16,100,60,0.07);
+  border: 1px solid rgba(16,100,60,0.2);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #0f6c3a;
+}
+.cf-success svg { width: 20px; height: 20px; flex-shrink: 0; }
+
+/* ===== BİLGİ KUTUSU ===== */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: sticky;
+  top: 88px;
+}
+
+.ci-card {
+  background: var(--off-white);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  transition: border-color var(--transition);
+}
+.ci-card:hover { border-color: rgba(200,168,75,0.3); }
+
+.ci-icon {
+  width: 44px; height: 44px;
+  background: rgba(200,168,75,0.1);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.ci-icon svg { width: 26px; height: 26px; }
+
+.ci-card h4 {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 5px;
+}
+.ci-card p { font-size: 0.86rem; color: var(--text-muted); line-height: 1.6; }
+
+.ci-link {
+  color: var(--gold-dim);
+  font-weight: 500;
+  transition: color var(--transition);
+}
+.ci-link:hover { color: var(--gold); }
+
+/* SOSYAL MEDYA */
+.ci-social {
+  background: var(--off-white);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+}
+
+.ci-social h4 {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 14px;
+}
+
+.ci-social-links { display: flex; flex-direction: column; gap: 10px; }
+
+.ci-slink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: all var(--transition);
+  border: 1px solid transparent;
+}
+.ci-slink svg { width: 18px; height: 18px; }
+
+.ci-slink.youtube {
+  background: rgba(255,0,0,0.06);
+  color: #cc0000;
+  border-color: rgba(255,0,0,0.1);
+}
+.ci-slink.youtube:hover { background: rgba(255,0,0,0.12); }
+
+.ci-slink.instagram {
+  background: rgba(131,58,180,0.06);
+  color: #7b2fbe;
+  border-color: rgba(131,58,180,0.1);
+}
+.ci-slink.instagram:hover { background: rgba(131,58,180,0.12); }
+
+/* DERS TİPLERİ */
+.ci-lessons {
+  background: var(--navy-dark);
+  border: 1px solid rgba(200,168,75,0.15);
+  border-radius: var(--radius);
+  padding: 22px;
+}
+
+.ci-lessons h4 {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.ci-lesson-list { display: flex; flex-direction: column; gap: 14px; }
+
+.ci-lesson {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.ci-lesson-icon {
+  font-size: 20px;
+  width: 36px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.ci-lesson div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ci-lesson strong {
+  font-size: 0.88rem;
+  color: var(--white);
+  font-weight: 500;
+}
+
+.ci-lesson span {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.45);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .contact-layout { grid-template-columns: 1fr; }
+  .contact-info { position: static; }
+}
+
+@media (max-width: 560px) {
+  .contact-form-wrap { padding: 28px 20px; }
+  .cf-row { grid-template-columns: 1fr; }
+  .cf-submit { width: 100%; }
+}

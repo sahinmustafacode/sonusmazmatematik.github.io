@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>İletişim · Sonuşmaz Matematik</title>
+  <link rel="icon" href="logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="about.css" />
+  <link rel="stylesheet" href="contact.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="Sonuşmaz Matematik Logo" />
+        <span>Sonuşmaz <strong>Matematik</strong></span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menü">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Ana Sayfa</a></li>
+        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+        <li><a href="ders-notlari.html">Ders Notları</a></li>
+        <li><a href="videolar.html">Videolar</a></li>
+        <li><a href="deneme.html">Online Deneme</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="iletisim.html" class="nav-cta active">İletişim</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-bg"><div class="hero-grid"></div></div>
+    <div class="page-hero-content">
+      <span class="section-tag">Bize Ulaşın</span>
+      <h1>İletişim</h1>
+      <p>Grup dersi, özel ders veya aklınızdaki her soru için buradayız.</p>
+    </div>
+  </section>
+
+  <!-- İLETİŞİM -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- FORM -->
+        <div class="contact-form-wrap">
+          <div class="cf-header">
+            <h2>Mesaj Gönderin</h2>
+            <p>Formı doldurun, en kısa sürede size dönelim.</p>
+          </div>
+
+          <form class="contact-form" id="contactForm" action="https://formspree.io/BURAYA_FORMSPREE_ID" method="POST">
+
+            <div class="cf-row">
+              <div class="cf-group">
+                <label for="ad">Adınız Soyadınız</label>
+                <input type="text" id="ad" name="ad" placeholder="Adınız Soyadınız" required />
+              </div>
+              <div class="cf-group">
+                <label for="email">E-posta</label>
+                <input type="email" id="email" name="email" placeholder="ornek@email.com" required />
+              </div>
+            </div>
+
+            <div class="cf-group">
+              <label for="konu">Konu</label>
+              <select id="konu" name="konu" required>
+                <option value="" disabled selected>Konuyu seçin...</option>
+                <option value="Online Grup Dersi">Online Grup Dersi</option>
+                <option value="Birebir Özel Ders (Online)">Birebir Özel Ders (Online)</option>
+                <option value="Yüz Yüze Ders (Ankara)">Yüz Yüze Ders (Ankara)</option>
+                <option value="Ders Notları Hakkında">Ders Notları Hakkında</option>
+                <option value="Diğer">Diğer</option>
+              </select>
+            </div>
+
+            <div class="cf-group">
+              <label for="seviye">Seviye</label>
+              <select id="seviye" name="seviye">
+                <option value="" disabled selected>Seviyenizi seçin...</option>
+                <option value="Ortaokul">Ortaokul</option>
+                <option value="Lise">Lise</option>
+                <option value="TYT">TYT Hazırlık</option>
+                <option value="AYT">AYT Hazırlık</option>
+              </select>
+            </div>
+
+            <div class="cf-group">
+              <label for="mesaj">Mesajınız</label>
+              <textarea id="mesaj" name="mesaj" rows="5" placeholder="Mesajınızı buraya yazın..." required></textarea>
+            </div>
+
+            <button type="submit" class="cf-submit" id="cfSubmit">
+              <svg viewBox="0 0 20 20" fill="none"><path d="M3 10l14 0M13 6l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Mesajı Gönder
+            </button>
+
+            <div class="cf-success" id="cfSuccess" style="display:none;">
+              <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#0f6c3a" stroke-width="1.5"/><path d="M8 12l3 3 5-5" stroke="#0f6c3a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Mesajınız iletildi! En kısa sürede size döneceğiz.
+            </div>
+
+          </form>
+        </div>
+
+        <!-- BİLGİ KUTUSU -->
+        <aside class="contact-info">
+
+          <div class="ci-card">
+            <div class="ci-icon">
+              <svg viewBox="0 0 40 40" fill="none">
+                <circle cx="20" cy="20" r="16" stroke="#c8a84b" stroke-width="1.2"/>
+                <path d="M20 10v11l6 4" stroke="#c8a84b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Yanıt Süresi</h4>
+              <p>Mesajlarınıza genellikle aynı gün veya 24 saat içinde dönüş yapıyoruz.</p>
+            </div>
+          </div>
+
+          <div class="ci-card">
+            <div class="ci-icon">
+              <svg viewBox="0 0 40 40" fill="none">
+                <rect x="6" y="10" width="28" height="20" rx="3" stroke="#c8a84b" stroke-width="1.2"/>
+                <path d="M6 14l14 9 14-9" stroke="#c8a84b" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <h4>E-posta ile Ulaşın</h4>
+              <p>
+                <a href="/cdn-cgi/l/email-protection#127b7c747d52617d7c67617f73687f7366777f73667b793c717d7f" class="ci-link"><span class="__cf_email__" data-cfemail="375e5951587744585942445a564d5a5643525a56435e5c1954585a">[email&#160;protected]</span></a>
+              </p>
+            </div>
+          </div>
+
+          <div class="ci-card">
+            <div class="ci-icon">
+              <svg viewBox="0 0 40 40" fill="none">
+                <path d="M20 6C15 6 11 10 11 15c0 7 9 19 9 19s9-12 9-19c0-5-4-9-9-9z" stroke="#c8a84b" stroke-width="1.2"/>
+                <circle cx="20" cy="15" r="3" stroke="#c8a84b" stroke-width="1.2"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Yüz Yüze Ders</h4>
+              <p>Ankara'da bulunan öğrencilerimiz için yüz yüze ders imkânımız mevcuttur.</p>
+            </div>
+          </div>
+
+          <!-- SOSYAL MEDYA -->
+          <div class="ci-social">
+            <h4>Sosyal Medyada Biz</h4>
+            <div class="ci-social-links">
+              <a href="https://www.youtube.com/@sonuşmazmatematik" target="_blank" class="ci-slink youtube">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.75 15.5v-7l6.25 3.5-6.25 3.5z"/></svg>
+                YouTube
+              </a>
+              <a href="#" class="ci-slink instagram">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                Instagram
+              </a>
+            </div>
+          </div>
+
+          <!-- DERS TİPLERİ -->
+          <div class="ci-lessons">
+            <h4>Ders Seçenekleri</h4>
+            <div class="ci-lesson-list">
+              <div class="ci-lesson">
+                <span class="ci-lesson-icon">🖥️</span>
+                <div>
+                  <strong>Online Grup Dersi</strong>
+                  <span>3–4 kişilik gruplar</span>
+                </div>
+              </div>
+              <div class="ci-lesson">
+                <span class="ci-lesson-icon">👤</span>
+                <div>
+                  <strong>Birebir Özel Ders</strong>
+                  <span>Online · Her seviye</span>
+                </div>
+              </div>
+              <div class="ci-lesson">
+                <span class="ci-lesson-icon">📍</span>
+                <div>
+                  <strong>Yüz Yüze Ders</strong>
+                  <span>Ankara · Birebir</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="logo.png" alt="Logo" class="footer-logo" />
+          <span class="footer-name">Sonuşmaz Matematik</span>
+          <p>Her seviyede matematik eğitimi için güvenilir adres.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Sayfalar</h4>
+          <ul>
+            <li><a href="hakkimizda.html">Hakkımızda</a></li>
+            <li><a href="ders-notlari.html">Ders Notları</a></li>
+            <li><a href="videolar.html">Videolar</a></li>
+            <li><a href="deneme.html">Online Deneme</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Seviyeler</h4>
+          <ul>
+            <li><a href="#">Ortaokul</a></li>
+            <li><a href="#">Lise</a></li>
+            <li><a href="#">TYT</a></li>
+            <li><a href="#">AYT</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h4>Bizi Takip Edin</h4>
+          <div class="social-icons">
+            <a href="https://www.youtube.com/@sonuşmazmatematik" target="_blank" class="social-icon" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.75 15.5v-7l6.25 3.5-6.25 3.5z"/></svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Sonuşmaz Matematik. Tüm hak
