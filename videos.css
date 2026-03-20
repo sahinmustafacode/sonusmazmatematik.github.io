@@ -126,6 +126,8 @@
 .vi-tag.ayt      { background: rgba(13,27,62,0.08);   color: var(--navy-light); }
 .vi-tag.lise     { background: rgba(30,51,112,0.07);  color: #2a4080; }
 .vi-tag.ortaokul { background: rgba(16,100,60,0.08);  color: #0f6c3a; }
+.vi-tag.lgs      { background: rgba(180,30,30,0.08);  color: #a01e1e; }
+.vi-tag.kpss     { background: rgba(80,30,120,0.08);  color: #5a1e8a; }
 
 .video-info h4 {
   font-family: var(--font-display);

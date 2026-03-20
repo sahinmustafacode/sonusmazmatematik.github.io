@@ -117,6 +117,8 @@
 .ni-tag.ayt      { background: rgba(13,27,62,0.08);   color: var(--navy-light); }
 .ni-tag.lise     { background: rgba(30,51,112,0.07);  color: #2a4080; }
 .ni-tag.ortaokul { background: rgba(16,100,60,0.08);  color: #0f6c3a; }
+.ni-tag.lgs      { background: rgba(180,30,30,0.08);  color: #a01e1e; }
+.ni-tag.kpss     { background: rgba(80,30,120,0.08);  color: #5a1e8a; }
 
 .ni-pages {
   font-size: 0.75rem;
