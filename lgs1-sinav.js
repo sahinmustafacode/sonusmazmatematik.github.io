@@ -539,7 +539,7 @@ ${cevapMetni}
   `.trim();
 
   try {
-    await fetch('https://formspree.io/xdawbbzg', {
+    await fetch('https://formspree.io/f/xdawbbzg', {
       method: 'POST',
       headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
       body: JSON.stringify({
