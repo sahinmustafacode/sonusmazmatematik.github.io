@@ -11,8 +11,6 @@
   <link rel="stylesheet" href="deneme.css" />
 </head>
 <body>
-
-  <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
@@ -34,7 +32,6 @@
     </div>
   </nav>
 
-  <!-- PAGE HERO -->
   <section class="page-hero">
     <div class="page-hero-bg"><div class="hero-grid"></div></div>
     <div class="page-hero-content">
@@ -44,196 +41,164 @@
     </div>
   </section>
 
-  <!-- KATEGORİ SEÇİM EKRANI -->
   <div id="screen-select" class="screen">
     <div class="container">
       <div class="select-header">
-        <h2>Deneme Kategorisi Seçin</h2>
-        <p>Hangi sınava hazırlanmak istiyorsunuz?</p>
+        <h2>Deneme Seçin</h2>
+        <p>Önce sınav türünü seçin, ardından denemelere ulaşın.</p>
       </div>
-      <div class="category-grid">
 
-        <button class="cat-card" onclick="startExam('tyt')">
-          <div class="cat-icon tyt-icon">TYT</div>
-          <h3>TYT Matematik</h3>
-          <div class="cat-meta">
-            <span>40 Soru</span>
-            <span class="cat-dot"></span>
-            <span>60 Dakika</span>
-          </div>
-          <p>Temel Yeterlilik Testi matematik soruları</p>
-          <span class="cat-start">Başla →</span>
-        </button>
-
-        <button class="cat-card" onclick="startExam('ayt')">
-          <div class="cat-icon ayt-icon">AYT</div>
-          <h3>AYT Matematik</h3>
-          <div class="cat-meta">
-            <span>40 Soru</span>
-            <span class="cat-dot"></span>
-            <span>60 Dakika</span>
-          </div>
-          <p>Alan Yeterlilik Testi ileri düzey matematik soruları</p>
-          <span class="cat-start">Başla →</span>
-        </button>
-
-        <button class="cat-card" onclick="startExam('lgs')">
-          <div class="cat-icon lgs-icon">LGS</div>
-          <h3>LGS Matematik</h3>
-          <div class="cat-meta">
-            <span>20 Soru</span>
-            <span class="cat-dot"></span>
-            <span>40 Dakika</span>
-          </div>
-          <p>Liseye Geçiş Sınavı matematik soruları</p>
-          <span class="cat-start">Başla →</span>
-        </button>
-
-        <a href="lgs-donem1.html" class="cat-card" style="text-decoration:none; border-color: rgba(15,108,58,0.3);">
-          <div style="display:flex; align-items:center; gap:10px; margin-bottom:4px;">
-            <div class="cat-icon lgs-icon" style="width:48px;height:48px;font-size:0.78rem;">LGS</div>
-            <span style="background:#0f6c3a;color:#fff;font-size:0.68rem;font-weight:600;padding:3px 10px;border-radius:100px;letter-spacing:0.06em;">ÜCRETSİZ</span>
-          </div>
-          <h3>LGS 1. Dönem Denemesi</h3>
-          <div class="cat-meta">
-            <span>20 Soru</span>
-            <span class="cat-dot"></span>
-            <span>40 Dakika</span>
-          </div>
-          <p>8 konu · Orta–Zor seviye · İsim soyisimle katıl, sonuçlar hocalarımıza iletilir.</p>
-          <span class="cat-start" style="color:#0f6c3a;">Deneye Gir →</span>
-        </a>
-
-        <button class="cat-card" onclick="startExam('kpss')">
-          <div class="cat-icon kpss-icon">KPSS</div>
-          <h3>KPSS Matematik</h3>
-          <div class="cat-meta">
-            <span>30 Soru</span>
-            <span class="cat-dot"></span>
-            <span>40 Dakika</span>
-          </div>
-          <p>Kamu Personeli Seçme Sınavı matematik soruları</p>
-          <span class="cat-start">Başla →</span>
-        </button>
-
-        <button class="cat-card" onclick="startExam('lise')">
-          <div class="cat-icon lise-icon">LİSE</div>
-          <h3>Lise Matematik</h3>
-          <div class="cat-meta">
-            <span>30 Soru</span>
-            <span class="cat-dot"></span>
-            <span>45 Dakika</span>
-          </div>
-          <p>Lise müfredatı kapsamında karma matematik soruları</p>
-          <span class="cat-start">Başla →</span>
-        </button>
-
-        <button class="cat-card" onclick="startExam('ortaokul')">
-          <div class="cat-icon ortaokul-icon">5-8</div>
-          <h3>Ortaokul Matematik</h3>
-          <div class="cat-meta">
-            <span>20 Soru</span>
-            <span class="cat-dot"></span>
-            <span>40 Dakika</span>
-          </div>
-          <p>5-8. sınıf matematik kazanımlarına yönelik sorular</p>
-          <span class="cat-start">Başla →</span>
-        </button>
-
+      <div class="kat-tabs">
+        <button class="kat-tab active" data-kat="lgs">LGS</button>
+        <button class="kat-tab" data-kat="tyt">TYT</button>
+        <button class="kat-tab" data-kat="ayt">AYT</button>
+        <button class="kat-tab" data-kat="lise">Lise</button>
+        <button class="kat-tab" data-kat="ortaokul">Ortaokul</button>
+        <button class="kat-tab" data-kat="kpss">KPSS</button>
       </div>
+
+      <!-- LGS -->
+      <div class="kat-panel active" data-panel="lgs">
+        <div class="kat-panel-header">
+          <div class="kat-panel-icon lgs-icon">LGS</div>
+          <div>
+            <h3>LGS Matematik Denemeleri</h3>
+            <p>Liseye Geçiş Sınavı · 20 Soru · 40 Dakika</p>
+          </div>
+        </div>
+        <div class="deneme-listesi">
+          <a href="lgs-donem1.html" class="deneme-karti">
+            <div class="dk-sol">
+              <span class="dk-rozet ucretiz">ÜCRETSİZ</span>
+              <h4>LGS 1. Dönem Denemesi</h4>
+              <p>Çarpanlar, EBOB/EKOK, Üslü, Kareköklü, Olasılık, Veri, Cebir, Özdeşlikler</p>
+              <div class="dk-meta">
+                <span>20 Soru</span><span class="dk-nokta"></span>
+                <span>40 Dakika</span><span class="dk-nokta"></span>
+                <span>Orta–Zor</span>
+              </div>
+            </div>
+            <div class="dk-sag">Deneye Gir →</div>
+          </a>
+          <div class="deneme-karti yakin">
+            <div class="dk-sol">
+              <span class="dk-rozet yakinda">YAKINDA</span>
+              <h4>LGS 2. Dönem Denemesi</h4>
+              <p>Yeni sorular hazırlanıyor, yakında yayınlanacak.</p>
+              <div class="dk-meta"><span>20 Soru</span><span class="dk-nokta"></span><span>40 Dakika</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TYT -->
+      <div class="kat-panel" data-panel="tyt">
+        <div class="kat-panel-header">
+          <div class="kat-panel-icon tyt-icon">TYT</div>
+          <div>
+            <h3>TYT Matematik Denemeleri</h3>
+            <p>Temel Yeterlilik Testi · 40 Soru · 60 Dakika</p>
+          </div>
+        </div>
+        <div class="deneme-listesi">
+          <div class="deneme-karti yakin">
+            <div class="dk-sol">
+              <span class="dk-rozet yakinda">YAKINDA</span>
+              <h4>TYT 1. Dönem Denemesi</h4>
+              <p>Yeni sorular hazırlanıyor, yakında yayınlanacak.</p>
+              <div class="dk-meta"><span>40 Soru</span><span class="dk-nokta"></span><span>60 Dakika</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AYT -->
+      <div class="kat-panel" data-panel="ayt">
+        <div class="kat-panel-header">
+          <div class="kat-panel-icon ayt-icon">AYT</div>
+          <div>
+            <h3>AYT Matematik Denemeleri</h3>
+            <p>Alan Yeterlilik Testi · 40 Soru · 60 Dakika</p>
+          </div>
+        </div>
+        <div class="deneme-listesi">
+          <div class="deneme-karti yakin">
+            <div class="dk-sol">
+              <span class="dk-rozet yakinda">YAKINDA</span>
+              <h4>AYT 1. Dönem Denemesi</h4>
+              <p>Yeni sorular hazırlanıyor, yakında yayınlanacak.</p>
+              <div class="dk-meta"><span>40 Soru</span><span class="dk-nokta"></span><span>60 Dakika</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LİSE -->
+      <div class="kat-panel" data-panel="lise">
+        <div class="kat-panel-header">
+          <div class="kat-panel-icon lise-icon">LİSE</div>
+          <div>
+            <h3>Lise Matematik Denemeleri</h3>
+            <p>Lise Müfredatı · 30 Soru · 45 Dakika</p>
+          </div>
+        </div>
+        <div class="deneme-listesi">
+          <div class="deneme-karti yakin">
+            <div class="dk-sol">
+              <span class="dk-rozet yakinda">YAKINDA</span>
+              <h4>Lise 1. Dönem Denemesi</h4>
+              <p>Yeni sorular hazırlanıyor, yakında yayınlanacak.</p>
+              <div class="dk-meta"><span>30 Soru</span><span class="dk-nokta"></span><span>45 Dakika</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ORTAOKUL -->
+      <div class="kat-panel" data-panel="ortaokul">
+        <div class="kat-panel-header">
+          <div class="kat-panel-icon ortaokul-icon">5-8</div>
+          <div>
+            <h3>Ortaokul Matematik Denemeleri</h3>
+            <p>5-8. Sınıf · 20 Soru · 40 Dakika</p>
+          </div>
+        </div>
+        <div class="deneme-listesi">
+          <div class="deneme-karti yakin">
+            <div class="dk-sol">
+              <span class="dk-rozet yakinda">YAKINDA</span>
+              <h4>Ortaokul 1. Dönem Denemesi</h4>
+              <p>Yeni sorular hazırlanıyor, yakında yayınlanacak.</p>
+              <div class="dk-meta"><span>20 Soru</span><span class="dk-nokta"></span><span>40 Dakika</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- KPSS -->
+      <div class="kat-panel" data-panel="kpss">
+        <div class="kat-panel-header">
+          <div class="kat-panel-icon kpss-icon">KPSS</div>
+          <div>
+            <h3>KPSS Matematik Denemeleri</h3>
+            <p>Kamu Personeli Seçme Sınavı · 30 Soru · 40 Dakika</p>
+          </div>
+        </div>
+        <div class="deneme-listesi">
+          <div class="deneme-karti yakin">
+            <div class="dk-sol">
+              <span class="dk-rozet yakinda">YAKINDA</span>
+              <h4>KPSS 1. Dönem Denemesi</h4>
+              <p>Yeni sorular hazırlanıyor, yakında yayınlanacak.</p>
+              <div class="dk-meta"><span>30 Soru</span><span class="dk-nokta"></span><span>40 Dakika</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
-  <!-- SINAV EKRANI -->
-  <div id="screen-exam" class="screen" style="display:none;">
-    <div class="exam-wrap">
-
-      <!-- ÜST BAR -->
-      <div class="exam-topbar">
-        <div class="exam-info">
-          <span id="examTitle" class="exam-title-label"></span>
-          <span id="examProgress" class="exam-progress-label"></span>
-        </div>
-        <div class="exam-timer" id="examTimer">00:00</div>
-        <button class="exam-finish-btn" onclick="finishExam()">Sınavı Bitir</button>
-      </div>
-
-      <!-- İLERLEME ÇUBUĞU -->
-      <div class="exam-bar">
-        <div class="exam-bar-fill" id="examBarFill"></div>
-      </div>
-
-      <!-- SORU ALANI -->
-      <div class="exam-body">
-        <div class="question-area">
-          <div class="q-number" id="qNumber"></div>
-          <div class="q-text" id="qText"></div>
-          <div class="q-options" id="qOptions"></div>
-          <div class="q-nav">
-            <button class="q-nav-btn" id="btnPrev" onclick="prevQuestion()">← Önceki</button>
-            <button class="q-nav-btn primary" id="btnNext" onclick="nextQuestion()">Sonraki →</button>
-          </div>
-        </div>
-
-        <!-- SORU PALETİ -->
-        <div class="question-palette">
-          <div class="palette-header">Soru Paleti</div>
-          <div class="palette-grid" id="paletteGrid"></div>
-          <div class="palette-legend">
-            <span class="leg answered">Cevaplandı</span>
-            <span class="leg current">Aktif</span>
-            <span class="leg empty">Boş</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- SONUÇ EKRANI -->
-  <div id="screen-result" class="screen" style="display:none;">
-    <div class="container">
-      <div class="result-wrap">
-        <div class="result-header">
-          <img src="logo.png" alt="Logo" class="result-logo" />
-          <h2 id="resultTitle">Deneme Tamamlandı!</h2>
-          <p id="resultSubtitle"></p>
-        </div>
-
-        <div class="result-stats">
-          <div class="result-stat correct">
-            <span class="rs-num" id="rsCorrect">0</span>
-            <span class="rs-label">Doğru</span>
-          </div>
-          <div class="result-stat wrong">
-            <span class="rs-num" id="rsWrong">0</span>
-            <span class="rs-label">Yanlış</span>
-          </div>
-          <div class="result-stat empty">
-            <span class="rs-num" id="rsEmpty">0</span>
-            <span class="rs-label">Boş</span>
-          </div>
-          <div class="result-stat score">
-            <span class="rs-num" id="rsScore">0</span>
-            <span class="rs-label">Net</span>
-          </div>
-        </div>
-
-        <!-- SORU SORU ANALİZ -->
-        <div class="result-analysis">
-          <h3>Soru Analizi</h3>
-          <div class="analysis-list" id="analysisList"></div>
-        </div>
-
-        <div class="result-actions">
-          <button class="btn btn-primary" onclick="restartExam()">Tekrar Dene</button>
-          <button class="btn btn-outline-dark" onclick="goToSelect()">Kategori Seç</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
@@ -282,7 +247,15 @@
   </footer>
 
   <script src="main.js"></script>
-  <script src="sorular.js"></script>
-  <script src="deneme.js"></script>
+  <script>
+    document.querySelectorAll('.kat-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.kat-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.kat-panel').forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.querySelector(`.kat-panel[data-panel="${tab.dataset.kat}"]`).classList.add('active');
+      });
+    });
+  </script>
 </body>
 </html>

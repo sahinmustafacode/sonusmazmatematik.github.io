@@ -443,3 +443,130 @@
   .result-wrap { padding: 28px 20px; }
   .exam-topbar { padding: 0 16px; }
 }
+
+/* ===== SEKMELİ KATEGORİ SİSTEMİ ===== */
+.kat-tabs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+  border-bottom: 2px solid var(--gray-100);
+  padding-bottom: 0;
+}
+
+.kat-tab {
+  padding: 10px 24px;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--transition);
+  border-radius: 0;
+}
+.kat-tab:hover { color: var(--navy); }
+.kat-tab.active { color: var(--navy); border-bottom-color: var(--gold); font-weight: 600; }
+
+.kat-panel { display: none; padding-bottom: 80px; }
+.kat-panel.active { display: block; }
+
+.kat-panel-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 0 28px;
+  border-bottom: 1px solid var(--gray-100);
+  margin-bottom: 24px;
+}
+.kat-panel-icon {
+  width: 56px; height: 56px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.kat-panel-header h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.kat-panel-header p { font-size: 0.85rem; color: var(--text-muted); }
+
+/* DENEME LİSTESİ */
+.deneme-listesi { display: flex; flex-direction: column; gap: 14px; }
+
+.deneme-karti {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  text-decoration: none;
+  color: inherit;
+  transition: all var(--transition);
+}
+a.deneme-karti:hover {
+  border-color: rgba(200,168,75,0.4);
+  box-shadow: 0 8px 28px rgba(13,27,62,0.08);
+  transform: translateY(-2px);
+}
+.deneme-karti.yakin {
+  opacity: 0.55;
+  cursor: default;
+  background: var(--off-white);
+}
+
+.dk-sol { display: flex; flex-direction: column; gap: 8px; }
+
+.dk-rozet {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: 100px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  width: fit-content;
+}
+.dk-rozet.ucretiz  { background: rgba(15,108,58,0.1); color: #0f6c3a; }
+.dk-rozet.yakinda  { background: rgba(100,100,100,0.08); color: var(--text-muted); }
+.dk-rozet.ucretli  { background: rgba(13,27,62,0.08); color: var(--navy-light); }
+
+.dk-sol h4 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+.dk-sol p { font-size: 0.84rem; color: var(--text-muted); line-height: 1.6; }
+
+.dk-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--gold-dim);
+  font-weight: 500;
+}
+.dk-nokta { width: 3px; height: 3px; border-radius: 50%; background: var(--gold-dim); }
+
+.dk-sag {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--gold);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
