@@ -82,20 +82,166 @@ const SORULAR = [
   },
   {
     konu: "Veri Analizi", zorluk: "Orta",
-    soru: "6 öğrencinin notları: Ali 72, Buse 85, Can 90, Defne 68, Ege x, Fatma 79'dur. 6 öğrencinin not ortalaması 80 olduğuna göre, 6 notun medyanı kaçtır?",
-    secenekler: ["79", "82", "82,5", "85"],
+    gorsel: `<div style="margin:18px 0;background:#f8f8f6;border:1px solid #e0ddd6;border-radius:8px;padding:18px 16px;">
+<div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#999;text-align:center;margin-bottom:16px;">Bir Okulda Sınıflara Göre Öğrenci Dağılımı</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center;">
+  <div>
+    <div style="font-size:11px;font-weight:600;color:#555;text-align:center;margin-bottom:8px;">Grafik 1 — Kayıt Dönemi Öncesi</div>
+    <svg viewBox="0 0 180 180" width="100%" style="display:block;">
+      <circle cx="90" cy="90" r="70" fill="#f0f0f0" stroke="#ccc" stroke-width="1"/>
+      <!-- 6.sınıf: 120° mavi -->
+      <path d="M90,90 L90,20 A70,70 0 0,1 150.6,55 Z" fill="#1a4a7a" opacity="0.85"/>
+      <!-- 7.sınıf: 150° yeşil -->
+      <path d="M90,90 L150.6,55 A70,70 0 0,1 55,148.1 Z" fill="#2d6e2d" opacity="0.85"/>
+      <!-- 8.sınıf: 90° turuncu -->
+      <path d="M90,90 L55,148.1 A70,70 0 0,1 90,20 Z" fill="#b85c00" opacity="0.85"/>
+      <text x="110" y="65" text-anchor="middle" font-size="10" font-weight="700" fill="white">6. Sınıf</text>
+      <text x="115" y="78" text-anchor="middle" font-size="9" fill="white">120°</text>
+      <text x="120" y="115" text-anchor="middle" font-size="10" font-weight="700" fill="white">7. Sınıf</text>
+      <text x="120" y="128" text-anchor="middle" font-size="9" fill="white">150°</text>
+      <text x="58" y="108" text-anchor="middle" font-size="10" font-weight="700" fill="white">8. Sınıf</text>
+      <text x="58" y="120" text-anchor="middle" font-size="9" fill="white">90°</text>
+    </svg>
+  </div>
+  <div>
+    <div style="font-size:11px;font-weight:600;color:#555;text-align:center;margin-bottom:8px;">Grafik 2 — Kayıt Dönemi Sonrası</div>
+    <svg viewBox="0 0 180 180" width="100%" style="display:block;">
+      <circle cx="90" cy="90" r="70" fill="#f0f0f0" stroke="#ccc" stroke-width="1"/>
+      <!-- 6.sınıf: 100° -->
+      <path d="M90,90 L90,20 A70,70 0 0,1 156.2,66.3 Z" fill="#1a4a7a" opacity="0.85"/>
+      <!-- 7.sınıf: 160° -->
+      <path d="M90,90 L156.2,66.3 A70,70 0 0,1 41.2,148.6 Z" fill="#2d6e2d" opacity="0.85"/>
+      <!-- 8.sınıf: 100° -->
+      <path d="M90,90 L41.2,148.6 A70,70 0 0,1 90,20 Z" fill="#b85c00" opacity="0.85"/>
+      <text x="118" y="62" text-anchor="middle" font-size="10" font-weight="700" fill="white">6. Sınıf</text>
+      <text x="118" y="74" text-anchor="middle" font-size="9" fill="white">100°</text>
+      <text x="118" y="118" text-anchor="middle" font-size="10" font-weight="700" fill="white">7. Sınıf</text>
+      <text x="118" y="130" text-anchor="middle" font-size="9" fill="white">160°</text>
+      <text x="52" y="112" text-anchor="middle" font-size="10" font-weight="700" fill="white">8. Sınıf</text>
+      <text x="52" y="124" text-anchor="middle" font-size="9" fill="white">100°</text>
+    </svg>
+  </div>
+</div>
+<div style="margin-top:12px;padding:10px 14px;background:#fdf6e3;border-left:3px solid #c9a84c;border-radius:0 4px 4px 0;font-size:13px;color:#5a400e;">
+  Kayıt dönemi dışında okuldaki öğrenci sayısı değişmemiştir. Kayıt döneminde okula <strong>22 öğrenci gelmiş</strong>, <strong>2 öğrenci gitmiştir.</strong> 6. sınıfın aldığı ve verdiği öğrenci sayıları tabloda verilmiştir: <strong>Gelen: 22, Giden: 2.</strong>
+</div>
+</div>`,
+    soru: "Grafik 1'de okuldaki toplam öğrenci sayısı 360'tır. Kayıt dönemi sonrası 8. sınıftaki öğrenci sayısı kaçtır?",
+    secenekler: ["90", "95", "100", "105"],
+    cevap: 2
+  },
+  {
+    konu: "Veri Analizi", zorluk: "Orta",
+    gorsel: `<div style="margin:18px 0;background:#f8f8f6;border:1px solid #e0ddd6;border-radius:8px;padding:18px 16px;">
+<div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#999;text-align:center;margin-bottom:16px;">Bir Tiyatro Salonunda Koltuk ve Seyirci Dağılımı</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:center;">
+  <div>
+    <div style="font-size:11px;font-weight:600;color:#555;text-align:center;margin-bottom:8px;">Grafik 1 — Toplam Koltuk Sayısı</div>
+    <svg viewBox="0 0 180 180" width="100%" style="display:block;">
+      <circle cx="90" cy="90" r="70" fill="#f0f0f0" stroke="#ccc" stroke-width="1"/>
+      <!-- Kırmızı: 120° -->
+      <path d="M90,90 L90,20 A70,70 0 0,1 150.6,55 Z" fill="#7a2020" opacity="0.9"/>
+      <!-- Mavi: 150° -->
+      <path d="M90,90 L150.6,55 A70,70 0 0,1 55,148.1 Z" fill="#1a4a7a" opacity="0.9"/>
+      <!-- Sarı: 90° -->
+      <path d="M90,90 L55,148.1 A70,70 0 0,1 90,20 Z" fill="#b85c00" opacity="0.9"/>
+      <text x="112" y="62" text-anchor="middle" font-size="9" font-weight="700" fill="white">Kırmızı</text>
+      <text x="112" y="73" text-anchor="middle" font-size="9" fill="white">120°</text>
+      <text x="118" y="118" text-anchor="middle" font-size="9" font-weight="700" fill="white">Mavi</text>
+      <text x="118" y="129" text-anchor="middle" font-size="9" fill="white">150°</text>
+      <text x="55" y="108" text-anchor="middle" font-size="9" font-weight="700" fill="white">Sarı</text>
+      <text x="55" y="119" text-anchor="middle" font-size="9" fill="white">90°</text>
+    </svg>
+  </div>
+  <div>
+    <div style="font-size:11px;font-weight:600;color:#555;text-align:center;margin-bottom:6px;">Grafik 2 — Dolu Koltuk Sayısı</div>
+    <svg viewBox="0 0 180 160" width="100%" style="display:block;">
+      <line x1="30" y1="10" x2="30" y2="130" stroke="#333" stroke-width="1.5"/>
+      <line x1="30" y1="130" x2="170" y2="130" stroke="#333" stroke-width="1.5"/>
+      <line x1="30" y1="40" x2="170" y2="40" stroke="#eee" stroke-width="1"/>
+      <line x1="30" y1="70" x2="170" y2="70" stroke="#eee" stroke-width="1"/>
+      <line x1="30" y1="100" x2="170" y2="100" stroke="#eee" stroke-width="1"/>
+      <text x="24" y="133" text-anchor="end" font-size="10" fill="#666">0</text>
+      <text x="24" y="103" text-anchor="end" font-size="10" fill="#666">45</text>
+      <text x="24" y="73" text-anchor="end" font-size="10" fill="#666">90</text>
+      <text x="24" y="43" text-anchor="end" font-size="10" fill="#666">135</text>
+      <!-- Kırmızı dolu: 90 koltuk → y=70 -->
+      <rect x="45" y="70" width="30" height="60" fill="#7a2020" rx="3"/>
+      <text x="60" y="66" text-anchor="middle" font-size="10" font-weight="700" fill="#7a2020">90</text>
+      <text x="60" y="148" text-anchor="middle" font-size="10" fill="#555">Kırmızı</text>
+      <!-- Mavi dolu: 45 → y=100 -->
+      <rect x="90" y="100" width="30" height="30" fill="#1a4a7a" rx="3"/>
+      <text x="105" y="96" text-anchor="middle" font-size="10" font-weight="700" fill="#1a4a7a">45</text>
+      <text x="105" y="148" text-anchor="middle" font-size="10" fill="#555">Mavi</text>
+      <!-- Sarı dolu: 50 → y=96 -->
+      <rect x="135" y="96" width="30" height="34" fill="#b85c00" rx="3"/>
+      <text x="150" y="92" text-anchor="middle" font-size="10" font-weight="700" fill="#b85c00">50</text>
+      <text x="150" y="148" text-anchor="middle" font-size="10" fill="#555">Sarı</text>
+    </svg>
+  </div>
+</div>
+<div style="margin-top:12px;padding:10px 14px;background:#fdf6e3;border-left:3px solid #c9a84c;border-radius:0 4px 4px 0;font-size:13px;color:#5a400e;">
+  Dolu sarı koltuk sayısı, boş kırmızı koltuk sayısının <strong>2 katıdır.</strong>
+</div>
+</div>`,
+    soru: "Tiyatro salonundaki toplam koltuk sayısı kaçtır?",
+    secenekler: ["360", "480", "540", "600"],
     cevap: 1
   },
   {
     konu: "Veri Analizi", zorluk: "Zor",
-    soru: "Bir mağazanın ilk 4 günlük satışları sırasıyla 120, 95, 140, 105 adettir. Yönetici 5 günlük ortalamanın en az 115 olmasını istiyor. 5. günün satışı en az kaç adet olmalıdır?",
-    secenekler: ["100 adet", "110 adet", "115 adet", "120 adet"],
-    cevap: 2
-  },
-  {
-    konu: "Veri Analizi", zorluk: "Zor",
-    soru: "Veri kümesi: 5, 8, a, 12, b, 15, 9. Bu 7 verinin modu 8, medyanı 9 olduğuna göre a + b değerinin alabileceği en büyük değer kaçtır?",
-    secenekler: ["25", "26", "27", "28"],
+    gorsel: `<div style="margin:18px 0;background:#f8f8f6;border:1px solid #e0ddd6;border-radius:8px;padding:18px 16px;">
+<div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#999;text-align:center;margin-bottom:16px;">Bir Fabrikada Çorap Üretimi ve Satışı</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start;">
+  <div>
+    <div style="font-size:11px;font-weight:600;color:#555;text-align:center;margin-bottom:8px;">Grafik 1 — Üretilen Çorap Renkleri</div>
+    <svg viewBox="0 0 180 180" width="100%" style="display:block;">
+      <circle cx="90" cy="90" r="70" fill="#f0f0f0" stroke="#ccc" stroke-width="1"/>
+      <!-- Sarı: 150° -->
+      <path d="M90,90 L90,20 A70,70 0 0,1 151,125 Z" fill="#c9a84c" opacity="0.9"/>
+      <!-- Mavi: 60° -->
+      <path d="M90,90 L151,125 A70,70 0 0,1 116,149 Z" fill="#1a4a7a" opacity="0.9"/>
+      <!-- Turuncu: 90° -->
+      <path d="M90,90 L116,149 A70,70 0 0,1 20,90 Z" fill="#b85c00" opacity="0.9"/>
+      <!-- Gri: 60° -->
+      <path d="M90,90 L20,90 A70,70 0 0,1 90,20 Z" fill="#666" opacity="0.9"/>
+      <text x="112" y="85" text-anchor="middle" font-size="9" font-weight="700" fill="white">Sarı</text>
+      <text x="112" y="96" text-anchor="middle" font-size="9" fill="white">150°</text>
+      <text x="145" y="140" text-anchor="middle" font-size="9" font-weight="700" fill="white">Mavi</text>
+      <text x="145" y="151" text-anchor="middle" font-size="9" fill="white">60°</text>
+      <text x="58" y="135" text-anchor="middle" font-size="9" font-weight="700" fill="white">Turuncu</text>
+      <text x="58" y="146" text-anchor="middle" font-size="9" fill="white">90°</text>
+      <text x="45" y="72" text-anchor="middle" font-size="9" font-weight="700" fill="white">Gri</text>
+      <text x="45" y="83" text-anchor="middle" font-size="9" fill="white">60°</text>
+    </svg>
+  </div>
+  <div>
+    <div style="font-size:11px;font-weight:600;color:#555;text-align:center;margin-bottom:8px;">Tablo — Paket Türleri ve Fiyatları</div>
+    <table style="width:100%;border-collapse:collapse;font-size:12px;">
+      <tr style="background:#e8e4dc;">
+        <th style="padding:7px 10px;border:1px solid #d0ccc4;text-align:left;">Paket Türü</th>
+        <th style="padding:7px 10px;border:1px solid #d0ccc4;text-align:center;">Fiyat (TL)</th>
+      </tr>
+      <tr>
+        <td style="padding:7px 10px;border:1px solid #d0ccc4;">Rengarenk (4 farklı renk)</td>
+        <td style="padding:7px 10px;border:1px solid #d0ccc4;text-align:center;">20</td>
+      </tr>
+      <tr style="background:#f5f3ef;">
+        <td style="padding:7px 10px;border:1px solid #d0ccc4;">Tek renk (4 aynı renk)</td>
+        <td style="padding:7px 10px;border:1px solid #d0ccc4;text-align:center;">16</td>
+      </tr>
+    </table>
+    <div style="margin-top:12px;padding:10px 14px;background:#fdf6e3;border-left:3px solid #c9a84c;border-radius:0 4px 4px 0;font-size:12px;color:#5a400e;line-height:1.6;">
+      • Aynı renk iki çorap birleşerek 1 çift oluşturur.<br/>
+      • 4 çiftten oluşan paketler halinde satılır.<br/>
+      • Paketler ya her renkten 1'er çift (rengarenk) ya da tek renkten 4 çift içerir.<br/>
+      • Bir günde toplam <strong>720 çorap</strong> üretilmektedir.
+    </div>
+  </div>
+</div>
+</div>`,
+    soru: "Bu fabrikada bir günde üretilen çoraplardan elde edilebilecek en fazla gelir kaç TL'dir?",
+    secenekler: ["1.440", "1.500", "1.560", "1.620"],
     cevap: 2
   },
   {
@@ -188,9 +334,22 @@ function soruGoster() {
   const toplam = SORULAR.length;
 
   document.getElementById('soruMeta').textContent = `Soru ${mevcutSoru + 1} · ${s.konu} · ${s.zorluk}`;
-  document.getElementById('soruText').textContent = s.soru;
   document.getElementById('sinav-progress').textContent = `${mevcutSoru + 1} / ${toplam}`;
   document.getElementById('sinavBarFill').style.width = `${((mevcutSoru + 1) / toplam) * 100}%`;
+
+  // Soru metni + görsel
+  const soruTextEl = document.getElementById('soruText');
+  soruTextEl.textContent = s.soru;
+
+  // Görsel varsa soru metninden önce ekle
+  const eskiGorsel = document.getElementById('soruGorsel');
+  if (eskiGorsel) eskiGorsel.remove();
+  if (s.gorsel) {
+    const gorselDiv = document.createElement('div');
+    gorselDiv.id = 'soruGorsel';
+    gorselDiv.innerHTML = s.gorsel;
+    soruTextEl.parentNode.insertBefore(gorselDiv, soruTextEl);
+  }
 
   const secEl = document.getElementById('soruSecenekler');
   secEl.innerHTML = '';
