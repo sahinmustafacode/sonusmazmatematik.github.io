@@ -29,6 +29,39 @@ const SORULAR = [
   </div>
 </div>`,
     soru: "Üç basamaklı bir doğal sayının asal çarpanlarına ayrılmış hali 2ᵃ · 3ᵇ · 7 biçimindedir. Bu sayının tam bölenlerinin sayısı 18'dir. a + b değerinin alabileceği tüm değerlerin toplamı kaçtır?",
+    cozum: `<div style="margin-top:20px;padding:20px 22px;background:#f6fbf6;border:1px solid #a8d5a8;border-radius:8px;font-size:14px;line-height:1.8;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#2e7a2e;margin-bottom:14px;">✦ Çözüm</div>
+  <div style="display:inline-block;background:#2e7a2e;color:white;font-family:Georgia,serif;font-weight:700;font-size:14px;padding:4px 16px;border-radius:3px;margin-bottom:14px;">Cevap: B) 4</div>
+  <div style="display:flex;flex-direction:column;gap:10px;color:#183018;">
+    <div style="display:flex;gap:10px;">
+      <span style="min-width:22px;height:22px;background:#2e7a2e;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:2px;">1</span>
+      <span>Sayı = 2ᵃ · 3ᵇ · 7¹ biçiminde olduğundan tam bölen sayısı formülü: <strong>(a+1)(b+1)(1+1) = 18</strong></span>
+    </div>
+    <div style="display:flex;gap:10px;">
+      <span style="min-width:22px;height:22px;background:#2e7a2e;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:2px;">2</span>
+      <span>(a+1)(b+1) · 2 = 18 → <strong>(a+1)(b+1) = 9</strong></span>
+    </div>
+    <div style="display:flex;gap:10px;">
+      <span style="min-width:22px;height:22px;background:#2e7a2e;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:2px;">3</span>
+      <span>9 = 1×9 = 3×3 = 9×1 olduğundan (a,b) çiftleri: <strong>(0,8), (2,2), (8,0)</strong></span>
+    </div>
+    <div style="display:flex;gap:10px;">
+      <span style="min-width:22px;height:22px;background:#2e7a2e;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:2px;">4</span>
+      <span>Sayının üç basamaklı olma koşulunu kontrol edelim (100 ≤ sayı ≤ 999):<br/>
+        • (a,b) = (0,8): 3⁸ · 7 = 45927 ✗<br/>
+        • (a,b) = (2,2): 2² · 3² · 7 = 4 · 9 · 7 = <strong>252 ✓</strong><br/>
+        • (a,b) = (8,0): 2⁸ · 7 = 256 · 7 = 1792 ✗
+      </span>
+    </div>
+    <div style="display:flex;gap:10px;">
+      <span style="min-width:22px;height:22px;background:#2e7a2e;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:2px;">5</span>
+      <span>Yalnızca (a,b) = (2,2) üç basamaklı koşulunu sağlar. Bu durumda <strong>a + b = 2 + 2 = 4</strong></span>
+    </div>
+  </div>
+  <div style="margin-top:14px;padding:10px 14px;background:rgba(201,168,76,.13);border-left:3px solid #c9a84c;border-radius:0 4px 4px 0;font-size:13px;color:#5a400e;font-style:italic;">
+    ★ "Tüm değerlerin toplamı" ifadesi birden fazla (a,b) çifti varmış izlenimi yaratır. Ancak üç basamaklı kısıt yalnızca bir çözüm bırakır. Soru bu farkı görmeni test ediyor.
+  </div>
+</div>`,
     secenekler: ["3", "4", "5", "6"],
     cevap: 1
   },
@@ -213,24 +246,31 @@ const SORULAR = [
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start;">
   <div>
     <div style="font-size:11px;font-weight:600;color:#555;text-align:center;margin-bottom:8px;">Grafik 1 — Üretilen Çorap Renkleri</div>
-    <svg viewBox="0 0 180 180" width="100%" style="display:block;">
-      <circle cx="90" cy="90" r="70" fill="#f0f0f0" stroke="#ccc" stroke-width="1"/>
-      <!-- Sarı: 150° -->
-      <path d="M90,90 L90,20 A70,70 0 0,1 151,125 Z" fill="#c9a84c" opacity="0.9"/>
-      <!-- Mavi: 60° -->
-      <path d="M90,90 L151,125 A70,70 0 0,1 116,149 Z" fill="#1a4a7a" opacity="0.9"/>
-      <!-- Turuncu: 90° -->
-      <path d="M90,90 L116,149 A70,70 0 0,1 20,90 Z" fill="#b85c00" opacity="0.9"/>
-      <!-- Gri: 60° -->
-      <path d="M90,90 L20,90 A70,70 0 0,1 90,20 Z" fill="#666" opacity="0.9"/>
-      <text x="112" y="85" text-anchor="middle" font-size="9" font-weight="700" fill="white">Sarı</text>
-      <text x="112" y="96" text-anchor="middle" font-size="9" fill="white">150°</text>
-      <text x="145" y="140" text-anchor="middle" font-size="9" font-weight="700" fill="white">Mavi</text>
-      <text x="145" y="151" text-anchor="middle" font-size="9" fill="white">60°</text>
-      <text x="58" y="135" text-anchor="middle" font-size="9" font-weight="700" fill="white">Turuncu</text>
-      <text x="58" y="146" text-anchor="middle" font-size="9" fill="white">90°</text>
-      <text x="45" y="72" text-anchor="middle" font-size="9" font-weight="700" fill="white">Gri</text>
-      <text x="45" y="83" text-anchor="middle" font-size="9" fill="white">60°</text>
+    <svg viewBox="0 0 220 220" width="100%" style="display:block;">
+      <!-- cx=110 cy=110 r=90 -->
+      <!-- Sarı: 150° → 0° ile 150° arası (saat 12'den başla) -->
+      <!-- 0°=top: x=110, y=20 -->
+      <!-- 150° noktası: 110+90*sin(150°)=110+45=155, 110-90*cos(150°)=110+77.9=187.9 -->
+      <path d="M110,110 L110,20 A90,90 0 0,1 155,187.9 Z" fill="#c9a84c"/>
+      <!-- Mavi: 60° → 150° ile 210° arası -->
+      <!-- 210° noktası: 110+90*sin(210°)=110-45=65, 110-90*cos(210°)=110+77.9=187.9 -->
+      <path d="M110,110 L155,187.9 A90,90 0 0,1 65,187.9 Z" fill="#1a4a7a"/>
+      <!-- Turuncu: 90° → 210° ile 300° arası -->
+      <!-- 300° noktası: 110+90*sin(300°)=110-77.9=32.1, 110-90*cos(300°)=110-45=65 -->
+      <path d="M110,110 L65,187.9 A90,90 0 0,1 32.1,65 Z" fill="#b85c00"/>
+      <!-- Gri: 60° → 300° ile 360° arası -->
+      <path d="M110,110 L32.1,65 A90,90 0 0,1 110,20 Z" fill="#777"/>
+      <!-- Etiketler — dilim ortalarında -->
+      <!-- Sarı ortası: 75° → sin75=0.966, cos75=0.259 → 110+60*0.966=167.9, 110-60*0.259=94.4 -->
+      <text x="155" y="88" text-anchor="middle" font-size="12" font-weight="700" fill="white">Sarı</text>
+      <text x="155" y="103" text-anchor="middle" font-size="11" fill="white">150°</text>
+      <!-- Mavi ortası: 180° → x=110-60=50, y=110 -->
+      <text x="110" y="182" text-anchor="middle" font-size="12" font-weight="700" fill="white">Mavi 60°</text>
+      <!-- Turuncu ortası: 255° → sin255=-0.966, cos255=-0.259 → 110-58=52, 110+15.5=125.5 -->
+      <text x="58" y="158" text-anchor="middle" font-size="12" font-weight="700" fill="white">Turuncu</text>
+      <text x="58" y="172" text-anchor="middle" font-size="11" fill="white">90°</text>
+      <!-- Gri ortası: 330° → sin330=-0.5, cos330=0.866 → 110-30=80, 110-52=58 -->
+      <text x="68" y="62" text-anchor="middle" font-size="12" font-weight="700" fill="white">Gri 60°</text>
     </svg>
   </div>
   <div>
@@ -448,11 +488,31 @@ async function sinaviBitir() {
     const rozet = bos_mu ? 'Boş' : (dogru_mu ? 'Doğru' : `Yanlış (D: ${HARFLER[s.cevap]})`);
     const item = document.createElement('div');
     item.className = `analiz-item ${cls}`;
-    item.innerHTML = `
+    item.style.flexDirection = 'column';
+    item.style.alignItems = 'stretch';
+    item.style.cursor = s.cozum ? 'pointer' : 'default';
+
+    const ust = document.createElement('div');
+    ust.style.cssText = 'display:flex;align-items:center;gap:10px;';
+    ust.innerHTML = `
       <span class="ai-no">${i+1}.</span>
       <span class="ai-metin">${s.konu} · ${s.zorluk}</span>
       <span class="ai-rozet">${rozet}</span>
+      ${s.cozum ? `<span style="margin-left:auto;font-size:0.72rem;color:#2e7a2e;font-weight:600;">Çözümü Gör ▾</span>` : ''}
     `;
+    item.appendChild(ust);
+
+    if (s.cozum) {
+      const cozumDiv = document.createElement('div');
+      cozumDiv.innerHTML = s.cozum;
+      cozumDiv.style.display = 'none';
+      item.appendChild(cozumDiv);
+      item.addEventListener('click', () => {
+        const acik = cozumDiv.style.display !== 'none';
+        cozumDiv.style.display = acik ? 'none' : 'block';
+        ust.querySelector('span:last-child').textContent = acik ? 'Çözümü Gör ▾' : 'Gizle ▴';
+      });
+    }
     analizListe.appendChild(item);
   });
 
