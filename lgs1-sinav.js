@@ -461,7 +461,7 @@ ${cevapMetni}
   `.trim();
 
   try {
-    await fetch('https://formspree.io/BURAYA_FORMSPREE_ID', {
+    await fetch('https://formspree.io/xdawbbzg', {
       method: 'POST',
       headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
       body: JSON.stringify({
