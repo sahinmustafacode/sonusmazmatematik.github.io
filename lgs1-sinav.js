@@ -10,6 +10,24 @@ const SORULAR = [
   },
   {
     konu: "Çarpanlar ve Katlar", zorluk: "Zor",
+    gorsel: `<div style="margin:18px 0;background:#fdf6e3;border:1px solid #e8d9a0;border-radius:8px;padding:16px 20px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8a6d1e;margin-bottom:10px;">Tam Bölen Sayısı Formülü</div>
+  <div style="font-family:'Georgia',serif;font-size:14px;color:#3a2a00;line-height:2;">
+    Bir doğal sayı <span style="font-style:italic;">n</span> = 
+    <span style="font-style:italic;">p</span><sub>1</sub><sup>a</sup> · 
+    <span style="font-style:italic;">p</span><sub>2</sub><sup>b</sup> · 
+    <span style="font-style:italic;">p</span><sub>3</sub><sup>c</sup> · ... 
+    biçiminde asal çarpanlarına ayrılırsa,
+  </div>
+  <div style="margin:10px 0 6px;padding:10px 16px;background:white;border-radius:6px;border:1px solid #e0cc80;text-align:center;">
+    <span style="font-family:'Georgia',serif;font-size:15px;font-weight:700;color:#5a400e;">
+      Tam Bölen Sayısı = (a + 1) · (b + 1) · (c + 1) · ...
+    </span>
+  </div>
+  <div style="font-size:12px;color:#8a6d1e;margin-top:6px;">
+    Örnek: 12 = 2² · 3¹ → Tam bölen sayısı = (2+1)·(1+1) = 6
+  </div>
+</div>`,
     soru: "Üç basamaklı bir doğal sayının asal çarpanlarına ayrılmış hali 2ᵃ · 3ᵇ · 7 biçimindedir. Bu sayının tam bölenlerinin sayısı 18'dir. a + b değerinin alabileceği tüm değerlerin toplamı kaçtır?",
     secenekler: ["3", "4", "5", "6"],
     cevap: 1
@@ -461,7 +479,7 @@ ${cevapMetni}
   `.trim();
 
   try {
-    await fetch('https://formspree.io/xdawbbzg', {
+    await fetch('https://formspree.io/BURAYA_FORMSPREE_ID', {
       method: 'POST',
       headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
       body: JSON.stringify({
