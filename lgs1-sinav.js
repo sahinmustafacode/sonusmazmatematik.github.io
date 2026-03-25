@@ -330,11 +330,12 @@ const SORULAR = [
 
 // =====================================================
 // SINAV MOTORU
-// =====================================================
 const HARFLER = ['A', 'B', 'C', 'D'];
 let mevcutSoru = 0;
 let cevaplar = new Array(20).fill(null);
-let kalanSure = 40 * 60;
+let kalanSure = 50 * 60;
+let gosterilen_sure1 = 45 * 60;
+let baslangicZaman1 = null;
 let timerInterval = null;
 let ogrenciAdi = '';
 
@@ -358,7 +359,9 @@ function sinaviBaslat() {
   err.style.display = 'none';
   mevcutSoru = 0;
   cevaplar = new Array(20).fill(null);
-  kalanSure = 40 * 60;
+  kalanSure = 50 * 60;
+  gosterilen_sure1 = 45 * 60;
+  baslangicZaman1 = Date.now();
 
   paletOlustur();
   soruGoster();
@@ -371,6 +374,7 @@ function zamanlayiciBaslat() {
   zamanlayiciGuncelle();
   timerInterval = setInterval(() => {
     kalanSure--;
+    gosterilen_sure1 = Math.max(0, gosterilen_sure1 - 1);
     zamanlayiciGuncelle();
     if (kalanSure <= 0) {
       clearInterval(timerInterval);
@@ -380,18 +384,18 @@ function zamanlayiciBaslat() {
 }
 
 function zamanlayiciGuncelle() {
-  const dk = Math.floor(kalanSure / 60);
-  const sn = kalanSure % 60;
+  const dk = Math.floor(gosterilen_sure1 / 60);
+  const sn = gosterilen_sure1 % 60;
   const el = document.getElementById('sinavTimer');
   el.textContent = `${String(dk).padStart(2,'0')}:${String(sn).padStart(2,'0')}`;
-  el.classList.toggle('uyari', kalanSure <= 120);
+  el.classList.toggle('uyari', gosterilen_sure1 <= 120);
 }
 
 function soruGoster() {
   const s = SORULAR[mevcutSoru];
   const toplam = SORULAR.length;
 
-  document.getElementById('soruMeta').textContent = `Soru ${mevcutSoru + 1} · ${s.konu} · ${s.zorluk}`;
+  document.getElementById('soruMeta').textContent = `Soru ${mevcutSoru + 1} / ${toplam}`;
   document.getElementById('sinav-progress').textContent = `${mevcutSoru + 1} / ${toplam}`;
   document.getElementById('sinavBarFill').style.width = `${((mevcutSoru + 1) / toplam) * 100}%`;
 
@@ -496,7 +500,7 @@ async function sinaviBitir() {
     ust.style.cssText = 'display:flex;align-items:center;gap:10px;';
     ust.innerHTML = `
       <span class="ai-no">${i+1}.</span>
-      <span class="ai-metin">${s.konu} · ${s.zorluk}</span>
+      <span class="ai-metin">Soru ${i+1}</span>
       <span class="ai-rozet">${rozet}</span>
       ${s.cozum ? `<span style="margin-left:auto;font-size:0.72rem;color:#2e7a2e;font-weight:600;">Çözümü Gör ▾</span>` : ''}
     `;
@@ -519,6 +523,7 @@ async function sinaviBitir() {
   showScreen('screen-result');
 
   // Formspree ile e-posta gönder
+  const gecenDakika = Math.round((Date.now() - baslangicZaman1) / 60000);
   const cevapMetni = SORULAR.map((s, i) => {
     const secilen = cevaplar[i] !== null ? HARFLER[cevaplar[i]] : 'BOŞ';
     const dogru_harf = HARFLER[s.cevap];
@@ -539,14 +544,15 @@ ${cevapMetni}
   `.trim();
 
   try {
-    await fetch('https://formspree.io/f/xdawbbzg', {
+    await fetch('https://formspree.io/xdawbbzg', {
       method: 'POST',
       headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
       body: JSON.stringify({
         _replyto: 'iletisim@sonusmazmatematik.com',
-        _subject: `LGS Deneme Sonucu — ${ogrenciAdi}`,
+        _subject: `LGS 1. Dönem Deneme Sonucu — ${ogrenciAdi}`,
         ogrenci: ogrenciAdi,
         sinav: 'LGS 1. Dönem Denemesi',
+        sure: `${gecenDakika} dakika`,
         sonuc: `Doğru: ${dogru} | Yanlış: ${yanlis} | Boş: ${bos} | Net: ${net}`,
         cevaplar: cevapMetni
       })
@@ -559,7 +565,9 @@ ${cevapMetni}
 function tekrarBaslat() {
   mevcutSoru = 0;
   cevaplar = new Array(20).fill(null);
-  kalanSure = 40 * 60;
+  kalanSure = 50 * 60;
+  gosterilen_sure1 = 45 * 60;
+  baslangicZaman1 = Date.now();
   paletOlustur();
   soruGoster();
   showScreen('screen-exam');

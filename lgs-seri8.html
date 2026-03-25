@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LGS Seri 8 Denemesi · Sonuşmaz Matematik</title>
+  <link rel="icon" href="logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="about.css" />
+  <link rel="stylesheet" href="sinav.css" />
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="Sonuşmaz Matematik Logo" />
+        <span>Sonuşmaz <strong>Matematik</strong></span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menü">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Ana Sayfa</a></li>
+        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+        <li><a href="ders-notlari.html">Ders Notları</a></li>
+        <li><a href="videolar.html">Videolar</a></li>
+        <li><a href="deneme.html" class="active">Online Deneme</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="iletisim.html" class="nav-cta">İletişim</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- GİRİŞ EKRANI -->
+  <div id="screen-intro-s8" class="sinav-screen">
+    <div class="container">
+      <div class="sinav-intro-wrap">
+        <div class="sinav-intro-badge">ÜCRETSİZ · LGS · Kolay–Orta</div>
+        <h1>LGS Matematik<br /><span class="gold">Seri 8 Denemesi</span></h1>
+        <p class="sinav-intro-desc">10 farklı konu, 20 özgün soru · Kolay–Orta seviye</p>
+
+        <div class="sinav-konular">
+          <span class="sk-pill">EBOB / EKOK</span>
+          <span class="sk-pill">Üslü İfadeler</span>
+          <span class="sk-pill">Kareköklü İfadeler</span>
+          <span class="sk-pill">Veri Analizi</span>
+          <span class="sk-pill">Olasılık</span>
+          <span class="sk-pill">Cebirsel İfadeler</span>
+          <span class="sk-pill">Özdeşlikler</span>
+          <span class="sk-pill">Denklemler</span>
+          <span class="sk-pill">Eşitsizlikler</span>
+          <span class="sk-pill">Üçgenler</span>
+        </div>
+
+        <div class="sinav-bilgi-grid">
+          <div class="sinav-bilgi-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#c8a84b" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3" stroke-linecap="round"/></svg>
+            <span><strong>45 Dakika</strong><br/>Sınav Süresi</span>
+          </div>
+          <div class="sinav-bilgi-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#c8a84b" stroke-width="1.5"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 9h8M8 13h5" stroke-linecap="round"/></svg>
+            <span><strong>20 Soru</strong><br/>4 Seçenekli</span>
+          </div>
+          <div class="sinav-bilgi-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#c8a84b" stroke-width="1.5"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>
+            <span><strong>Ücretsiz</strong><br/>Kayıt Gerekmez</span>
+          </div>
+          <div class="sinav-bilgi-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#c8a84b" stroke-width="1.5"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+            <span><strong>Anlık Sonuç</strong><br/>Doğru/Yanlış Analizi</span>
+          </div>
+        </div>
+
+        <div class="sinav-kural-box">
+          <h3>Sınav Kuralları</h3>
+          <ul>
+            <li>Süre dolduğunda sınav otomatik olarak biter.</li>
+            <li>Cevaplarınızı değiştirebilirsiniz.</li>
+            <li>Sınav sonunda doğru/yanlış/boş sayınızı göreceksiniz.</li>
+            <li>Cevaplarınız hocalarımıza e-posta olarak iletilir.</li>
+          </ul>
+        </div>
+
+        <div class="sinav-isim-form">
+          <h3>Başlamadan önce bilgilerinizi girin</h3>
+          <div class="sif-row">
+            <div class="sif-group">
+              <label for="ogrenciAd_s8">Adınız</label>
+              <input type="text" id="ogrenciAd_s8" placeholder="Adınız" />
+            </div>
+            <div class="sif-group">
+              <label for="ogrenciSoyad_s8">Soyadınız</label>
+              <input type="text" id="ogrenciSoyad_s8" placeholder="Soyadınız" />
+            </div>
+          </div>
+          <p class="sif-note">Cevaplarınız iletisim@sonusmazmatematik.com adresine gönderilecektir.</p>
+          <button class="sinav-baslat-btn" onclick="sinaviBaslat_s8()">Sınavı Başlat →</button>
+          <p class="sinav-error" id="isimError_s8" style="display:none;">Lütfen adınızı ve soyadınızı girin.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SINAV EKRANI -->
+  <div id="screen-exam-s8" class="sinav-screen" style="display:none;">
+    <div class="sinav-wrap">
+      <div class="sinav-topbar">
+        <div class="sinav-top-info">
+          <span class="sinav-top-title">LGS Seri 8 Denemesi</span>
+          <span class="sinav-top-sub" id="sinav-progress_s8">1 / 20</span>
+        </div>
+        <div class="sinav-timer" id="sinavTimer_s8">45:00</div>
+        <button class="sinav-bitir-btn" onclick="sinaviBitir_s8()">Sınavı Bitir</button>
+      </div>
+      <div class="sinav-bar"><div class="sinav-bar-fill" id="sinavBarFill_s8" style="width:5%"></div></div>
+      <div class="sinav-body">
+        <div class="soru-alani">
+          <div class="soru-meta" id="soruMeta_s8"></div>
+          <div class="soru-text" id="soruText_s8"></div>
+          <div class="soru-secenekler" id="soruSecenekler_s8"></div>
+          <div class="soru-nav">
+            <button class="soru-nav-btn" id="btnOnceki_s8" onclick="oncekiSoru_s8()">← Önceki</button>
+            <button class="soru-nav-btn primary" id="btnSonraki_s8" onclick="sonrakiSoru_s8()">Sonraki →</button>
+          </div>
+        </div>
+        <div class="soru-paleti">
+          <div class="palet-baslik">Soru Paleti</div>
+          <div class="palet-grid" id="paletGrid_s8"></div>
+          <div class="palet-aciklama">
+            <span class="pa cevaplandi">Cevaplandı</span>
+            <span class="pa aktif">Aktif</span>
+            <span class="pa bos">Boş</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SONUÇ EKRANI -->
+  <div id="screen-result-s8" class="sinav-screen" style="display:none;">
+    <div class="container">
+      <div class="sinav-sonuc-wrap">
+        <div class="sonuc-header">
+          <img src="logo.png" alt="Logo" class="sonuc-logo" />
+          <h2>Deneme Tamamlandı!</h2>
+          <p id="sonucAd_s8" class="sonuc-ogrenci"></p>
+          <p class="sonuc-sinav-adi">LGS Seri 8 Denemesi</p>
+        </div>
+        <div class="sonuc-istatistik">
+          <div class="si dogru"><span class="si-sayi" id="siDogru_s8">0</span><span class="si-etiket">Doğru</span></div>
+          <div class="si yanlis"><span class="si-sayi" id="siYanlis_s8">0</span><span class="si-etiket">Yanlış</span></div>
+          <div class="si bos"><span class="si-sayi" id="siBos_s8">0</span><span class="si-etiket">Boş</span></div>
+          <div class="si net"><span class="si-sayi" id="siNet_s8">0</span><span class="si-etiket">Net</span></div>
+        </div>
+        <div class="sonuc-analiz">
+          <h3>Soru Analizi</h3>
+          <div class="analiz-liste" id="analizListe_s8"></div>
+        </div>
+        <div class="sonuc-gonderim">
+          <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="#0f6c3a" stroke-width="1.5"/><path d="M16 24l6 6 10-10" stroke="#0f6c3a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p>Cevaplarınız <strong>iletisim@sonusmazmatematik.com</strong> adresine iletildi.</p>
+        </div>
+        <div class="sonuc-aksiyonlar">
+          <a href="deneme.html" class="btn btn-primary">Diğer Denemelere Bak</a>
+          <button class="btn-outline-sinav" onclick="tekrarBaslat_s8()">Tekrar Dene</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="logo.png" alt="Logo" class="footer-logo" />
+          <span class="footer-name">Sonuşmaz Matematik</span>
+          <p>Her seviyede matematik eğitimi için güvenilir adres.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Sayfalar</h4>
+          <ul>
+            <li><a href="hakkimizda.html">Hakkımızda</a></li>
+            <li><a href="ders-notlari.html">Ders Notları</a></li>
+            <li><a href="videolar.html">Videolar</a></li>
+            <li><a href="deneme.html">Online Deneme</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Seviyeler</h4>
+          <ul>
+            <li><a href="#">Ortaokul</a></li>
+            <li><a href="#">Lise</a></li>
+            <li><a href="#">TYT</a></li>
+            <li><a href="#">AYT</a></li>
+            <li><a href="#">LGS</a></li>
+            <li><a href="#">KPSS</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h4>Bizi Takip Edin</h4>
+          <div class="social-icons">
+            <a href="https://www.youtube.com/@sonuşmazmatematik" target="_blank" class="social-icon" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.75 15.5v-7l6.25 3.5-6.25 3.5z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Sonuşmaz Matematik. Tüm hakları saklıdır.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script src="lgs2-sinav.js"></script>
+</body>
+</html>
