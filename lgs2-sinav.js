@@ -39,22 +39,28 @@ const SORULAR_S8 = [
   },
   {
     gorsel: `<div style="margin:18px 0;background:#f8f8f6;border:1px solid #e0ddd6;border-radius:8px;padding:16px;">
-<div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#999;text-align:center;margin-bottom:12px;">İhracat Daire Grafiği (taslak)</div>
-<svg viewBox="0 0 260 200" width="100%" style="display:block;max-width:320px;margin:0 auto;">
-  <circle cx="130" cy="100" r="75" fill="#fafaf7" stroke="#d0c8ba" stroke-width="1.5"/>
-  <path d="M130,100 L205,100 A75,75 0 0,1 71.5,163.5 Z" fill="rgba(30,58,110,.7)" stroke="#fff" stroke-width="2"/>
-  <text x="162" y="118" font-family="Georgia,serif" font-size="11" fill="#fff" font-weight="700" text-anchor="middle">Almanya</text>
-  <text x="162" y="131" font-family="Georgia,serif" font-size="10" fill="rgba(255,255,255,.85)" text-anchor="middle">%40</text>
-  <path d="M130,100 L71.5,163.5 A75,75 0 0,1 86.5,33.5 Z" fill="rgba(120,30,30,.75)" stroke="#fff" stroke-width="2"/>
-  <text x="78" y="145" font-family="Georgia,serif" font-size="11" fill="#fff" font-weight="700" text-anchor="middle">Fransa</text>
-  <text x="78" y="158" font-family="Georgia,serif" font-size="10" fill="rgba(255,255,255,.85)" text-anchor="middle">%25</text>
-  <text x="78" y="145" font-family="Georgia,serif" font-size="20" fill="#c8a040" font-weight="900" text-anchor="middle" dy="-40">?°</text>
-  <path d="M130,100 L86.5,33.5 A75,75 0 0,1 205,100 Z" fill="rgba(26,80,58,.7)" stroke="#fff" stroke-width="2"/>
-  <text x="155" y="62" font-family="Georgia,serif" font-size="11" fill="#fff" font-weight="700" text-anchor="middle">Diğer</text>
-  <text x="155" y="75" font-family="Georgia,serif" font-size="10" fill="rgba(255,255,255,.85)" text-anchor="middle">%35</text>
+<div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#999;text-align:center;margin-bottom:12px;">İhracat Daire Grafiği</div>
+<svg viewBox="0 0 280 220" width="100%" style="display:block;max-width:320px;margin:0 auto;">
+  <!-- cx=140 cy=110 r=90 -->
+  <!-- Almanya %40 = 144° → 0° den 144° ye (saat 12'den başla) -->
+  <!-- 0°: x=140, y=20 -->
+  <!-- 144°: x=140+90*sin(144°)=140+52.9=192.9, y=110-90*cos(144°)=110+72.8=182.8 -->
+  <path d="M140,110 L140,20 A90,90 0 0,1 192.9,182.8 Z" fill="rgba(30,58,110,.8)" stroke="#fff" stroke-width="2"/>
+  <text x="175" y="100" text-anchor="middle" font-size="12" font-weight="700" fill="white">Almanya</text>
+  <text x="175" y="115" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.9)">%40 · 144°</text>
+  <!-- Fransa %25 = 90° → 144° den 234° ye -->
+  <!-- 234°: x=140+90*sin(234°)=140-72.8=67.2, y=110-90*cos(234°)=110+52.9=162.9 -->
+  <path d="M140,110 L192.9,182.8 A90,90 0 0,1 67.2,162.9 Z" fill="rgba(140,30,30,.8)" stroke="#fff" stroke-width="2"/>
+  <text x="105" y="178" text-anchor="middle" font-size="12" font-weight="700" fill="white">Fransa</text>
+  <text x="105" y="192" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.9)">%25 · <tspan fill="#ffd700" font-weight="900">?°</tspan></text>
+  <!-- Diğer %35 = 126° → 234° den 360° ye -->
+  <!-- 360°=0°: x=140, y=20 -->
+  <path d="M140,110 L67.2,162.9 A90,90 0 0,1 140,20 Z" fill="rgba(26,80,58,.8)" stroke="#fff" stroke-width="2"/>
+  <text x="115" y="62" text-anchor="middle" font-size="12" font-weight="700" fill="white">Diğer</text>
+  <text x="115" y="76" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.9)">%35 · 126°</text>
 </svg>
 </div>`,
-    soru: "Bir şirketin ihracatının %40'ı Almanya'ya, %25'i Fransa'ya, %35'i diğer ülkelere yapılmaktadır. Fransa dilimine karşılık gelen merkez açısı kaç derecedir?",
+    soru: "Bir şirketin ihracatının %40'ı Almanya'ya, %25'i Fransa'ya, %35'i diğer ülkelere yapılmaktadır. Bu veriler daire grafiğiyle gösterildiğinde Fransa dilimine karşılık gelen merkez açısı kaç derecedir?",
     secenekler: ["80°", "90°", "100°", "126°"],
     cevap: 1
   },
@@ -85,6 +91,11 @@ const SORULAR_S8 = [
     soru: "Bir okul kütüphanesinde bir ayda ödünç alınan kitap sayıları: Roman 90, Bilim 60, Şiir 30. Bu veriler daire grafiğine aktarıldığında Roman dilimine karşılık gelen merkez açısı kaç derecedir?",
     secenekler: ["120°", "150°", "162°", "180°"],
     cevap: 3
+  },
+  {
+    soru: "Bir tombala çantasında 1'den 24'e kadar numaralı eşit büyüklükte 24 bilye vardır. Gözler kapalı bir bilye çekiliyor. Çekilen bilyenin numarasının 3'ün katı olmaması olasılığı kaçtır?",
+    secenekler: ["1/3", "2/3", "1/4", "3/4"],
+    cevap: 1
   },
   {
     soru: "Bir dikdörtgen bahçenin uzunluğu (3x − 2) metre, genişliği (2x + 5) metredir. x = 3 için bahçenin alanı kaç m²'dir?",
@@ -299,6 +310,31 @@ async function sinaviBitir_s8() {
 
   const analizListe = document.getElementById('analizListe_s8');
   analizListe.innerHTML = '';
+
+  // İpuçları listesi
+  const ipuclari = [
+    "İki periyotun aynı anda tekrarlanması → EKOK. Soru 'kaç dakika sonra' değil 'saat kaç' soruyor — bir adım daha var.",
+    "'En az sayıda parça' → parça boyu en uzun → EBOB. Sonra her ipten kaç parça çıktığını topla.",
+    "4 ve 8'i 2'nin kuvveti olarak yaz. Sonra tek bir 2 tabanına indir.",
+    "Bölme: katsayıları böl, üsleri çıkar. Bilimsel gösterim koşulunu kontrol et: 1 ≤ |a| < 10.",
+    "Her terimi a√2 biçimine getir. √a+√b ≠ √(a+b) tuzağına dikkat!",
+    "√a/√b = √(a/b). Önce basitleştir — tam kare çıkıyor mu?",
+    "36 < 45 < 49 → 6 < √45 < 7. 45 tam kare değil → irrasyonel.",
+    "Açı = (pay/toplam) × 360. Yüzdeyi 360 ile çarp.",
+    "Sütun grafiğinden daire grafiğine: önce her verinin toplama oranını bul.",
+    "3'ün katı olmaması = 1 − P(3'ün katı). Tamamlayan olay!",
+    "Önce x=3'ü parantez içine yaz: uzunluk ve genişliği bul, sonra çarp.",
+    "101×99 = (100+1)(100−1) = 100²−1². a²−b² özdeşliği!",
+    "'n yıl sonra' derken iki yaşa da n ekle.",
+    "Kapasite = a. a/4 + 30 = a/2 → a/4 = 30 → a = 120.",
+    "2/5 + 1/3 = 11/15. Kalan 4/15 = 16 TL → toplam 60 TL.",
+    "3x−5 > 2x+7 → x > 12. 'Kesinlikle daha fazla' = sıkı eşitsizlik, x=12 geçersiz.",
+    "Açılar toplamı=180°. Sonra iki açının eşit olup olmadığını kontrol et.",
+    "9-40-41 özel Pisagor üçlüsü! 9²+40²=81+1600=1681=41².",
+    "Alan oranı = (benzerlik oranı)². Kenar oranını alana direkt uygulama!",
+    "a²−b²=(a+b)(a−b). a+b=2√3, a−b=2√2. Çarpım=4√6."
+  ];
+
   SORULAR_S8.forEach((s, i) => {
     const dogru_mu = cevaplar_s8[i] === s.cevap;
     const bos_mu = cevaplar_s8[i] === null;
@@ -306,11 +342,31 @@ async function sinaviBitir_s8() {
     const rozet = bos_mu ? 'Boş' : (dogru_mu ? 'Doğru' : `Yanlış (D: ${HARFLER_S8[s.cevap]})`);
     const item = document.createElement('div');
     item.className = `analiz-item ${cls}`;
-    item.innerHTML = `
+    item.style.flexDirection = 'column';
+    item.style.alignItems = 'stretch';
+    item.style.cursor = 'pointer';
+
+    const ust = document.createElement('div');
+    ust.style.cssText = 'display:flex;align-items:center;gap:10px;';
+    ust.innerHTML = `
       <span class="ai-no">${i+1}.</span>
       <span class="ai-metin">Soru ${i+1}</span>
       <span class="ai-rozet">${rozet}</span>
+      <span style="margin-left:auto;font-size:0.72rem;color:#8a6d1e;font-weight:600;">İpucu ▾</span>
     `;
+    item.appendChild(ust);
+
+    const ipucuDiv = document.createElement('div');
+    ipucuDiv.innerHTML = `<div style="margin-top:8px;padding:8px 12px;background:rgba(200,168,75,0.1);border-left:3px solid #c9a84c;border-radius:0 4px 4px 0;font-size:0.82rem;color:#5a400e;">${ipuclari[i]}</div>`;
+    ipucuDiv.style.display = 'none';
+    item.appendChild(ipucuDiv);
+
+    item.addEventListener('click', () => {
+      const acik = ipucuDiv.style.display !== 'none';
+      ipucuDiv.style.display = acik ? 'none' : 'block';
+      ust.querySelector('span:last-child').textContent = acik ? 'İpucu ▾' : 'Gizle ▴';
+    });
+
     analizListe.appendChild(item);
   });
 
