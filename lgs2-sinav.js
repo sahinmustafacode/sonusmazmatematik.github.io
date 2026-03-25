@@ -47,17 +47,17 @@ const SORULAR_S8 = [
   <!-- 144°: x=140+90*sin(144°)=140+52.9=192.9, y=110-90*cos(144°)=110+72.8=182.8 -->
   <path d="M140,110 L140,20 A90,90 0 0,1 192.9,182.8 Z" fill="rgba(30,58,110,.8)" stroke="#fff" stroke-width="2"/>
   <text x="175" y="100" text-anchor="middle" font-size="12" font-weight="700" fill="white">Almanya</text>
-  <text x="175" y="115" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.9)">%40 · 144°</text>
+  <text x="175" y="115" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.9)">%40</text>
   <!-- Fransa %25 = 90° → 144° den 234° ye -->
   <!-- 234°: x=140+90*sin(234°)=140-72.8=67.2, y=110-90*cos(234°)=110+52.9=162.9 -->
   <path d="M140,110 L192.9,182.8 A90,90 0 0,1 67.2,162.9 Z" fill="rgba(140,30,30,.8)" stroke="#fff" stroke-width="2"/>
-  <text x="105" y="178" text-anchor="middle" font-size="12" font-weight="700" fill="white">Fransa</text>
-  <text x="105" y="192" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.9)">%25 · <tspan fill="#ffd700" font-weight="900">?°</tspan></text>
+  <text x="118" y="165" text-anchor="middle" font-size="12" font-weight="700" fill="white">Fransa</text>
+  <text x="118" y="179" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.9)">%25 · <tspan fill="#ffd700" font-weight="900">?°</tspan></text>
   <!-- Diğer %35 = 126° → 234° den 360° ye -->
   <!-- 360°=0°: x=140, y=20 -->
   <path d="M140,110 L67.2,162.9 A90,90 0 0,1 140,20 Z" fill="rgba(26,80,58,.8)" stroke="#fff" stroke-width="2"/>
   <text x="115" y="62" text-anchor="middle" font-size="12" font-weight="700" fill="white">Diğer</text>
-  <text x="115" y="76" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.9)">%35 · 126°</text>
+  <text x="115" y="76" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.9)">%35</text>
 </svg>
 </div>`,
     soru: "Bir şirketin ihracatının %40'ı Almanya'ya, %25'i Fransa'ya, %35'i diğer ülkelere yapılmaktadır. Bu veriler daire grafiğiyle gösterildiğinde Fransa dilimine karşılık gelen merkez açısı kaç derecedir?",
@@ -384,9 +384,9 @@ async function sinaviBitir_s8() {
       method: 'POST',
       headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        _subject: `LGS Seri 8 Sonucu — ${ogrenciAdi_s8}`,
+        _subject: `LGS Kazanım Kavrama Denemesi 1 Sonucu — ${ogrenciAdi_s8}`,
         ogrenci: ogrenciAdi_s8,
-        sinav: 'LGS Seri 8 Denemesi',
+        sinav: 'LGS Kazanım Kavrama Denemesi 1',
         sure: `${gecenDakika} dakika`,
         sonuc: `Doğru: ${dogru} | Yanlış: ${yanlis} | Boş: ${bos} | Net: ${net}`,
         cevaplar: cevapMetni
