@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8. Sınıf Matematik – 2. Dönem 1. Yazılı</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Source+Serif+4:wght@300;400;600;700&display=swap');
+
+  :root {
+    --ink: #1a1a2e;
+    --rule: #2c3e6b;
+    --accent: #c0392b;
+    --light-rule: #d0d8e8;
+    --bg: #faf8f3;
+    --answer-bg: #f0eee8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  /* ── SCREEN ── */
+  body {
+    background: #dbd7cf;
+    font-family: 'Source Serif 4', Georgia, serif;
+    color: var(--ink);
+    padding: 24px 16px;
+  }
+
+  .a4-page {
+    background: var(--bg);
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto 24px;
+    padding: 16mm 18mm 14mm;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.20);
+    border-radius: 2px;
+    position: relative;
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    body { background: white; padding: 0; margin: 0; }
+
+    .a4-page {
+      box-shadow: none;
+      border-radius: 0;
+      width: 210mm;
+      min-height: 0;
+      margin: 0;
+      padding: 14mm 16mm 12mm;
+    }
+
+    .a4-page.page2 {
+      page-break-before: always;
+      break-before: page;
+    }
+
+    /* Prevent any single question from being split */
+    .question {
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    /* Keep divider with the next question */
+    .q-divider {
+      page-break-after: avoid;
+      break-after: avoid;
+    }
+
+    .no-print { display: none !important; }
+
+    @page { size: A4; margin: 0; }
+  }
+
+  /* ── Header ── */
+  .exam-header {
+    border-top: 4px solid var(--rule);
+    border-bottom: 2px solid var(--rule);
+    padding: 10px 0;
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 8px;
+  }
+  .header-left { font-size: 10px; line-height: 1.7; color: #444; }
+  .header-center { text-align: center; }
+  .header-center .school { font-size: 11px; font-weight: 700; color: var(--rule); letter-spacing: 0.05em; text-transform: uppercase; }
+  .header-center .exam-title { font-size: 13px; font-weight: 700; color: var(--ink); margin-top: 4px; line-height: 1.35; }
+  .header-right { text-align: right; }
+
+  .score-box {
+    border: 2px solid var(--rule);
+    padding: 6px 12px;
+    text-align: center;
+    font-size: 10.5px;
+    font-weight: 700;
+    color: var(--rule);
+    min-width: 88px;
+  }
+  .score-box .score-line {
+    display: block;
+    border-bottom: 1px solid var(--rule);
+    min-height: 26px;
+    margin-bottom: 4px;
+  }
+
+  /* ── Notice ── */
+  .notice {
+    background: var(--rule);
+    color: #fff;
+    font-size: 10px;
+    padding: 5px 12px;
+    margin-bottom: 14px;
+    letter-spacing: 0.02em;
+  }
+
+  /* ── Question ── */
+  .question { margin-bottom: 14px; }
+
+  .q-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    margin-bottom: 6px;
+  }
+
+  .q-num {
+    background: var(--rule);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    min-width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .q-body { flex: 1; }
+
+  .kazanim {
+    font-size: 9px;
+    color: #999;
+    font-style: italic;
+    margin-bottom: 3px;
+  }
+
+  .q-text {
+    font-size: 12px;
+    line-height: 1.65;
+    color: var(--ink);
+  }
+
+  .q-ask {
+    font-weight: 700;
+    font-size: 12px;
+    margin-top: 5px;
+    color: var(--rule);
+    line-height: 1.5;
+  }
+
+  .pts {
+    font-size: 9.5px;
+    color: var(--accent);
+    font-weight: 700;
+    margin-left: 3px;
+    white-space: nowrap;
+  }
+
+  /* Answer boxes */
+  .answer-area {
+    background: var(--answer-bg);
+    border: 1px dashed #b0a898;
+    margin-top: 8px;
+    min-height: 90px;
+  }
+  .answer-area.md  { min-height: 110px; }
+  .answer-area.lg  { min-height: 135px; }
+  .answer-area.graph {
+    min-height: 170px;
+    background-color: var(--answer-bg);
+    background-image:
+      linear-gradient(rgba(44,62,107,0.12) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(44,62,107,0.12) 1px, transparent 1px),
+      linear-gradient(rgba(44,62,107,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(44,62,107,0.05) 1px, transparent 1px);
+    background-size: 40px 40px, 40px 40px, 8px 8px, 8px 8px;
+  }
+
+  /* Divider */
+  .q-divider {
+    border: none;
+    border-top: 1px solid var(--light-rule);
+    margin: 12px 0;
+  }
+
+  /* Figure */
+  .figure {
+    margin: 8px 0 6px;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  /* Table */
+  table.data-table {
+    border-collapse: collapse;
+    font-size: 11px;
+    margin: 7px 0;
+  }
+  table.data-table th, table.data-table td {
+    border: 1px solid var(--rule);
+    padding: 4px 12px;
+    text-align: center;
+  }
+  table.data-table th {
+    background: var(--rule);
+    color: #fff;
+    font-weight: 600;
+    font-size: 10.5px;
+  }
+  table.data-table td { min-width: 34px; }
+
+  /* Footer */
+  .exam-footer {
+    border-top: 2px solid var(--rule);
+    padding-top: 7px;
+    margin-top: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 9.5px;
+    color: #666;
+  }
+  .footer-bold { font-weight: 700; color: var(--ink); font-size: 10.5px; }
+
+  /* Math helpers */
+  .math { font-style: italic; font-family: 'IM Fell English', Georgia, serif; }
+  .frac { display: inline-block; vertical-align: middle; text-align: center; font-size: 0.88em; line-height: 1; }
+  .frac .num, .frac .den { display: block; }
+  .frac .num { border-bottom: 1px solid currentColor; padding: 0 2px; }
+  .frac .den { padding: 0 2px; }
+
+  /* Print button */
+  .print-btn {
+    position: fixed;
+    bottom: 22px;
+    right: 22px;
+    background: var(--rule);
+    color: #fff;
+    border: none;
+    padding: 11px 22px;
+    font-size: 13px;
+    font-family: inherit;
+    cursor: pointer;
+    border-radius: 2px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.22);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+  .print-btn:hover { background: var(--accent); }
+</style>
+</head>
+<body>
+
+<!-- ══════════ SAYFA 1 ══════════ -->
+<div class="a4-page page1">
+
+  <div class="exam-header">
+    <div class="header-left">
+      <strong>ADI SOYADI:</strong><br>
+      <span style="display:block;border-bottom:1px solid #aaa;min-height:17px;margin-bottom:5px;"></span>
+      <strong>SINIFI / NO:</strong><br>
+      <span style="display:block;border-bottom:1px solid #aaa;min-height:17px;"></span>
+    </div>
+    <div class="header-center">
+      <div class="exam-title">
+        8. Sınıf Matematik Dersi<br>
+        2. Dönem 1. Yazılı Sınavı<br>
+        <span style="font-size:10.5px;font-weight:400;color:#555;">2024 – 2025 Eğitim ve Öğretim Yılı</span>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="score-box">
+        <span class="score-line"></span>
+        ALINAN PUAN
+      </div>
+    </div>
+  </div>
+
+  <div class="notice">
+    ✦ Sınav süresi <strong>40 dakikadır.</strong> &nbsp;|&nbsp; Her sorunun puan değeri yanında belirtilmiştir. &nbsp;|&nbsp; Çözümlerinizi ilgili alanlara yazınız.
+  </div>
+
+  <!-- S1 -->
+  <div class="question">
+    <div class="kazanim">Kazanım: M.8.2.1.1 – Basit cebirsel ifadeleri anlar ve farklı biçimlerde yazar.</div>
+    <div class="q-header">
+      <div class="q-num">1</div>
+      <div class="q-body">
+        <div class="q-text">
+          Bir dikdörtgenin kısa kenarı <span class="math">(3a + 2)</span> cm, uzun kenarı ise kısa kenarının 2 katından 5 cm daha fazladır.
+        </div>
+        <div class="q-ask">
+          Dikdörtgenin çevresini <span class="math">a</span>'ya göre ifade ediniz ve <span class="math">a = 3</span> için çevrenin sayısal değerini bulunuz.
+          <span class="pts">(14 puan)</span>
+        </div>
+      </div>
+    </div>
+    <div class="answer-area lg"></div>
+  </div>
+  <hr class="q-divider">
+
+  <!-- S2 -->
+  <div class="question">
+    <div class="kazanim">Kazanım: M.8.2.1.2 – Cebirsel ifadelerin çarpımını yapar.</div>
+    <div class="q-header">
+      <div class="q-num">2</div>
+      <div class="q-body">
+        <div class="q-text">
+          Bir bahçenin kenar uzunluğu <span class="math">(2k + 3)</span> metre olan kare şeklindeki bölümünden,
+          her biri <span class="math">k</span> metre × 2 metre boyutlarında eş 3 dikdörtgen parsel ayrılmıştır.
+        </div>
+        <div class="figure">
+          <svg width="195" height="175" viewBox="0 0 215 195" xmlns="http://www.w3.org/2000/svg" font-family="Source Serif 4,serif" font-size="11">
+            <rect x="10" y="10" width="185" height="175" fill="#e8f0fb" stroke="#2c3e6b" stroke-width="2"/>
+            <rect x="10" y="10" width="38" height="175" fill="#c0cfe8" stroke="#2c3e6b" stroke-width="1.2" stroke-dasharray="4 2"/>
+            <rect x="54" y="10" width="38" height="175" fill="#c0cfe8" stroke="#2c3e6b" stroke-width="1.2" stroke-dasharray="4 2"/>
+            <rect x="98" y="10" width="38" height="175" fill="#c0cfe8" stroke="#2c3e6b" stroke-width="1.2" stroke-dasharray="4 2"/>
+            <text x="29"  y="100" text-anchor="middle" fill="#2c3e6b" font-size="10">k</text>
+            <text x="73"  y="100" text-anchor="middle" fill="#2c3e6b" font-size="10">k</text>
+            <text x="117" y="100" text-anchor="middle" fill="#2c3e6b" font-size="10">k</text>
+            <text x="102" y="7"   text-anchor="middle" fill="#2c3e6b" font-size="10">(2k+3)</text>
+            <text x="200" y="100" text-anchor="start"  fill="#2c3e6b" font-size="10">(2k+3)</text>
+            <text x="29"  y="178" text-anchor="middle" fill="#555"    font-size="9">yük.=2</text>
+          </svg>
+        </div>
+        <div class="q-ask">
+          Geriye kalan bölgenin alanını <span class="math">k</span>'ya göre ifade ediniz; elde ettiğiniz ifadeyi sadeleştiriniz.
+          <span class="pts">(14 puan)</span>
+        </div>
+      </div>
+    </div>
+    <div class="answer-area lg"></div>
+  </div>
+  <hr class="q-divider">
+
+  <!-- S3 -->
+  <div class="question">
+    <div class="kazanim">Kazanım: M.8.2.1.4 – Cebirsel ifadeleri çarpanlara ayırır.</div>
+    <div class="q-header">
+      <div class="q-num">3</div>
+      <div class="q-body">
+        <div class="q-text">
+          Bir dikdörtgenin alanı <span class="math">6m² + 15m</span> cm² olarak verilmiştir.
+        </div>
+        <div class="q-ask">
+          Bu dikdörtgenin olası kenar uzunluklarını çarpanlara ayırma yöntemiyle bulunuz.
+          Bu ifadeyi sağlayan <strong>iki farklı</strong> kenar uzunluğu çiftini yazınız.
+          <span class="pts">(14 puan)</span>
+        </div>
+      </div>
+    </div>
+    <div class="answer-area lg"></div>
+  </div>
+
+  <div class="exam-footer">
+    <span>Sayfa 1 / 2</span>
+    <span class="footer-bold">Sayfayı çevirin →</span>
+    <span></span>
+  </div>
+</div>
+
+<!-- ══════════ SAYFA 2 ══════════ -->
+<div class="a4-page page2">
+
+  <!-- S4 -->
+  <div class="question">
+    <div class="kazanim">Kazanım: M.8.2.2.1 – Birinci dereceden bir bilinmeyenli denklemleri çözer.</div>
+    <div class="q-header">
+      <div class="q-num">4</div>
+      <div class="q-body">
+        <div class="q-text">
+          Bir kitaplığın raflarındaki kitapların
+          <span class="frac"><span class="num">1</span><span class="den">6</span></span>'sı matematik,
+          <span class="frac"><span class="num">2</span><span class="den">5</span></span>'i Türkçe kitabıdır.
+          Geri kalan 39 kitap ise diğer derslerle ilgilidir.
+        </div>
+        <div class="q-ask">
+          Kitaplıktaki toplam kitap sayısını hesaplayınız. Denklem kurma ve çözüm adımlarınızı gösteriniz.
+          <span class="pts">(14 puan)</span>
+        </div>
+      </div>
+    </div>
+    <div class="answer-area lg"></div>
+  </div>
+  <hr class="q-divider">
+
+  <!-- S5 -->
+  <div class="question">
+    <div class="kazanim">Kazanım: M.8.2.2.2 – Koordinat sistemini özellikleriyle tanır ve sıralı ikilileri gösterir.</div>
+    <div class="q-header">
+      <div class="q-num">5</div>
+      <div class="q-body">
+        <div class="q-text">Aşağıda koordinat düzleminde bazı noktalar verilmiştir.</div>
+        <div class="figure">
+          <svg width="285" height="245" viewBox="-8 -8 300 254" xmlns="http://www.w3.org/2000/svg" font-family="Source Serif 4,serif">
+            <defs>
+              <pattern id="sg" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M20 0L0 0 0 20" fill="none" stroke="#c8d4e8" stroke-width="0.5"/>
+              </pattern>
+              <pattern id="lg" width="20" height="20" patternUnits="userSpaceOnUse">
+                <rect width="20" height="20" fill="url(#sg)"/>
+                <path d="M20 0L0 0 0 20" fill="none" stroke="#b0c0d8" stroke-width="1"/>
+              </pattern>
+            </defs>
+            <rect x="8" y="8" width="268" height="222" fill="url(#lg)"/>
+            <line x1="142" y1="8"   x2="142" y2="230" stroke="#2c3e6b" stroke-width="2"/>
+            <line x1="8"   y1="119" x2="276" y2="119" stroke="#2c3e6b" stroke-width="2"/>
+            <polygon points="142,6 137,16 147,16" fill="#2c3e6b"/>
+            <polygon points="278,119 268,114 268,124" fill="#2c3e6b"/>
+            <text x="147" y="5"   fill="#2c3e6b" font-weight="bold" font-size="12">y</text>
+            <text x="279" y="124" fill="#2c3e6b" font-weight="bold" font-size="12">x</text>
+            <!-- x ticks -->
+            <text x="142" y="133" text-anchor="middle" fill="#555" font-size="9">0</text>
+            <text x="162" y="131" text-anchor="middle" fill="#555" font-size="9">1</text>
+            <text x="182" y="131" text-anchor="middle" fill="#555" font-size="9">2</text>
+            <text x="202" y="131" text-anchor="middle" fill="#555" font-size="9">3</text>
+            <text x="222" y="131" text-anchor="middle" fill="#555" font-size="9">4</text>
+            <text x="122" y="131" text-anchor="middle" fill="#555" font-size="9">-1</text>
+            <text x="102" y="131" text-anchor="middle" fill="#555" font-size="9">-2</text>
+            <text x="82"  y="131" text-anchor="middle" fill="#555" font-size="9">-3</text>
+            <text x="62"  y="131" text-anchor="middle" fill="#555" font-size="9">-4</text>
+            <!-- y ticks -->
+            <text x="136" y="102" text-anchor="end" fill="#555" font-size="9">1</text>
+            <text x="136" y="82"  text-anchor="end" fill="#555" font-size="9">2</text>
+            <text x="136" y="62"  text-anchor="end" fill="#555" font-size="9">3</text>
+            <text x="136" y="42"  text-anchor="end" fill="#555" font-size="9">4</text>
+            <text x="136" y="142" text-anchor="end" fill="#555" font-size="9">-1</text>
+            <text x="136" y="162" text-anchor="end" fill="#555" font-size="9">-2</text>
+            <text x="136" y="182" text-anchor="end" fill="#555" font-size="9">-3</text>
+            <!-- A(3,2) B(-2,3) C(-3,-1) D(1,-3) E(0,4) -->
+            <circle cx="202" cy="79"  r="5" fill="#c0392b"/><text x="208" y="75"  fill="#c0392b" font-weight="bold" font-size="11">A</text>
+            <circle cx="102" cy="59"  r="5" fill="#2980b9"/><text x="108" y="55"  fill="#2980b9" font-weight="bold" font-size="11">B</text>
+            <circle cx="82"  cy="139" r="5" fill="#27ae60"/><text x="88"  y="135" fill="#27ae60" font-weight="bold" font-size="11">C</text>
+            <circle cx="162" cy="179" r="5" fill="#8e44ad"/><text x="168" y="175" fill="#8e44ad" font-weight="bold" font-size="11">D</text>
+            <circle cx="142" cy="39"  r="5" fill="#e67e22"/><text x="148" y="35"  fill="#e67e22" font-weight="bold" font-size="11">E</text>
+          </svg>
+        </div>
+        <div class="q-ask">
+          <strong>a)</strong> Her noktanın koordinatlarını yazınız.<br>
+          <strong>b)</strong> Hangi noktalar aynı bölgede (çeyrekte) yer almaktadır? Belirtiniz.<br>
+          <strong>c)</strong> Koordinat ekseni üzerinde bulunan noktaları söyleyiniz ve nedenini açıklayınız.
+          <span class="pts">(14 puan)</span>
+        </div>
+      </div>
+    </div>
+    <div class="answer-area md"></div>
+  </div>
+  <hr class="q-divider">
+
+  <!-- S6 -->
+  <div class="question">
+    <div class="kazanim">Kazanım: M.8.2.2.5 – Doğrusal ilişki içeren gerçek hayat durumlarına ait denklem, tablo ve grafiği oluşturur ve yorumlar.</div>
+    <div class="q-header">
+      <div class="q-num">6</div>
+      <div class="q-body">
+        <div class="q-text">
+          Bir su deposunda başlangıçta 480 litre su bulunmaktadır. Depodan her saat 30 litre su kullanılmaktadır.
+        </div>
+        <div class="q-ask">
+          <strong>a)</strong> Depodaki su miktarını (<span class="math">y</span>) geçen saate (<span class="math">x</span>) bağlı olarak gösteren doğrusal denklemi yazınız.<br>
+          <strong>b)</strong> Aşağıdaki tabloyu doldurunuz.<br>
+          <strong>c)</strong> Denklemin grafiğini çiziniz. Deponun ne zaman boşalacağını grafikten okuyunuz.
+          <span class="pts">(15 puan)</span>
+        </div>
+        <table class="data-table" style="margin-top:8px;">
+          <tr>
+            <th>x (saat)</th>
+            <td>0</td><td>2</td><td>4</td><td>8</td><td>12</td><td>16</td>
+          </tr>
+          <tr>
+            <th>y (litre)</th>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="answer-area graph"></div>
+  </div>
+  <hr class="q-divider">
+
+  <!-- S7 -->
+  <div class="question">
+    <div class="kazanim">Kazanım: M.8.2.2.6 – Doğrunun eğimini modellerle açıklar; doğrusal denklemleri ve grafiklerini eğimle ilişkilendirir.</div>
+    <div class="q-header">
+      <div class="q-num">7</div>
+      <div class="q-body">
+        <div class="q-text">
+          Ahmet, okula bisikletle gitmektedir. Bisiklet yolunun bir bölümünde ölçülen yatay uzunluk ve dikey yükseklik değerleri tablodaki gibidir.
+        </div>
+        <table class="data-table" style="margin-top:7px;margin-bottom:8px;">
+          <tr>
+            <th>Yatay Uzunluk (m)</th>
+            <td>0</td><td>5</td><td>10</td><td>15</td>
+          </tr>
+          <tr>
+            <th>Dikey Yükseklik (m)</th>
+            <td>0</td><td>2</td><td>4</td><td>6</td>
+          </tr>
+        </table>
+        <div class="q-ask">
+          <strong>a)</strong> Yolun eğimini hesaplayınız.<br>
+          <strong>b)</strong> Bu eğime sahip başka bir yolun denklemi <span class="math">y = mx + n</span> biçiminde verilebilir.
+          Bu yolun (3,&nbsp;5) noktasından geçtiği bilindiğine göre <span class="math">n</span> değerini bulunuz ve denklemini yazınız.
+          <span class="pts">(15 puan)</span>
+        </div>
+      </div>
+    </div>
+    <div class="answer-area lg"></div>
+  </div>
+
+  <div class="exam-footer">
+    <span>Sayfa 2 / 2</span>
+    <span class="footer-bold">SINAV BİTTİ – CEVAPLARINI KONTROL ET ✦</span>
+    <span>Toplam: 100 puan</span>
+  </div>
+</div>
+
+<button class="print-btn no-print" onclick="window.print()">🖨️ Yazdır / PDF</button>
+
+</body>
+</html>
