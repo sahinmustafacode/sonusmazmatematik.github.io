@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10. Sınıf Matematik 2. Dönem 1. Yazılı – ZOR SEVİYE</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap');
+
+  :root {
+    --primary: #1a1a2e;
+    --accent: #16213e;
+    --border: #0f3460;
+    --highlight: #b91c1c;
+    --bg: #ffffff;
+    --text: #1a1a2e;
+    --light-bg: #fef2f2;
+    --muted: #64748b;
+    --danger: #dc2626;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @page { size: A4; margin: 12mm 15mm; }
+
+  @media print {
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .no-print { display: none !important; }
+    .page-break { page-break-before: always; }
+    .question-block { break-inside: avoid; }
+  }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 13px;
+    color: var(--text);
+    background: #f1f0f0;
+    line-height: 1.5;
+  }
+
+  .exam-container {
+    max-width: 210mm;
+    margin: 20px auto;
+    background: var(--bg);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  }
+
+  .exam-header {
+    border: 2.5px solid var(--primary);
+    margin: 15mm 15mm 0 15mm;
+  }
+
+  .header-top {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    border-bottom: 2.5px solid var(--primary);
+  }
+
+  .header-top > div {
+    padding: 8px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 600;
+    font-size: 12px;
+  }
+
+  .header-top > div:not(:last-child) { border-right: 2.5px solid var(--primary); }
+
+  .school-name {
+    font-family: 'Crimson Pro', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1.3;
+  }
+
+  .difficulty-badge {
+    display: inline-block;
+    background: var(--danger);
+    color: white;
+    font-size: 9px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    margin-top: 4px;
+  }
+
+  .header-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    border-bottom: 1px solid var(--primary);
+  }
+
+  .header-row > div {
+    padding: 5px 10px;
+    font-size: 12px;
+    border-right: 1px solid var(--primary);
+  }
+  .header-row > div:last-child { border-right: none; }
+
+  .header-row label {
+    font-weight: 600;
+    color: var(--muted);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .header-row .field-value {
+    display: block;
+    min-height: 18px;
+    border-bottom: 1px dotted #ccc;
+    margin-top: 2px;
+  }
+
+  .exam-info-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background: var(--light-bg);
+  }
+
+  .exam-info-bar > div {
+    padding: 6px 10px;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 600;
+    border-right: 1px solid var(--primary);
+  }
+  .exam-info-bar > div:last-child { border-right: none; }
+
+  .exam-info-bar .info-label {
+    color: var(--muted);
+    font-size: 9px;
+    text-transform: uppercase;
+    display: block;
+  }
+
+  .score-table-wrapper {
+    margin: 10px 15mm;
+    display: flex;
+    justify-content: center;
+  }
+
+  .score-table {
+    border-collapse: collapse;
+    font-size: 11px;
+    text-align: center;
+  }
+
+  .score-table th, .score-table td {
+    border: 1.5px solid var(--primary);
+    padding: 4px 10px;
+    min-width: 40px;
+  }
+
+  .score-table th {
+    background: var(--light-bg);
+    font-weight: 700;
+    font-size: 10px;
+    color: var(--accent);
+  }
+
+  .score-table td { height: 24px; }
+  .score-table .total-col { background: var(--light-bg); font-weight: 700; }
+
+  .questions-area { padding: 8px 15mm 15mm 15mm; }
+
+  .question-block {
+    margin-bottom: 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .question-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--light-bg);
+    padding: 6px 12px;
+    border-bottom: 1px solid #fecaca;
+  }
+
+  .question-number {
+    font-family: 'Crimson Pro', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--highlight);
+  }
+
+  .question-points {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--muted);
+    background: white;
+    padding: 2px 10px;
+    border-radius: 12px;
+    border: 1px solid #fecaca;
+  }
+
+  .question-topic {
+    font-size: 9px;
+    color: var(--muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .question-body {
+    padding: 10px 14px;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .question-body p { margin-bottom: 6px; }
+  .sub-parts { margin-top: 6px; padding-left: 4px; }
+  .sub-parts .sub-part { margin-bottom: 4px; }
+  .sub-parts .sub-label { font-weight: 700; color: var(--accent); }
+
+  .answer-space {
+    min-height: 70px;
+    border-top: 1px dashed #cbd5e1;
+    margin: 6px 14px 10px 14px;
+  }
+  .answer-space.large { min-height: 100px; }
+  .answer-space.xlarge { min-height: 140px; }
+
+  .math {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 14px;
+  }
+
+  .note-box {
+    margin: 10px 15mm;
+    padding: 8px 12px;
+    background: #fffbeb;
+    border-left: 3px solid #f59e0b;
+    font-size: 11px;
+    color: #92400e;
+  }
+
+  .print-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--highlight);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(185,28,28,0.4);
+    z-index: 100;
+  }
+  .print-btn:hover { transform: scale(1.05); }
+
+  .solution-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 180px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(22,33,62,0.3);
+    z-index: 100;
+  }
+
+  .solution-box {
+    display: none;
+    background: #f0fdf4;
+    border-top: 2px solid #22c55e;
+    padding: 10px 14px;
+    font-size: 12px;
+    line-height: 1.7;
+    color: #15803d;
+  }
+
+  .solution-box .sol-title {
+    font-weight: 700;
+    color: #166534;
+    margin-bottom: 4px;
+  }
+
+  body.show-solutions .solution-box { display: block; }
+
+  .graph-container {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+  }
+
+  .graph-container svg {
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    background: #fafbfc;
+  }
+
+  .graph-in-question {
+    display: flex;
+    justify-content: center;
+    margin: 8px 0;
+  }
+
+  .graph-in-question svg {
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    background: #fafbfc;
+  }
+</style>
+</head>
+<body>
+
+<div class="exam-container">
+  <div class="exam-header">
+    <div class="header-top">
+      <div>2025 – 2026<br>EĞİTİM ÖĞRETİM YILI</div>
+      <div>
+        <div style="font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#c9a84c;margin-bottom:4px;">Sonuşmaz Matematik</div><div class="school-name">.............................................<br>10. SINIF MATEMATİK DERSİ<br>2. DÖNEM 1. YAZILI SINAVI</div>
+        <div class="difficulty-badge">ZOR SEVİYE</div>
+      </div>
+      <div>SÜRE: 40 DAKİKA</div>
+    </div>
+    <div class="header-row">
+      <div><label>Adı</label><span class="field-value"></span></div>
+      <div><label>Soyadı</label><span class="field-value"></span></div>
+      <div><label>Sınıfı</label><span class="field-value"></span></div>
+      <div><label>Numarası</label><span class="field-value"></span></div>
+    </div>
+    <div class="exam-info-bar">
+      <div><span class="info-label">Soru Sayısı</span>8</div>
+      <div><span class="info-label">Sınav Türü</span>Açık Uçlu</div>
+      <div><span class="info-label">Tarih</span>....../....../2026</div>
+    </div>
+  </div>
+
+  <div class="score-table-wrapper">
+    <table class="score-table">
+      <tr>
+        <th>Soru</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th>
+        <th class="total-col">TOPLAM</th>
+      </tr>
+      <tr>
+        <th>Puan</th>
+        <td>10</td><td>15</td><td>10</td><td>15</td><td>10</td><td>10</td><td>15</td><td>15</td>
+        <td class="total-col">100</td>
+      </tr>
+      <tr>
+        <th>Alınan</th>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        <td class="total-col"></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="note-box">
+    <strong>Not:</strong> Tüm sorularda çözüm yollarınızı açıkça gösteriniz. Sadece sonuç yazılan sorulardan tam puan alınamaz.
+  </div>
+
+  <div class="questions-area">
+
+    <!-- ============ SORU 1: 10.2.1 ============ -->
+    <div class="question-block">
+      <div class="question-header">
+        <span class="question-number">Soru 1</span>
+        <span class="question-topic">10.2.1 – Tanımlı Fonksiyonlar</span>
+        <span class="question-points">10 puan</span>
+      </div>
+      <div class="question-body">
+        <p><span class="math">f : ℝ → ℝ</span>, &nbsp; <span class="math">f(x) = |x² − 5x + 4|</span> fonksiyonu veriliyor.</p>
+        <div class="sub-parts">
+          <div class="sub-part"><span class="sub-label">a)</span> <span class="math">f(x) = 0</span> denklemini çözünüz.</div>
+          <div class="sub-part"><span class="sub-label">b)</span> <span class="math">f(3)</span> değerini hesaplayınız.</div>
+          <div class="sub-part"><span class="sub-label">c)</span> Fonksiyonun görüntü kümesini belirleyip <strong>bire bir olup olmadığını</strong> gerekçeleriyle açıklayınız.</div>
+        </div>
+      </div>
+      <div class="answer-space xlarge"></div>
+      <div class="solution-box">
+        <div class="sol-title">Çözüm 1:</div>
+        <p><strong>a)</strong> |x²−5x+4| = 0 ⇒ x²−5x+4 = 0 ⇒ (x−1)(x−4) = 0 ⇒ x = 1 veya x = 4.</p>
+        <p><strong>b)</strong> f(3) = |9−15+4| = |−2| = 2.</p>
+        <p><strong>c)</strong> x²−5x+4 = (x−5/2)²−9/4. İç fonksiyonun minimumu −9/4 (x=5/2'de). Mutlak değer alındığında minimum 0 olur (x=1 ve x=4'te). Görüntü kümesi: [0, +∞). Bire bir değildir çünkü örneğin f(1) = f(4) = 0 ve f(0) = |4| = 4, f(5) = |25−25+4| = 4.</p>
+        <!-- GRAPH: f(x) = |x²-5x+4| -->
+        <div class="graph-container">
+          <svg width="320" height="240" viewBox="0 0 320 240">
+            <defs>
+              <marker id="a1" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                <path d="M0,0 L8,3 L0,6" fill="#94a3b8"/>
+              </marker>
+            </defs>
+            <!-- origin (60,180), scale=40 per unit -->
+            <line x1="10" y1="180" x2="310" y2="180" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#a1)"/>
+            <line x1="60" y1="230" x2="60" y2="10" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#a1)"/>
+            <g stroke="#e2e8f0" stroke-width="0.5">
+              <line x1="100" y1="230" x2="100" y2="10"/>
+              <line x1="140" y1="230" x2="140" y2="10"/>
+              <line x1="180" y1="230" x2="180" y2="10"/>
+              <line x1="220" y1="230" x2="220" y2="10"/>
+              <line x1="260" y1="230" x2="260" y2="10"/>
+              <line x1="10" y1="140" x2="310" y2="140"/>
+              <line x1="10" y1="100" x2="310" y2="100"/>
+              <line x1="10" y1="60" x2="310" y2="60"/>
+            </g>
+            <g font-size="9" fill="#64748b" text-anchor="middle">
+              <text x="100" y="195">1</text>
+              <text x="140" y="195">2</text>
+              <text x="180" y="195">3</text>
+              <text x="220" y="195">4</text>
+              <text x="260" y="195">5</text>
+            </g>
+            <g font-size="9" fill="#64748b" text-anchor="end">
+              <text x="55" y="144">1</text>
+              <text x="55" y="104">2</text>
+              <text x="55" y="64">3</text>
+            </g>
+            <text x="305" y="175" font-size="10" fill="#64748b" font-style="italic">x</text>
+            <text x="65" y="18" font-size="10" fill="#64748b" font-style="italic">y</text>
+            <!-- x²-5x+4 dashed (the inner parabola) -->
+            <!-- x=0:4, x=1:0, x=2:-2, x=2.5:-2.25, x=3:-2, x=4:0, x=5:4 -->
+            <polyline points="60,20 80,72 100,180 120,240 130,250 140,240 160,216 180,240 200,260 220,180 240,72 260,20"
+              fill="none" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,3"/>
+            <!-- |x²-5x+4| → reflect negative part -->
+            <!-- x=0: 4 → (60,180-160)=(60,20) -->
+            <!-- x=0.5: |2.25-2.5+4|=|3.75|=3.75 → (80,180-150)=(80,30) ...approximate -->
+            <!-- x=1: 0 → (100,180) -->
+            <!-- x=1.5: |2.25-7.5+4|=|−1.25|=1.25 → (120,180-50)=(120,130) -->
+            <!-- x=2: |4-10+4|=|−2|=2 → (140,180-80)=(140,100) -->
+            <!-- x=2.5: |6.25-12.5+4|=|−2.25|=2.25 → (160,180-90)=(160,90) -->
+            <!-- x=3: |9-15+4|=|−2|=2 → (180,100) -->
+            <!-- x=3.5: |12.25-17.5+4|=|−1.25|=1.25 → (200,130) -->
+            <!-- x=4: 0 → (220,180) -->
+            <!-- x=4.5: |20.25-22.5+4|=|1.75|=1.75 → (240,110) -->
+            <!-- x=5: 4 → (260,20) -->
+            <polyline points="60,20 80,48 100,180 110,155 120,130 130,110 140,100 150,92 160,90 170,92 180,100 190,110 200,130 210,155 220,180 240,110 260,20"
+              fill="none" stroke="#b91c1c" stroke-width="2.5" stroke-linejoin="round"/>
+            <circle cx="100" cy="180" r="4" fill="#b91c1c"/>
+            <circle cx="220" cy="180" r="4" fill="#b91c1c"/>
+            <text x="88" y="175" font-size="8" fill="#b91c1c" text-anchor="end">(1,0)</text>
+            <text x="228" y="175" font-size="8" fill="#b91c1c">(4,0)</text>
+            <circle cx="160" cy="90" r="3" fill="#16213e"/>
+            <text x="165" y="85" font-size="8" fill="#16213e">(5/2, 9/4)</text>
+            <text x="180" y="40" font-size="10" fill="#b91c1c" font-family="Crimson Pro" font-style="italic">f(x) = |x²−5x+4|</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ SORU 2: 10.2.2 (1/2) ============ -->
+    <div class="question-block">
+      <div class="question-header">
+        <span class="question-number">Soru 2</span>
+        <span class="question-topic">10.2.2 – Karesel Fonksiyonlar</span>
+        <span class="question-points">15 puan</span>
+      </div>
+      <div class="question-body">
+        <p>Bir topun yüksekliği <span class="math">h(t) = −5t² + 20t + 1</span> metre olarak veriliyor (<span class="math">t</span> saniye cinsinden).</p>
+        <div class="sub-parts">
+          <div class="sub-part"><span class="sub-label">a)</span> Top en yüksek noktasına kaçıncı saniyede ulaşır? Maksimum yüksekliği bulunuz.</div>
+          <div class="sub-part"><span class="sub-label">b)</span> Top hangi zaman aralığında 16 metrenin üzerindedir?</div>
+          <div class="sub-part"><span class="sub-label">c)</span> Top yere düştüğü anı (h = 0) bulunuz. (İpucu: Karekök içinde kalabilir.)</div>
+        </div>
+      </div>
+      <div class="answer-space xlarge"></div>
+      <div class="solution-box">
+        <div class="sol-title">Çözüm 2:</div>
+        <p><strong>a)</strong> h(t) = −5(t²−4t) + 1 = −5(t−2)² + 20 + 1 = −5(t−2)² + 21. t = 2 s'de maksimum, h<sub>max</sub> = 21 m.</p>
+        <p><strong>b)</strong> −5t²+20t+1 > 16 ⇒ −5t²+20t−15 > 0 ⇒ t²−4t+3 < 0 ⇒ (t−1)(t−3) < 0 ⇒ 1 < t < 3. Yani 1. ve 3. saniyeler arasında.</p>
+        <p><strong>c)</strong> −5t²+20t+1 = 0 ⇒ 5t²−20t−1 = 0. Δ = 400+20 = 420. t = (20±√420)/10 = (20±2√105)/10 = (10±√105)/5. t > 0 olmalı ⇒ t = (10+√105)/5 ≈ 4.05 s.</p>
+        <div class="graph-container">
+          <svg width="320" height="250" viewBox="0 0 320 250">
+            <defs>
+              <marker id="a2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                <path d="M0,0 L8,3 L0,6" fill="#94a3b8"/>
+              </marker>
+            </defs>
+            <!-- origin (40,220), xscale=55px/s, yscale=9px/m -->
+            <line x1="10" y1="220" x2="310" y2="220" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#a2)"/>
+            <line x1="40" y1="240" x2="40" y2="10" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#a2)"/>
+            <g stroke="#e2e8f0" stroke-width="0.5">
+              <line x1="95" y1="240" x2="95" y2="10"/>
+              <line x1="150" y1="240" x2="150" y2="10"/>
+              <line x1="205" y1="240" x2="205" y2="10"/>
+              <line x1="260" y1="240" x2="260" y2="10"/>
+              <line x1="10" y1="175" x2="310" y2="175"/>
+              <line x1="10" y1="130" x2="310" y2="130"/>
+              <line x1="10" y1="85" x2="310" y2="85"/>
+              <line x1="10" y1="40" x2="310" y2="40"/>
+            </g>
+            <g font-size="9" fill="#64748b" text-anchor="middle">
+              <text x="95" y="235">1</text>
+              <text x="150" y="235">2</text>
+              <text x="205" y="235">3</text>
+              <text x="260" y="235">4</text>
+            </g>
+            <g font-size="9" fill="#64748b" text-anchor="end">
+              <text x="35" y="178">5</text>
+              <text x="35" y="133">10</text>
+              <text x="35" y="88">15</text>
+              <text x="35" y="43">20</text>
+            </g>
+            <text x="300" y="215" font-size="10" fill="#64748b" font-style="italic">t</text>
+            <text x="45" y="18" font-size="10" fill="#64748b" font-style="italic">h</text>
+            <!-- h=16 line -->
+            <line x1="10" y1="76" x2="310" y2="76" stroke="#f59e0b" stroke-width="1" stroke-dasharray="5,4"/>
+            <text x="275" y="72" font-size="8" fill="#f59e0b" font-weight="600">h = 16</text>
+            <!-- h(t): t=0→1, t=0.5→9, t=1→16, t=1.5→20, t=2→21, t=2.5→20, t=3→16, t=3.5→9, t=4→1, t≈4.05→0 -->
+            <!-- y = 220 - 9*h -->
+            <!-- t=0:h=1→(40,211), t=0.5:h=9→(67.5,139), t=1:h=16→(95,76), t=1.5:h=20→(122.5,40), t=2:h=21→(150,31), t=2.5:h=20→(177.5,40), t=3:h=16→(205,76), t=3.5:h=9→(232.5,139), t=4:h=1→(260,211), t=4.05:h=0→(263,220) -->
+            <polyline points="40,211 55,175 68,139 80,103 95,76 108,52 122,40 136,33 150,31 164,33 178,40 192,52 205,76 218,103 232,139 245,175 260,211 263,220"
+              fill="none" stroke="#b91c1c" stroke-width="2.5" stroke-linejoin="round"/>
+            <!-- Tepe -->
+            <circle cx="150" cy="31" r="4" fill="#b91c1c"/>
+            <text x="158" y="26" font-size="8" fill="#b91c1c" font-weight="600">(2, 21)</text>
+            <!-- h=16 kesişimler -->
+            <circle cx="95" cy="76" r="3" fill="#f59e0b"/>
+            <circle cx="205" cy="76" r="3" fill="#f59e0b"/>
+            <text x="82" y="70" font-size="8" fill="#f59e0b" text-anchor="end">t=1</text>
+            <text x="212" y="70" font-size="8" fill="#f59e0b">t=3</text>
+            <text x="170" y="245" font-size="10" fill="#b91c1c" font-family="Crimson Pro" font-style="italic">h(t) = −5t²+20t+1</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ SORU 3: 10.2.2 (2/2) ============ -->
+    <div class="question-block">
+      <div class="question-header">
+        <span class="question-number">Soru 3</span>
+        <span class="question-topic">10.2.2 – Karesel Fonksiyonlar</span>
+        <span class="question-points">10 puan</span>
+      </div>
+      <div class="question-body">
+        <p><span class="math">f(x) = ax² + bx + c</span> karesel fonksiyonunun tepe noktası <span class="math">(−1, 4)</span> ve grafiği <span class="math">(1, 0)</span> noktasından geçiyor.</p>
+        <div class="sub-parts">
+          <div class="sub-part"><span class="sub-label">a)</span> <span class="math">a</span>, <span class="math">b</span> ve <span class="math">c</span> değerlerini bulunuz.</div>
+          <div class="sub-part"><span class="sub-label">b)</span> Fonksiyonun diğer sıfırını bulunuz.</div>
+        </div>
+      </div>
+      <div class="answer-space xlarge"></div>
+      <div class="solution-box">
+        <div class="sol-title">Çözüm 3:</div>
+        <p><strong>a)</strong> Tepe formundan: f(x) = a(x+1)² + 4. (1,0) noktasından geçiyor: a(1+1)²+4 = 0 ⇒ 4a+4 = 0 ⇒ a = −1.</p>
+        <p>f(x) = −(x+1)²+4 = −x²−2x−1+4 = −x²−2x+3. Yani a=−1, b=−2, c=3.</p>
+        <p><strong>b)</strong> −x²−2x+3 = 0 ⇒ x²+2x−3 = 0 ⇒ (x+3)(x−1) = 0. Diğer sıfır: x = −3.</p>
+        <div class="graph-container">
+          <svg width="300" height="220" viewBox="0 0 300 220">
+            <defs>
+              <marker id="a3" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                <path d="M0,0 L8,3 L0,6" fill="#94a3b8"/>
+              </marker>
+            </defs>
+            <!-- origin (150,170), scale=30 -->
+            <line x1="10" y1="170" x2="290" y2="170" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#a3)"/>
+            <line x1="150" y1="210" x2="150" y2="10" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#a3)"/>
+            <g stroke="#e2e8f0" stroke-width="0.5">
+              <line x1="60" y1="210" x2="60" y2="10"/>
+              <line x1="90" y1="210" x2="90" y2="10"/>
+              <line x1="120" y1="210" x2="120" y2="10"/>
+              <line x1="180" y1="210" x2="180" y2="10"/>
+              <line x1="210" y1="210" x2="210" y2="10"/>
+              <line x1="10" y1="140" x2="290" y2="140"/>
+              <line x1="10" y1="110" x2="290" y2="110"/>
+              <line x1="10" y1="80" x2="290" y2="80"/>
+              <line x1="10" y1="50" x2="290" y2="50"/>
+            </g>
+            <g font-size="9" fill="#64748b" text-anchor="middle">
+              <text x="60" y="185">−3</text>
+              <text x="90" y="185">−2</text>
+              <text x="120" y="185">−1</text>
+              <text x="180" y="185">1</text>
+              <text x="210" y="185">2</text>
+            </g>
+            <g font-size="9" fill="#64748b" text-anchor="end">
+              <text x="146" y="143">1</text>
+              <text x="146" y="113">2</text>
+              <text x="146" y="83">3</text>
+              <text x="146" y="53">4</text>
+            </g>
+            <!-- f(x) = -(x+1)²+4 -->
+            <!-- x=-4: f=-(9)+4=-5→(30,170+150)=clamp -->
+            <!-- x=-3: f=0→(60,170) -->
+            <!-- x=-2: f=-(1)+4=3→(90,80) -->
+            <!-- x=-1: f=4→(120,50) -->
+            <!-- x=0: f=3→(150,80) -->
+            <!-- x=1: f=0→(180,170) -->
+            <!-- x=2: f=-(9)+4=-5→clamp -->
+            <polyline points="38,210 48,200 60,170 75,120 90,80 105,58 120,50 135,58 150,80 165,120 180,170 190,200 200,210"
+              fill="none" stroke="#b91c1c" stroke-width="2.5" stroke-linejoin="round"/>
+            <circle cx="120" cy="50" r="4" fill="#b91c1c"/>
+            <text x="128" y="44" font-size="8" fill="#b91c1c" font-weight="600">(−1, 4)</text>
+            <circle cx="60" cy="170" r="3.5" fill="#16213e"/>
+            <circle cx="180" cy="170" r="3.5" fill="#16213e"/>
+            <text x="45" y="166" font-size="8" fill="#16213e" text-anchor="end">(−3,0)</text>
+            <text x="188" y="166" font-size="8" fill="#16213e">(1,0)</text>
+            <circle cx="150" cy="80" r="3" fill="#0f3460"/>
+            <text x="155" y="76" font-size="8" fill="#0f3460">(0,3)</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ SORU 4: 10.2.3 (1/2) ============ -->
+    <div class="question-block">
+      <div class="question-header">
+        <span class="question-number">Soru 4</span>
+        <span class="question-topic">10.2.3 – Karekök Fonksiyonlar</span>
+        <span class="question-points">15 puan</span>
+      </div>
+      <div class="question-body">
+        <p><span class="math">f(x) = √(2x − 6) − x + 5</span> fonksiyonu veriliyor.</p>
+        <div class="sub-parts">
+          <div class="sub-part"><span class="sub-label">a)</span> Fonksiyonun tanım kümesini bulunuz.</div>
+          <div class="sub-part"><span class="sub-label">b)</span> <span class="math">f(x) = 0</span> denklemini çözünüz. (Dikkat: Çözümlerin geçerliliğini kontrol ediniz.)</div>
+          <div class="sub-part"><span class="sub-label">c)</span> <span class="math">f(3)</span> ve <span class="math">f(7)</span> değerlerini hesaplayıp fonksiyonun azalan mı artan mı olduğu hakkında yorum yapınız.</div>
+        </div>
+      </div>
+      <div class="answer-space xlarge"></div>
+      <div class="solution-box">
+        <div class="sol-title">Çözüm 4:</div>
+        <p><strong>a)</strong> 2x−6 ≥ 0 ⇒ x ≥ 3. Tanım kümesi: [3, +∞).</p>
+        <p><strong>b)</strong> √(2x−6) = x−5. Her iki tarafın karesini alalım: 2x−6 = x²−10x+25 ⇒ x²−12x+31 = 0.</p>
+        <p>Δ = 144−124 = 20. x = (12±√20)/2 = 6±√5. x₁ = 6−√5 ≈ 3.76, x₂ = 6+√5 ≈ 8.24.</p>
+        <p>Kontrol: √(2x−6) ≥ 0 olmalı ⇒ x−5 ≥ 0 ⇒ x ≥ 5 olmalı. x₁ ≈ 3.76 < 5 ⇒ <strong>geçersiz!</strong> Tek çözüm: x = 6+√5.</p>
+        <p><strong>c)</strong> f(3) = √0 − 3 + 5 = 2. f(7) = √8 − 7 + 5 = 2√2 − 2 ≈ 0.83. f(3) > f(7) ⇒ fonksiyon azalma eğiliminde (karekök yavaş artarken −x terimi baskın).</p>
+        <div class="graph-container">
+          <svg width="320" height="220" viewBox="0 0 320 220">
+            <defs>
+              <marker id="a4" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                <path d="M0,0 L8,3 L0,6" fill="#94a3b8"/>
+              </marker>
+            </defs>
+            <!-- origin (40,160), xscale=28, yscale=35 -->
+            <line x1="10" y1="160" x2="310" y2="160" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#a4)"/>
+            <line x1="40" y1="210" x2="40" y2="10" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#a4)"/>
+            <g stroke="#e2e8f0" stroke-width="0.5">
+              <line x1="68" y1="210" x2="68" y2="10"/>
+              <line x1="96" y1="210" x2="96" y2="10"/>
+              <line x1="124" y1="210" x2="124" y2="10"/>
+              <line x1="152" y1="210" x2="152" y2="10"/>
+              <line x1="180" y1="210" x2="180" y2="10"/>
+              <line x1="208" y1="210" x2="208" y2="10"/>
+              <line x1="236" y1="210" x2="236" y2="10"/>
+              <line x1="264" y1="210" x2="264" y2="10"/>
+              <line x1="10" y1="125" x2="310" y2="125"/>
+              <line x1="10" y1="90" x2="310" y2="90"/>
+              <line x1="10" y1="55" x2="310" y2="55"/>
+              <line x1="10" y1="195" x2="310" y2="195"/>
+            </g>
+            <g font-size="9" fill="#64748b" text-anchor="middle">
+              <text x="68" y="175">1</text>
+              <text x="96" y="175">2</text>
+              <text x="124" y="175">3</text>
+              <text x="152" y="175">4</text>
+              <text x="180" y="175">5</text>
+              <text x="208" y="175">6</text>
+              <text x="236" y="175">7</text>
+              <text x="264" y="175">8</text>
+            </g>
+            <g font-size="9" fill="#64748b" text-anchor="end">
+              <text x="36" y="128">1</text>
+              <text x="36" y="93">2</text>
+              <text x="36" y="58">3</text>
+              <text x="36" y="198">−1</text>
+            </g>
+            <!-- f(x) = √(2x-6) - x + 5 starting at x=3 -->
+            <!-- x=3: √0-3+5=2 → (124, 160-70)=(124,90) -->
+            <!-- x=4: √2-4+5=√2+1≈2.41 → (152,160-84)=(152,76) -->
+            <!-- x=5: √4-5+5=2 → (180,90) -->
+            <!-- x=6: √6-6+5≈1.45 → (208,109) -->
+            <!-- x=7: √8-7+5=2√2-2≈0.83 → (236,131) -->
+            <!-- x=8: √10-8+5≈-0.16 → (264,166) cross zero around x≈8.24 -->
+            <!-- x≈8.24: 0 → (271,160) -->
+            <polyline points="124,90 132,84 140,80 148,77 152,76 160,78 168,82 176,87 180,90 188,96 196,102 204,109 212,117 220,124 228,130 236,137 244,144 252,150 260,156 271,160"
+              fill="none" stroke="#b91c1c" stroke-width="2.5" stroke-linejoin="round"/>
+            <circle cx="124" cy="90" r="4" fill="#b91c1c"/>
+            <text x="110" y="86" font-size="8" fill="#b91c1c" text-anchor="end">(3, 2)</text>
+            <circle cx="236" cy="137" r="3" fill="#16213e"/>
+            <text x="242" y="133" font-size="8" fill="#16213e">(7, 2√2−2)</text>
+            <circle cx="271" cy="160" r="3.5" fill="#0f3460"/>
+            <text x="275" y="155" font-size="8" fill="#0f3460">x=6+√5</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ SORU 5: 10.2.3 (2/2) ============ -->
+    <div class="question-block">
+      <div class="question-header">
+        <span class="question-number">Soru 5</span>
+        <span class="question-topic">10.2.3 – Karekök Fonksiyonlar</span>
+        <span class="question-points">10 puan</span>
+      </div>
+      <div class="question-body">
+        <p>Aşağıda grafiği verilen fonksiyon, <span class="math">f(x) = √x</span> referans fonksiyonundan dönüşümlerle elde edilmiştir. Fonksiyonun denklemini <span class="math">g(x) = a·√(x − r) + k</span> formunda yazınız.</p>
+        <!-- Graph GIVEN in the question -->
+        <div class="graph-in-question">
+          <svg width="280" height="220" viewBox="0 0 280 220">
+            <defs>
+              <marker id="a5q" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                <path d="M0,0 L8,3 L0,6" fill="#94a3b8"/>
+              </marker>
+            </defs>
+            <!-- origin (80,120), xscale=25, yscale=25 -->
+            <line x1="10" y1="120" x2="270" y2="120" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#a5q)"/>
+            <line x1="80" y1="210" x2="80" y2="10" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#a5q)"/>
+            <g stroke="#e2e8f0" stroke-width="0.5">
+              <line x1="55" y1="210" x2="55" y2="10"/>
+              <line x1="30" y1="210" x2="30" y2="10"/>
+              <line x1="105" y1="210" x2="105" y2="10"/>
+              <line x1="130" y1="210" x2="130" y2="10"/>
+              <line x1="155" y1="210" x2="155" y2="10"/>
+              <line x1="180" y1="210" x2="180" y2="10"/>
+              <line x1="205" y1="210" x2="205" y2="10"/>
+              <line x1="230" y1="210" x2="230" y2="10"/>
+              <line x1="10" y1="95" x2="270" y2="95"/>
+              <line x1="10" y1="70" x2="270" y2="70"/>
+              <line x1="10" y1="145" x2="270" y2="145"/>
+              <line x1="10" y1="170" x2="270" y2="170"/>
+              <line x1="10" y1="195" x2="270" y2="195"/>
+              <line x1="10" y1="45" x2="270" y2="45"/>
+            </g>
+            <g font-size="9" fill="#64748b" text-anchor="middle">
+              <text x="55" y="134">−1</text>
+              <text x="105" y="134">1</text>
+              <text x="130" y="134">2</text>
+              <text x="155" y="134">3</text>
+              <text x="180" y="134">4</text>
+              <text x="205" y="134">5</text>
+              <text x="230" y="134">6</text>
+            </g>
+            <g font-size="9" fill="#64748b" text-anchor="end">
+              <text x="76" y="98">1</text>
+              <text x="76" y="73">2</text>
+              <text x="76" y="48">3</text>
+              <text x="76" y="148">−1</text>
+              <text x="76" y="173">−2</text>
+              <text x="76" y="198">−3</text>
+            </g>
+            <!-- g(x) = -2√(x-1) + 2 -->
+            <!-- x=1: g=2 → (105,70) -->
+            <!-- x=2: g=-2+2=0 → (130,120) -->
+            <!-- x=3: g=-2√2+2≈-0.83 → (155,141) -->
+            <!-- x=4: g=-2√3+2≈-1.46 → (180,157) -->
+            <!-- x=5: g=-4+2=-2 → (205,170) -->
+            <!-- x=6: g=-2√5+2≈-2.47 → (230,182) -->
+            <polyline points="105,70 110,88 115,98 120,106 125,113 130,120 135,126 140,130 145,134 150,137 155,141 160,144 165,147 170,150 175,154 180,157 190,162 200,166 205,170 215,175 225,179 230,182 240,186"
+              fill="none" stroke="#b91c1c" stroke-width="2.5" stroke-linejoin="round"/>
+            <circle cx="105" cy="70" r="4" fill="#b91c1c"/>
+            <text x="112" y="64" font-size="9" fill="#b91c1c" font-weight="600">(1, 2)</text>
+            <circle cx="205" cy="170" r="3.5" fill="#16213e"/>
+            <text x="212" y="183" font-size="9" fill="#16213e">(5, −2)</text>
+          </svg>
+        </div>
+      </div>
+      <div class="answer-space large"></div>
+      <div class="solution-box">
+        <div class="sol-title">Çözüm 5:</div>
+        <p>Grafikten: Başlangıç noktası (1, 2), yani r = 1 ve k = 2. Grafik aşağı doğru gidiyor → a < 0.</p>
+        <p>(5, −2) noktasından: −2 = a·√(5−1) + 2 ⇒ a·2 = −4 ⇒ a = −2.</p>
+        <p><strong>g(x) = −2√(x − 1) + 2</strong></p>
+      </div>
+    </div>
+
+    <!-- ============ SORU 6: 10.2.4 ============ -->
+    <div class="question-block">
+      <div class="question-header">
+        <span class="question-number">Soru 6</span>
+        <span class="question-topic">10.2.4 – Rasyonel Fonksiyonlar</span>
+        <span class="question-points">10 puan</span>
+      </div>
+      <div class="question-body">
+        <p><span class="math">f(x) = (x² + 2x − 15) / (x² − 9)</span> rasyonel fonksiyonu veriliyor.</p>
+        <div class="sub-parts">
+          <div class="sub-part"><span class="sub-label">a)</span> Fonksiyonun tanım kümesini bulunuz.</div>
+          <div class="sub-part"><span class="sub-label">b)</span> Fonksiyonu sadeleştiriniz. Sadeleştirme sonrası tanım kümesi değişir mi? Açıklayınız.</div>
+          <div class="sub-part"><span class="sub-label">c)</span> <span class="math">f(x) = 2</span> denklemini çözünüz.</div>
+        </div>
+      </div>
+      <div class="answer-space xlarge"></div>
+      <div class="solution-box">
+        <div class="sol-title">Çözüm 6:</div>
+        <p><strong>a)</strong> x²−9 = (x−3)(x+3) ≠ 0 ⇒ x ≠ 3 ve x ≠ −3. Tanım: ℝ \ {−3, 3}.</p>
+        <p><strong>b)</strong> Pay: x²+2x−15 = (x+5)(x−3). Payda: (x+3)(x−3).</p>
+        <p>f(x) = (x+5)(x−3) / [(x+3)(x−3)] = (x+5)/(x+3), x ≠ 3 ve x ≠ −3.</p>
+        <p>Sadeleştirme sonrası ifade (x+5)/(x+3) olur ama tanım kümesi değişmez — hâlâ x ≠ 3 ve x ≠ −3'tür. Çünkü orijinal fonksiyonda her iki noktada da tanımsızdır.</p>
+        <p><strong>c)</strong> (x+5)/(x+3) = 2 ⇒ x+5 = 2(x+3) ⇒ x+5 = 2x+6 ⇒ x = −1. Kontrol: −1 ≠ 3 ve −1 ≠ −3 ✓</p>
+      </div>
+    </div>
+
+    <!-- ============ SORU 7: 10.2.5 (1/2) ============ -->
+    <div class="question-block">
+      <div class="question-header">
+        <span class="question-number">Soru 7</span>
+        <span class="question-topic">10.2.5 – Ters Fonksiyonlar</span>
+        <span class="question-points">15 puan</span>
+      </div>
+      <div class="question-body">
+        <p><span class="math">f(x) = (2x + 3) / (x − 1)</span>, &nbsp; <span class="math">x ≠ 1</span> fonksiyonu veriliyor.</p>
+        <div class="sub-parts">
+          <div class="sub-part"><span class="sub-label">a)</span> <span class="math">f</span> fonksiyonunun tersini bulunuz.</div>
+          <div class="sub-part"><span class="sub-label">b)</span> <span class="math">f(x) = f⁻¹(x)</span> denklemini çözünüz.</div>
+          <div class="sub-part"><span class="sub-label">c)</span> <span class="math">f(f(3))</span> değerini hesaplayınız.</div>
+        </div>
+      </div>
+      <div class="answer-space xlarge"></div>
+      <div class="solution-box">
+        <div class="sol-title">Çözüm 7:</div>
+        <p><strong>a)</strong> y = (2x+3)/(x−1). y(x−1) = 2x+3 ⇒ xy−y = 2x+3 ⇒ xy−2x = y+3 ⇒ x(y−2) = y+3 ⇒ x = (y+3)/(y−2).</p>
+        <p>f⁻¹(x) = (x+3)/(x−2), x ≠ 2.</p>
+        <p><strong>b)</strong> f(x) = f⁻¹(x): (2x+3)/(x−1) = (x+3)/(x−2). Çapraz çarpım: (2x+3)(x−2) = (x+3)(x−1).</p>
+        <p>2x²−4x+3x−6 = x²−x+3x−3 ⇒ 2x²−x−6 = x²+2x−3 ⇒ x²−3x−3 = 0.</p>
+        <p>Δ = 9+12 = 21. x = (3±√21)/2.</p>
+        <p><strong>c)</strong> f(3) = (6+3)/(3−1) = 9/2. f(f(3)) = f(9/2) = (2·9/2+3)/(9/2−1) = (9+3)/(7/2) = 12·2/7 = 24/7.</p>
+        <div class="graph-container">
+          <svg width="320" height="280" viewBox="0 0 320 280">
+            <defs>
+              <marker id="a7" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                <path d="M0,0 L8,3 L0,6" fill="#94a3b8"/>
+              </marker>
+            </defs>
+            <!-- origin (120,160), scale=25 -->
+            <line x1="10" y1="160" x2="310" y2="160" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#a7)"/>
+            <line x1="120" y1="270" x2="120" y2="10" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#a7)"/>
+            <g stroke="#e2e8f0" stroke-width="0.5">
+              <line x1="145" y1="270" x2="145" y2="10"/>
+              <line x1="170" y1="270" x2="170" y2="10"/>
+              <line x1="195" y1="270" x2="195" y2="10"/>
+              <line x1="220" y1="270" x2="220" y2="10"/>
+              <line x1="245" y1="270" x2="245" y2="10"/>
+              <line x1="95" y1="270" x2="95" y2="10"/>
+              <line x1="70" y1="270" x2="70" y2="10"/>
+              <line x1="45" y1="270" x2="45" y2="10"/>
+              <line x1="10" y1="135" x2="310" y2="135"/>
+              <line x1="10" y1="110" x2="310" y2="110"/>
+              <line x1="10" y1="85" x2="310" y2="85"/>
+              <line x1="10" y1="60" x2="310" y2="60"/>
+              <line x1="10" y1="185" x2="310" y2="185"/>
+              <line x1="10" y1="210" x2="310" y2="210"/>
+              <line x1="10" y1="235" x2="310" y2="235"/>
+            </g>
+            <g font-size="9" fill="#64748b" text-anchor="middle">
+              <text x="145" y="175">1</text>
+              <text x="170" y="175">2</text>
+              <text x="195" y="175">3</text>
+              <text x="220" y="175">4</text>
+              <text x="245" y="175">5</text>
+              <text x="95" y="175">−1</text>
+              <text x="70" y="175">−2</text>
+              <text x="45" y="175">−3</text>
+            </g>
+            <g font-size="9" fill="#64748b" text-anchor="end">
+              <text x="116" y="138">1</text>
+              <text x="116" y="113">2</text>
+              <text x="116" y="88">3</text>
+              <text x="116" y="63">4</text>
+              <text x="116" y="188">−1</text>
+              <text x="116" y="213">−2</text>
+              <text x="116" y="238">−3</text>
+            </g>
+            <!-- y=x dashed -->
+            <line x1="30" y1="270" x2="270" y2="30" stroke="#94a3b8" stroke-width="1" stroke-dasharray="5,4"/>
+            <text x="268" y="28" font-size="8" fill="#94a3b8" font-style="italic">y = x</text>
+            <!-- f(x) = (2x+3)/(x-1) — blue -->
+            <!-- x=-3: (−6+3)/(−4) = 3/4 → (45,160-19)=(45,141) -->
+            <!-- x=-2: (−4+3)/(−3) = 1/3 → (70,152) -->
+            <!-- x=-1: (−2+3)/(−2) = −1/2 → (95,173) -->
+            <!-- x=0: 3/(-1)=-3 → (120,235) -->
+            <!-- x=0.5: 4/(-0.5)=-8 → clamp -->
+            <!-- RIGHT of x=1: -->
+            <!-- x=1.5: 6/(0.5)=12 → clamp -->
+            <!-- x=2: 7/1=7 → (170,160-175)=clamp -->
+            <!-- x=3: 9/2=4.5 → (195,47) -->
+            <!-- x=4: 11/3≈3.67 → (220,68) -->
+            <!-- x=5: 13/4=3.25 → (245,79) -->
+            <!-- x=6: 15/5=3 → (270,85) -->
+            <!-- x=7: 17/6≈2.83 → (295,89) -->
+            <!-- Left branch -->
+            <polyline points="20,145 45,141 58,147 70,152 82,160 95,173 105,195 110,210 115,235 117,260"
+              fill="none" stroke="#0f3460" stroke-width="2.5" stroke-linejoin="round"/>
+            <!-- Right branch -->
+            <polyline points="153,270 155,250 158,220 162,180 165,140 168,110 170,85 175,65 180,55 195,47 210,55 220,68 232,76 245,79 258,83 270,85 285,87 300,89"
+              fill="none" stroke="#0f3460" stroke-width="2.5" stroke-linejoin="round"/>
+            <!-- f⁻¹(x) = (x+3)/(x-2) — red -->
+            <!-- Reflect f across y=x -->
+            <!-- x=-3: (-3+3)/(-5)=0 → (45,160) -->
+            <!-- x=-1: 2/(-3)≈-0.67 → (95,177) -->
+            <!-- x=0: 3/(-2)=-1.5 → (120,198) -->
+            <!-- x=0.5: 3.5/(-1.5)≈-2.33 → (132,218) -->
+            <!-- x=1: 4/(-1)=-4 → (145,260) -->
+            <!-- RIGHT of x=2: -->
+            <!-- x=3: 6/1=6 → (195,160-150)=(195,10) -->
+            <!-- x=4: 7/2=3.5 → (220,73) -->
+            <!-- x=4.5: 7.5/2.5=3 → (232,85) -->
+            <!-- x=5: 8/3≈2.67 → (245,93) -->
+            <!-- x=7: 10/5=2 → (295,110) -->
+            <!-- Left branch -->
+            <polyline points="20,157 45,160 70,168 95,177 108,190 120,198 130,215 135,225 140,245 142,260"
+              fill="none" stroke="#b91c1c" stroke-width="2.5" stroke-linejoin="round"/>
+            <!-- Right branch -->
+            <polyline points="178,10 180,20 185,35 190,42 195,50 200,58 210,68 220,73 232,85 245,93 258,100 270,105 285,108 300,110"
+              fill="none" stroke="#b91c1c" stroke-width="2.5" stroke-linejoin="round"/>
+            <text x="260" y="50" font-size="9" fill="#0f3460" font-weight="600">f(x)</text>
+            <text x="260" y="120" font-size="9" fill="#b91c1c" font-weight="600">f⁻¹(x)</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ SORU 8: 10.2.5 (2/2) ============ -->
+    <div class="question-block">
+      <div class="question-header">
+        <span class="question-number">Soru 8</span>
+        <span class="question-topic">10.2.5 – Ters Fonksiyonlar</span>
+        <span class="question-points">15 puan</span>
+      </div>
+      <div class="question-body">
+        <p><span class="math">f(x) = x² − 2x</span> fonksiyonu <span class="math">[1, +∞)</span> aralığında tanımlıdır.</p>
+        <div class="sub-parts">
+          <div class="sub-part"><span class="sub-label">a)</span> Bu kısıtlı tanım kümesinde <span class="math">f</span> fonksiyonunun neden tersinin var olduğunu açıklayınız.</div>
+          <div class="sub-part"><span class="sub-label">b)</span> <span class="math">f⁻¹(x)</span> fonksiyonunu bulunuz. (İpucu: Tam kareye tamamlayınız.)</div>
+          <div class="sub-part"><span class="sub-label">c)</span> <span class="math">f⁻¹(3)</span> değerini hesaplayınız.</div>
+        </div>
+      </div>
+      <div class="answer-space xlarge"></div>
+      <div class="solution-box">
+        <div class="sol-title">Çözüm 8:</div>
+        <p><strong>a)</strong> f(x) = (x−1)²−1. x ≥ 1 olduğunda (x−1) ≥ 0, dolayısıyla f sürekli artan ⇒ bire bir. Görüntü kümesi [−1, +∞) ⇒ örten. Tersi vardır.</p>
+        <p><strong>b)</strong> y = (x−1)²−1 ⇒ y+1 = (x−1)² ⇒ x−1 = √(y+1) (x ≥ 1 olduğundan pozitif kök). x = 1+√(y+1). f⁻¹(x) = 1 + √(x+1), x ≥ −1.</p>
+        <p><strong>c)</strong> f⁻¹(3) = 1 + √(3+1) = 1 + √4 = 1 + 2 = 3. Kontrol: f(3) = 9−6 = 3 ✓</p>
+        <div class="graph-container">
+          <svg width="320" height="260" viewBox="0 0 320 260">
+            <defs>
+              <marker id="a8" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                <path d="M0,0 L8,3 L0,6" fill="#94a3b8"/>
+              </marker>
+            </defs>
+            <!-- origin (100,200), scale=30 -->
+            <line x1="10" y1="200" x2="310" y2="200" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#a8)"/>
+            <line x1="100" y1="250" x2="100" y2="10" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#a8)"/>
+            <g stroke="#e2e8f0" stroke-width="0.5">
+              <line x1="130" y1="250" x2="130" y2="10"/>
+              <line x1="160" y1="250" x2="160" y2="10"/>
+              <line x1="190" y1="250" x2="190" y2="10"/>
+              <line x1="220" y1="250" x2="220" y2="10"/>
+              <line x1="250" y1="250" x2="250" y2="10"/>
+              <line x1="70" y1="250" x2="70" y2="10"/>
+              <line x1="10" y1="170" x2="310" y2="170"/>
+              <line x1="10" y1="140" x2="310" y2="140"/>
+              <line x1="10" y1="110" x2="310" y2="110"/>
+              <line x1="10" y1="80" x2="310" y2="80"/>
+              <line x1="10" y1="50" x2="310" y2="50"/>
+              <line x1="10" y1="230" x2="310" y2="230"/>
+            </g>
+            <g font-size="9" fill="#64748b" text-anchor="middle">
+              <text x="70" y="215">−1</text>
+              <text x="130" y="215">1</text>
+              <text x="160" y="215">2</text>
+              <text x="190" y="215">3</text>
+              <text x="220" y="215">4</text>
+              <text x="250" y="215">5</text>
+            </g>
+            <g font-size="9" fill="#64748b" text-anchor="end">
+              <text x="96" y="174">1</text>
+              <text x="96" y="144">2</text>
+              <text x="96" y="114">3</text>
+              <text x="96" y="84">4</text>
+              <text x="96" y="54">5</text>
+              <text x="96" y="234">−1</text>
+            </g>
+            <!-- y=x -->
+            <line x1="30" y1="270" x2="280" y2="20" stroke="#94a3b8" stroke-width="1" stroke-dasharray="5,4"/>
+            <text x="275" y="18" font-size="8" fill="#94a3b8" font-style="italic">y = x</text>
+            <!-- f(x) = (x-1)²-1 for x≥1: -->
+            <!-- x=1: -1 → (130, 230) -->
+            <!-- x=1.5: 0.25-1=-0.75 → (145, 222) -->
+            <!-- x=2: 1-1=0 → (160, 200) -->
+            <!-- x=2.5: 2.25-1=1.25 → (175, 162) -->
+            <!-- x=3: 4-1=3 → (190, 110) -->
+            <!-- x=3.5: 6.25-1=5.25 → (205, 42) -->
+            <!-- x=4: 9-1=8 → (220, -40) clamp -->
+            <polyline points="130,230 135,226 140,224 145,222 150,214 155,208 160,200 165,190 170,180 175,162 180,140 185,126 190,110 195,90 200,68 205,42 210,18"
+              fill="none" stroke="#0f3460" stroke-width="2.5" stroke-linejoin="round"/>
+            <!-- f⁻¹(x)=1+√(x+1) for x≥-1: reflect -->
+            <!-- x=-1: 1+0=1 → (70, 170) → reflected: (70,170)... -->
+            <!-- Actually: -->
+            <!-- x=-1: f⁻¹=1 → (70, 170) -->
+            <!-- x=0: f⁻¹=1+1=2 → (100, 140) -->
+            <!-- x=1: f⁻¹=1+√2≈2.41 → (130, 128) -->
+            <!-- x=2: f⁻¹=1+√3≈2.73 → (160, 118) -->
+            <!-- x=3: f⁻¹=3 → (190, 110) -->
+            <!-- x=4: f⁻¹=1+√5≈3.24 → (220, 103) -->
+            <!-- x=5: f⁻¹=1+√6≈3.45 → (250, 97) -->
+            <polyline points="70,170 80,160 90,150 100,140 110,135 120,131 130,128 140,123 150,120 160,118 170,115 180,112 190,110 200,107 210,105 220,103 230,101 240,99 250,97 260,95"
+              fill="none" stroke="#b91c1c" stroke-width="2.5" stroke-linejoin="round"/>
+            <!-- Tepe/başlangıç noktaları -->
+            <circle cx="130" cy="230" r="4" fill="#0f3460"/>
+            <text x="138" y="240" font-size="8" fill="#0f3460" font-weight="600">(1, −1)</text>
+            <circle cx="70" cy="170" r="4" fill="#b91c1c"/>
+            <text x="50" y="166" font-size="8" fill="#b91c1c" font-weight="600" text-anchor="end">(−1, 1)</text>
+            <!-- f⁻¹(3)=3 intersection -->
+            <circle cx="190" cy="110" r="5" fill="none" stroke="#166534" stroke-width="2"/>
+            <circle cx="190" cy="110" r="2" fill="#166534"/>
+            <text x="198" y="104" font-size="8" fill="#166534" font-weight="600">(3, 3)</text>
+            <text x="215" y="30" font-size="9" fill="#0f3460" font-weight="600">f(x) = x²−2x</text>
+            <text x="230" y="90" font-size="9" fill="#b91c1c" font-weight="600">f⁻¹(x) = 1+√(x+1)</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<button class="print-btn no-print" onclick="window.print()">🖨️ Yazdır</button>
+<button class="solution-toggle no-print" onclick="toggleSolutions()">📝 Çözümler</button>
+
+<script>
+function toggleSolutions() {
+  document.body.classList.toggle('show-solutions');
+  const btn = document.querySelector('.solution-toggle');
+  btn.textContent = document.body.classList.contains('show-solutions') ? '📝 Çözümleri Gizle' : '📝 Çözümler';
+}
+</script>
+
+</body>
+</html>

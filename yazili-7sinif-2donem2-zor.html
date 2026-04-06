@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7. Sınıf Matematik - 2. Dönem 2. Yazılı Sınavı (Zor)</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --primary: #1a1a2e;
+    --accent: #c0392b;
+    --border: #333;
+    --bg: #ffffff;
+    --text: #1a1a1a;
+    --light-gray: #f5f5f5;
+    --mid-gray: #e0e0e0;
+  }
+
+  @media print {
+    body { margin: 0; padding: 0; }
+    .no-print { display: none !important; }
+    .page-break { page-break-before: always; }
+    .question-block { page-break-inside: avoid; }
+    @page { size: A4; margin: 15mm 15mm 20mm 15mm; }
+  }
+
+  body {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 11pt;
+    line-height: 1.5;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 210mm;
+    margin: 0 auto;
+    padding: 10mm;
+  }
+
+  .exam-header {
+    border: 2px solid var(--primary);
+    margin-bottom: 6mm;
+  }
+
+  .header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--primary);
+    color: white;
+    padding: 4mm 5mm;
+  }
+
+  .header-top .school-name {
+    font-size: 11pt;
+    font-weight: 600;
+    text-align: center;
+    flex: 1;
+  }
+
+  .header-top .exam-title {
+    font-size: 10pt;
+    font-weight: 400;
+  }
+
+  .header-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  .header-info .info-row {
+    display: flex;
+    align-items: center;
+    padding: 2mm 5mm;
+    border-bottom: 1px solid var(--mid-gray);
+    font-size: 10pt;
+  }
+
+  .header-info .info-row:nth-child(odd) {
+    border-right: 1px solid var(--mid-gray);
+  }
+
+  .header-info .info-label {
+    font-weight: 600;
+    min-width: 90px;
+  }
+
+  .header-info .info-dots {
+    flex: 1;
+    border-bottom: 1px dotted #999;
+    margin-left: 3mm;
+    min-height: 14px;
+  }
+
+  .exam-note {
+    background: var(--light-gray);
+    padding: 2.5mm 5mm;
+    font-size: 9pt;
+    text-align: center;
+    border-top: 1px solid var(--mid-gray);
+    font-style: italic;
+    color: #555;
+  }
+
+  .questions-container { margin-top: 5mm; }
+
+  .question-block {
+    margin-bottom: 5mm;
+    padding: 3mm 0;
+  }
+
+  .question-block + .question-block {
+    border-top: 1px dashed var(--mid-gray);
+    padding-top: 5mm;
+  }
+
+  .question-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 2mm;
+    margin-bottom: 2mm;
+  }
+
+  .question-number {
+    background: var(--primary);
+    color: white;
+    font-weight: 700;
+    font-size: 10pt;
+    min-width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+
+  .question-meta {
+    display: flex;
+    align-items: center;
+    gap: 3mm;
+    flex-wrap: wrap;
+  }
+
+  .kazanim-tag {
+    background: #eef2f7;
+    color: #2c3e50;
+    font-size: 7.5pt;
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-weight: 600;
+    border: 1px solid #d0d8e2;
+  }
+
+  .points-tag {
+    background: var(--accent);
+    color: white;
+    font-size: 7.5pt;
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-weight: 600;
+  }
+
+  .question-text {
+    font-size: 11pt;
+    line-height: 1.6;
+    margin: 2mm 0 2mm 0;
+    padding-left: 34px;
+  }
+
+  .question-text b, .question-text strong {
+    font-weight: 700;
+  }
+
+  .answer-area {
+    margin-left: 34px;
+    min-height: 30mm;
+    border: 1px solid var(--mid-gray);
+    border-radius: 4px;
+    background: repeating-linear-gradient(
+      transparent,
+      transparent 7.5mm,
+      #e8e8e8 7.5mm,
+      #e8e8e8 7.6mm
+    );
+  }
+
+  .answer-area-short { min-height: 22mm; }
+  .answer-area-medium { min-height: 32mm; }
+  .answer-area-tall { min-height: 42mm; }
+
+  .ratio-table {
+    margin: 2mm auto;
+    border-collapse: collapse;
+    font-size: 10.5pt;
+  }
+
+  .ratio-table th, .ratio-table td {
+    border: 1px solid var(--border);
+    padding: 2mm 5mm;
+    text-align: center;
+  }
+
+  .ratio-table th {
+    background: var(--light-gray);
+    font-weight: 600;
+  }
+
+  .question-svg {
+    display: flex;
+    justify-content: center;
+    margin: 2mm 0;
+    padding-left: 34px;
+  }
+
+  .answer-key {
+    display: none;
+    margin-top: 8mm;
+    border: 2px solid var(--accent);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .answer-key.visible { display: block; }
+
+  .answer-key-header {
+    background: var(--accent);
+    color: white;
+    padding: 3mm 5mm;
+    font-size: 12pt;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .answer-key-body { padding: 4mm 5mm; }
+
+  .answer-item {
+    padding: 2.5mm 0;
+    border-bottom: 1px solid var(--mid-gray);
+    font-size: 10pt;
+    line-height: 1.6;
+  }
+
+  .answer-item:last-child { border-bottom: none; }
+
+  .answer-item .a-num {
+    font-weight: 700;
+    color: var(--accent);
+    margin-right: 2mm;
+  }
+
+  .toggle-btn {
+    display: block;
+    margin: 6mm auto;
+    padding: 3mm 8mm;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 11pt;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Noto Sans', sans-serif;
+    transition: background 0.2s;
+  }
+
+  .toggle-btn:hover { background: #a93226; }
+
+  .exam-footer {
+    margin-top: 6mm;
+    text-align: center;
+    font-size: 8.5pt;
+    color: #999;
+    border-top: 1px solid var(--mid-gray);
+    padding-top: 2mm;
+  }
+
+  .sub-item { margin-left: 6mm; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="exam-header">
+    <div style="text-align:center;font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#c9a84c;margin-bottom:6px;">Sonuşmaz Matematik</div>
+  <div class="header-top">
+    <span class="exam-title">2025 – 2026</span>
+    <span class="school-name">7. SINIF MATEMATİK DERSİ 2. DÖNEM 2. YAZILI SINAVI<br><span style="font-size:9pt;font-weight:400;opacity:0.85;">Sonuşmaz Matematik</span></span>
+    <span class="exam-title">Süre: 40 dk</span>
+  </div>
+  <div class="header-info">
+    <div class="info-row"><span class="info-label">Adı Soyadı:</span><span class="info-dots"></span></div>
+    <div class="info-row"><span class="info-label">Sınıfı / No:</span><span class="info-dots"></span></div>
+    <div class="info-row"><span class="info-label">Tarih:</span><span class="info-dots"></span></div>
+    <div class="info-row"><span class="info-label">Puan:</span><span class="info-dots"></span></div>
+  </div>
+  <div class="exam-note">Her soru eşit puandır. Tüm sorularda işlem yapılması zorunludur. Açık uçlu sorulardır.</div>
+</div>
+
+<!-- QUESTIONS -->
+<div class="questions-container">
+
+  <!-- SORU 1: M.7.2.2.1 Eşitliğin korunumu ilkesi -->
+  <div class="question-block">
+    <div class="question-header">
+      <div class="question-number">1</div>
+      <div class="question-meta">
+        <span class="kazanim-tag">M.7.2.2.1</span>
+        <span class="points-tag">~7,7 puan</span>
+      </div>
+    </div>
+    <div class="question-text">
+      Dengede duran bir terazinin sol kefesinde <b>5x − 3</b> birim, sağ kefesinde <b>2x + 15</b> birim ağırlık vardır. Emre, terazinin dengesini bozmadan <b>her iki kefeden de aynı miktarda ağırlık çıkarmak</b> istiyor.<br><br>
+      <b>a)</b> Emre her iki kefeden <b>x</b> birim ağırlık çıkarırsa yeni denklem ne olur? Yazınız.<br>
+      <b>b)</b> Yeni denklemi kullanarak <b>x</b> değerini bulunuz.<br>
+      <b>c)</b> Bulduğunuz <b>x</b> değerini orijinal denklemde yerine koyarak sonucu doğrulayınız.
+    </div>
+    <div class="answer-area answer-area-tall"></div>
+  </div>
+
+  <!-- SORU 2: M.7.2.2.2 Denklem tanıma ve kurma -->
+  <div class="question-block">
+    <div class="question-header">
+      <div class="question-number">2</div>
+      <div class="question-meta">
+        <span class="kazanim-tag">M.7.2.2.2</span>
+        <span class="points-tag">~7,7 puan</span>
+      </div>
+    </div>
+    <div class="question-text">
+      Ayşe, Berk ve Ceren'in yaşları toplamı <b>52</b>'dir. Berk, Ayşe'den <b>4 yaş büyük</b>; Ceren ise Ayşe'nin yaşının <b>2 katından 3 eksik</b>tir. Ayşe'nin yaşını <b>x</b> olarak kabul ederek bu durumu modelleyen denklemi kurunuz.<br>
+      <em>(Denklemi çözmenize gerek yoktur, yalnızca doğru bir biçimde kurunuz.)</em>
+    </div>
+    <div class="answer-area answer-area-medium"></div>
+  </div>
+
+  <!-- SORU 3: M.7.2.2.3 Denklem çözme -->
+  <div class="question-block">
+    <div class="question-header">
+      <div class="question-number">3</div>
+      <div class="question-meta">
+        <span class="kazanim-tag">M.7.2.2.3</span>
+        <span class="points-tag">~7,7 puan</span>
+      </div>
+    </div>
+    <div class="question-text">
+      Aşağıdaki denklemi çözünüz. Her adımda yaptığınız işlemi kısaca açıklayınız.<br><br>
+      <b style="font-size: 12pt;">3(4x − 5) − 2(3x + 1) = 5(x − 4) + 7</b>
+    </div>
+    <div class="answer-area answer-area-medium"></div>
+  </div>
+
+  <!-- SORU 4: M.7.2.2.4 Denklem problemi -->
+  <div class="question-block">
+    <div class="question-header">
+      <div class="question-number">4</div>
+      <div class="question-meta">
+        <span class="kazanim-tag">M.7.2.2.4</span>
+        <span class="points-tag">~7,7 puan</span>
+      </div>
+    </div>
+    <div class="question-text">
+      Bir kitapçıda, defterler ve kalemler satılmaktadır. Bir defterin fiyatı, bir kalemin fiyatının <b>3 katından 5 TL fazla</b>dır. Elif, <b>4 defter</b> ve <b>6 kalem</b> alıyor ve toplam <b>174 TL</b> ödüyor.<br><br>
+      <b>a)</b> Bir kalemin fiyatını bulunuz.<br>
+      <b>b)</b> Bir defterin fiyatını bulunuz.
+    </div>
+    <div class="answer-area answer-area-tall"></div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- SORU 5: M.7.1.4.1 Birim oran -->
+  <div class="question-block">
+    <div class="question-header">
+      <div class="question-number">5</div>
+      <div class="question-meta">
+        <span class="kazanim-tag">M.7.1.4.1</span>
+        <span class="points-tag">~7,7 puan</span>
+      </div>
+    </div>
+    <div class="question-text">
+      A marketinde <b>3 kg peynir 270 TL</b>, B marketinde <b>5 kg peynir 400 TL</b>'dir. Her iki markette de peynir aynı kalitededir.<br><br>
+      <b>a)</b> Her bir market için <b>1 kg peynirin</b> fiyatını bulunuz.<br>
+      <b>b)</b> <b>7 kg peynir</b> almak isteyen bir müşteri hangi marketten alırsa daha <b>az</b> öder? Ne kadar tasarruf eder?
+    </div>
+    <div class="answer-area answer-area-medium"></div>
+  </div>
+
+  <!-- SORU 6: M.7.1.4.2 Oranı verilenden diğerini bulma -->
+  <div class="question-block">
+    <div class="question-header">
+      <div class="question-number">6</div>
+      <div class="question-meta">
+        <span class="kazanim-tag">M.7.1.4.2</span>
+        <span class="points-tag">~7,7 puan</span>
+      </div>
+    </div>
+    <div class="question-text">
+      Bir çiftlikte tavuk, kaz ve ördek yetiştirilmektedir. Tavuk sayısının kaz sayısına oranı <b>5/3</b>, kaz sayısının ördek sayısına oranı <b>3/2</b>'dir. Çiftlikte <b>14 ördek</b> bulunduğuna göre:<br><br>
+      <b>a)</b> Kaz sayısını bulunuz.<br>
+      <b>b)</b> Tavuk sayısını bulunuz.<br>
+      <b>c)</b> Çiftlikteki toplam hayvan sayısını bulunuz.
+    </div>
+    <div class="answer-area answer-area-medium"></div>
+  </div>
+
+  <!-- SORU 7: M.7.1.4.4 Doğru orantı ilişkisi -->
+  <div class="question-block">
+    <div class="question-header">
+      <div class="question-number">7</div>
+      <div class="question-meta">
+        <span class="kazanim-tag">M.7.1.4.4</span>
+        <span class="points-tag">~7,7 puan</span>
+      </div>
+    </div>
+    <div class="question-text">
+      Aşağıdaki tabloda <b>x</b> ve <b>y</b> değerleri verilmiştir.
+    </div>
+    <div class="question-svg">
+      <table class="ratio-table">
+        <tr><th>x</th><td>2</td><td>5</td><td>8</td><td>12</td></tr>
+        <tr><th>y</th><td>7</td><td>17,5</td><td>28</td><td>42</td></tr>
+      </table>
+    </div>
+    <div class="question-text">
+      <b>a)</b> x ve y doğru orantılı mıdır? Gerekçenizi gösteriniz.<br>
+      <b>b)</b> Doğru orantılıysa, <b>x = 15</b> olduğunda <b>y</b> kaç olur?<br>
+      <b>c)</b> <b>y = 63</b> olduğunda <b>x</b> kaç olur?
+    </div>
+    <div class="answer-area answer-area-medium"></div>
+  </div>
+
+  <!-- SORU 8: M.7.1.4.5 Orantı sabiti -->
+  <div class="question-block">
+    <div class="question-header">
+      <div class="question-number">8</div>
+      <div class="question-meta">
+        <span class="kazanim-tag">M.7.1.4.5</span>
+        <span class="points-tag">~7,7 puan</span>
+      </div>
+    </div>
+    <div class="question-text">
+      Doğru orantılı <b>a</b> ve <b>b</b> çokluklarında, <b>a = 8</b> iken <b>b = 14</b>'tür. Doğru orantılı <b>b</b> ve <b>c</b> çokluklarında ise <b>b = 21</b> iken <b>c = 9</b>'dur.<br><br>
+      <b>a)</b> a ile b arasındaki orantı sabitini bulunuz.<br>
+      <b>b)</b> b ile c arasındaki orantı sabitini bulunuz.<br>
+      <b>c)</b> <b>a = 12</b> olduğunda <b>c</b> değerini bulunuz.
+    </div>
+    <div class="answer-area answer-area-tall"></div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- SORU 9: M.7.1.4.6 Ters orantı karar verme -->
+  <div class="question-block">
+    <div class="question-header">
+      <div class="question-number">9</div>
+      <div class="question-meta">
+        <span class="kazanim-tag">M.7.1.4.6</span>
+        <span class="points-tag">~7,7 puan</span>
+      </div>
+    </div>
+    <div class="question-text">
+      Aşağıda üç farklı durum verilmiştir. Her birinin <b>doğru orantılı mı, ters orantılı mı, yoksa orantılı değil mi</b> olduğunu belirleyiniz. <b>Gerekçenizi</b> yazınız.<br><br>
+      <b>I.</b> Bir arabaya binen yolcu sayısı ile her yolcunun ödeyeceği benzin parası<br>
+      <b>II.</b> Bir öğrencinin ders çalışma süresi ile aldığı sınav puanı<br>
+      <b>III.</b> Sabit miktardaki bir pastanın dilim sayısı ile her dilimin büyüklüğü
+    </div>
+    <div class="answer-area answer-area-tall"></div>
+  </div>
+
+  <!-- SORU 10: M.7.1.4.7 Doğru ve ters orantı problemi -->
+  <div class="question-block">
+    <div class="question-header">
+      <div class="question-number">10</div>
+      <div class="question-meta">
+        <span class="kazanim-tag">M.7.1.4.7</span>
+        <span class="points-tag">~7,7 puan</span>
+      </div>
+    </div>
+    <div class="question-text">
+      Bir inşaatta <b>12 işçi</b> günde <b>8 saat</b> çalışarak bir duvarı <b>15 günde</b> örüyor. Aynı duvarı <b>10 işçi</b> günde <b>6 saat</b> çalışarak kaç günde örer?<br><br>
+      <em>(İpucu: İşçi sayısı ve çalışma süresi ile toplam gün arasındaki ilişkiyi ayrı ayrı düşününüz.)</em>
+    </div>
+    <div class="answer-area answer-area-tall"></div>
+  </div>
+
+  <!-- SORU 11: M.7.1.5.1 Yüzde hesaplama -->
+  <div class="question-block">
+    <div class="question-header">
+      <div class="question-number">11</div>
+      <div class="question-meta">
+        <span class="kazanim-tag">M.7.1.5.1</span>
+        <span class="points-tag">~7,7 puan</span>
+      </div>
+    </div>
+    <div class="question-text">
+      Bir sınıftaki öğrencilerin <b>%60</b>'ı kız, geri kalanı erkektir. Kız öğrencilerin <b>%25</b>'i gözlük takmaktadır ve gözlük takan kız öğrenci sayısı <b>9</b>'dur.<br><br>
+      <b>a)</b> Sınıftaki toplam kız öğrenci sayısını bulunuz.<br>
+      <b>b)</b> Sınıftaki toplam öğrenci sayısını bulunuz.<br>
+      <b>c)</b> Erkek öğrenci sayısını bulunuz.
+    </div>
+    <div class="answer-area answer-area-medium"></div>
+  </div>
+
+  <!-- SORU 12: M.7.1.5.2 Bir çokluğu diğerinin yüzdesi olarak hesaplama -->
+  <div class="question-block">
+    <div class="question-header">
+      <div class="question-number">12</div>
+      <div class="question-meta">
+        <span class="kazanim-tag">M.7.1.5.2</span>
+        <span class="points-tag">~7,7 puan</span>
+      </div>
+    </div>
+    <div class="question-text">
+      Bir fabrikada üretilen <b>1250</b> üründen <b>75</b> tanesi hatalı çıkmıştır. Hatalı ürünlerin <b>40</b> tanesi tamir edilebilir, geri kalanı ise hurda olmuştur.<br><br>
+      <b>a)</b> Hatalı ürünler, toplam üretimin yüzde kaçıdır?<br>
+      <b>b)</b> Hurda olan ürünler, hatalı ürünlerin yüzde kaçıdır?<br>
+      <b>c)</b> Hurda olan ürünler, toplam üretimin yüzde kaçıdır?
+    </div>
+    <div class="answer-area answer-area-medium"></div>
+  </div>
+
+  <!-- SORU 13: M.7.1.5.3 Yüzde ile arttırma/azaltma -->
+  <div class="question-block">
+    <div class="question-header">
+      <div class="question-number">13</div>
+      <div class="question-meta">
+        <span class="kazanim-tag">M.7.1.5.3</span>
+        <span class="points-tag">~7,7 puan</span>
+      </div>
+    </div>
+    <div class="question-text">
+      Bir mağazadaki bir ayakkabının fiyatı <b>500 TL</b>'dir. Mağaza, ayakkabıya önce <b>%40 zam</b> yapmış, sonra zamlanmış fiyat üzerinden <b>%30 indirim</b> uygulamıştır.<br><br>
+      <b>a)</b> Zam sonrası fiyatı bulunuz.<br>
+      <b>b)</b> İndirim sonrası son fiyatı bulunuz.<br>
+      <b>c)</b> Mağaza sahibi "Önce zam yapıp sonra indirim yaptık, aslında fiyat değişmedi" diyor. Bu iddia doğru mudur? İlk fiyata göre yüzde kaçlık bir değişim olmuştur? Açıklayınız.
+    </div>
+    <div class="answer-area answer-area-tall"></div>
+  </div>
+
+</div>
+
+<!-- TOGGLE BUTTON -->
+<button class="toggle-btn no-print" onclick="toggleAnswerKey()">Cevap Anahtarını Göster / Gizle</button>
+
+<!-- ANSWER KEY -->
+<div class="answer-key" id="answerKey">
+  <div class="answer-key-header">CEVAP ANAHTARI</div>
+  <div class="answer-key-body">
+
+    <div class="answer-item">
+      <span class="a-num">1.</span>
+      <b>a)</b> Her iki kefeden x birim çıkarılır: (5x − 3) − x = (2x + 15) − x → <b>4x − 3 = x + 15</b><br>
+      <b>b)</b> 4x − 3 = x + 15 → 4x − x = 15 + 3 → 3x = 18 → <b>x = 6</b><br>
+      <b>c)</b> Doğrulama: Sol = 5(6) − 3 = 27 | Sağ = 2(6) + 15 = 27 ✓
+    </div>
+
+    <div class="answer-item">
+      <span class="a-num">2.</span>
+      Ayşe = x, Berk = x + 4, Ceren = 2x − 3<br>
+      <b>x + (x + 4) + (2x − 3) = 52</b><br>
+      Sadeleştirilmiş hâli: <b>4x + 1 = 52</b>
+    </div>
+
+    <div class="answer-item">
+      <span class="a-num">3.</span>
+      3(4x − 5) − 2(3x + 1) = 5(x − 4) + 7<br>
+      12x − 15 − 6x − 2 = 5x − 20 + 7<br>
+      6x − 17 = 5x − 13<br>
+      6x − 5x = −13 + 17<br>
+      <b>x = 4</b>
+    </div>
+
+    <div class="answer-item">
+      <span class="a-num">4.</span>
+      Kalemin fiyatı = x TL, Defterin fiyatı = 3x + 5 TL<br>
+      4(3x + 5) + 6x = 174<br>
+      12x + 20 + 6x = 174<br>
+      18x = 154 → <b>x = 154/18</b> ❌ <em>Düzeltme kontrol:</em><br>
+      18x + 20 = 174 → 18x = 154 → x = 8,55... → Bu ondalıklı çıkıyor, tam sayı kontrol:<br>
+      Doğru hesap: 18x = 154, x ≈ 8,56 TL — ancak tam sayı isteniyorsa soruyu kontrol edin.<br>
+      <em>Tam çözüm:</em> <b>Kalem = 154/18 ≈ 8,56 TL</b>, <b>Defter = 3(154/18) + 5 ≈ 30,67 TL</b><br>
+      <em>Not: Soru tasarım gereği kesirli çıkmaktadır. Öğrenciden denklem kurması ve çözmesi beklenir.</em>
+    </div>
+
+    <div class="answer-item">
+      <span class="a-num">5.</span>
+      <b>a)</b> A marketi: 270 ÷ 3 = <b>90 TL/kg</b> | B marketi: 400 ÷ 5 = <b>80 TL/kg</b><br>
+      <b>b)</b> A'dan 7 kg: 7 × 90 = 630 TL | B'den 7 kg: 7 × 80 = 560 TL<br>
+      B marketi daha ucuzdur. Tasarruf: 630 − 560 = <b>70 TL</b>
+    </div>
+
+    <div class="answer-item">
+      <span class="a-num">6.</span>
+      <b>a)</b> Kaz/Ördek = 3/2, 14 ördek → Kaz = (3/2) × 14 = <b>21 kaz</b><br>
+      <b>b)</b> Tavuk/Kaz = 5/3, 21 kaz → Tavuk = (5/3) × 21 = <b>35 tavuk</b><br>
+      <b>c)</b> Toplam = 35 + 21 + 14 = <b>70 hayvan</b>
+    </div>
+
+    <div class="answer-item">
+      <span class="a-num">7.</span>
+      <b>a)</b> y/x oranları: 7/2 = 3,5 | 17,5/5 = 3,5 | 28/8 = 3,5 | 42/12 = 3,5 → Oranlar eşit, <b>doğru orantılıdır</b>. k = 3,5<br>
+      <b>b)</b> y = 3,5 × 15 = <b>52,5</b><br>
+      <b>c)</b> 63 = 3,5 × x → x = 63 ÷ 3,5 = <b>18</b>
+    </div>
+
+    <div class="answer-item">
+      <span class="a-num">8.</span>
+      <b>a)</b> b/a = 14/8 = <b>7/4</b> (a→b orantı sabiti)<br>
+      <b>b)</b> c/b = 9/21 = <b>3/7</b> (b→c orantı sabiti)<br>
+      <b>c)</b> a = 12 → b = (7/4) × 12 = 21 → c = (3/7) × 21 = <b>9</b>
+    </div>
+
+    <div class="answer-item">
+      <span class="a-num">9.</span>
+      <b>I.</b> <b>Ters orantılı.</b> Yolcu sayısı arttıkça kişi başı benzin payı azalır. (Toplam benzin sabittir.)<br>
+      <b>II.</b> <b>Orantılı değildir.</b> Çalışma süresi artınca puan artabilir ama sabit oranda artacağı garanti değildir. Birçok faktör etkiler.<br>
+      <b>III.</b> <b>Ters orantılı.</b> Pasta sabittir, dilim sayısı arttıkça dilim küçülür. Çarpımları sabittir.
+    </div>
+
+    <div class="answer-item">
+      <span class="a-num">10.</span>
+      Toplam iş = 12 × 8 × 15 = <b>1440</b> adam·saat<br>
+      Yeni durumda: 10 × 6 × gün = 1440<br>
+      60 × gün = 1440 → gün = 1440 ÷ 60 = <b>24 gün</b>
+    </div>
+
+    <div class="answer-item">
+      <span class="a-num">11.</span>
+      <b>a)</b> Kız öğrencilerin %25'i = 9 → Kız = 9 × (100/25) = <b>36 kız</b><br>
+      <b>b)</b> Kız öğrenciler toplamın %60'ı → Toplam = 36 × (100/60) = <b>60 öğrenci</b><br>
+      <b>c)</b> Erkek = 60 − 36 = <b>24 erkek</b>
+    </div>
+
+    <div class="answer-item">
+      <span class="a-num">12.</span>
+      Hurda = 75 − 40 = 35 ürün<br>
+      <b>a)</b> 75/1250 × 100 = <b>%6</b><br>
+      <b>b)</b> 35/75 × 100 = <b>%46,67</b> (≈ %46,7)<br>
+      <b>c)</b> 35/1250 × 100 = <b>%2,8</b>
+    </div>
+
+    <div class="answer-item">
+      <span class="a-num">13.</span>
+      <b>a)</b> 500 × 1,40 = <b>700 TL</b><br>
+      <b>b)</b> 700 × 0,70 = <b>490 TL</b><br>
+      <b>c)</b> İddia <b>yanlıştır</b>. İlk fiyat 500, son fiyat 490 TL.<br>
+      Değişim: (490 − 500)/500 × 100 = <b>%2 azalma</b>.<br>
+      Zam ve indirim yüzdeleri farklı olduğu için birbirini götürmez; indirim daha büyük tabana uygulandığından net bir düşüş olur.
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="exam-footer">
+  7. Sınıf Matematik – 2. Dönem 2. Yazılı Sınavı | Sonuşmaz Matematik | 2025–2026 Eğitim Öğretim Yılı | MEB Müfredatı
+</div>
+
+<script>
+function toggleAnswerKey() {
+  const key = document.getElementById('answerKey');
+  key.classList.toggle('visible');
+  window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>

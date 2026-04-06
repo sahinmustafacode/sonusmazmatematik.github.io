@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>9. Sınıf - Eşlik ve Benzerlik Yazılı Sınavı</title>
+<style>
+  @page { size: A4; margin: 12mm 14mm 14mm 14mm; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Times New Roman', 'Cambria', serif;
+    font-size: 11.5pt; line-height: 1.45; color: #1a1a1a; background: #fff;
+  }
+  .page {
+    width: 210mm; min-height: 297mm; margin: 0 auto;
+    padding: 10mm 14mm 14mm 14mm; position: relative;
+    page-break-after: always;
+  }
+  .page:last-of-type { page-break-after: avoid; }
+  .exam-header {
+    border: 2px solid #222; border-radius: 4px;
+    display: grid; grid-template-columns: 1fr 2fr 1fr; margin-bottom: 5mm;
+  }
+  .exam-header > div {
+    padding: 5px 8px; display: flex; flex-direction: column;
+    justify-content: center; align-items: center; text-align: center; font-size: 10pt;
+  }
+  .exam-header > div:not(:last-child) { border-right: 2px solid #222; }
+  .exam-header .center-col h2 { font-size: 12.5pt; letter-spacing: 0.4px; }
+  .exam-header .center-col p { font-size: 9.5pt; margin-top: 2px; }
+  .student-info {
+    display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 0;
+    border: 1.5px solid #333; border-radius: 3px; margin-bottom: 4mm; font-size: 10pt;
+  }
+  .student-info div { padding: 4px 8px; border-right: 1px solid #999; }
+  .student-info div:last-child { border-right: none; }
+  .student-info span { font-weight: bold; }
+  .student-info .line { display: inline-block; border-bottom: 1px dotted #555; width: 75%; margin-left: 4px; }
+  .instructions {
+    background: #f4f4f4; border: 1px solid #ccc; border-radius: 3px;
+    padding: 4px 10px; margin-bottom: 4mm; font-size: 9pt; color: #333;
+  }
+  .question-block { margin-bottom: 4.5mm; page-break-inside: avoid; }
+  .question-block h3 { font-size: 11pt; margin-bottom: 2px; color: #111; }
+  .question-text { font-size: 11pt; margin-bottom: 3px; }
+  .sub-parts { margin-left: 5mm; font-size: 10.5pt; }
+  .sub-parts p { margin-bottom: 2px; }
+  .points {
+    float: right; font-size: 9pt; font-weight: bold; color: #444;
+    background: #eee; padding: 1px 6px; border-radius: 3px;
+  }
+  .work-area {
+    border: 1px dashed #bbb; border-radius: 3px; min-height: 18mm;
+    margin: 3px 0; position: relative;
+  }
+  .work-area::after {
+    content: "Çözüm alanı"; position: absolute; top: 2px; right: 6px;
+    font-size: 7.5pt; color: #bbb; font-style: italic;
+  }
+  .work-area.large { min-height: 28mm; }
+  .work-area.xlarge { min-height: 40mm; }
+  svg { display: block; margin: 4px auto; }
+  svg text { font-family: 'Times New Roman', serif; }
+  .section-title {
+    background: #1b3a5c; color: #fff; padding: 3px 10px;
+    font-size: 10.5pt; font-weight: bold; border-radius: 3px;
+    margin: 4mm 0 3mm 0; letter-spacing: 0.3px;
+  }
+  .answer-key-page { width: 210mm; margin: 0 auto; padding: 12mm 14mm; }
+  .answer-key-page h2 {
+    text-align: center; font-size: 14pt; margin-bottom: 5mm;
+    border-bottom: 2px solid #1b3a5c; padding-bottom: 3mm; color: #1b3a5c;
+  }
+  .ak-item { margin-bottom: 4mm; padding: 3px 0; border-bottom: 1px dotted #ddd; font-size: 10.5pt; }
+  .ak-item strong { color: #1b3a5c; }
+  .ak-detail { margin-left: 5mm; font-size: 10pt; color: #333; line-height: 1.5; }
+  .toggle-btn {
+    position: fixed; bottom: 15px; right: 15px; background: #1b3a5c; color: #fff;
+    border: none; padding: 10px 18px; border-radius: 30px; cursor: pointer;
+    font-size: 12pt; box-shadow: 0 2px 10px rgba(0,0,0,0.3); z-index: 999;
+  }
+  .toggle-btn:hover { background: #142d47; }
+  #answerKey { display: none; }
+  @media print {
+    .toggle-btn { display: none !important; }
+    #answerKey { display: none !important; }
+    body { background: white; }
+    .page { margin: 0; padding: 8mm 12mm 12mm 12mm; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== SAYFA 1 ==================== -->
+<div class="page">
+
+  <div class="exam-header">
+    <div style="text-align:center;font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#c9a84c;margin-bottom:6px;">Sonuşmaz Matematik</div>
+    <div><strong>2025–2026</strong><span>Eğitim-Öğretim Yılı</span></div>
+    <div class="center-col">
+      <h2>9. SINIF MATEMATİK DERSİ</h2>
+      <p>Eşlik ve Benzerlik – Konu Sınavı</p>
+    </div>
+    <div><strong>Süre: 40 dk</strong><span>Toplam: 100 puan</span></div>
+  </div>
+
+  <div class="student-info">
+    <div><span>Adı Soyadı:</span><span class="line">&nbsp;</span></div>
+    <div><span>Sınıfı:</span><span class="line">&nbsp;</span></div>
+    <div><span>No:</span><span class="line">&nbsp;</span></div>
+    <div><span>Puan:</span><span class="line">&nbsp;</span></div>
+  </div>
+
+  <div class="instructions">
+    ● Sınav 10 sorudan oluşmaktadır. ● Her sorunun puanı yanında belirtilmiştir. ● Tüm çözüm adımlarını gösteriniz.
+  </div>
+
+  <div class="section-title">KISIM A – Üçgenlerde Eşlik (30 puan)</div>
+
+  <!-- ========== SORU 1 ========== -->
+  <div class="question-block">
+    <h3>Soru 1 <span class="points">10 puan</span></h3>
+    <p class="question-text">Aşağıdaki şekilde [AC] ve [BD] birbirini E noktasında ortalar (|AE| = |EC|, |BE| = |ED|).</p>
+    <svg width="340" height="180" viewBox="0 0 340 180">
+      <!-- A(30,30) C(270,150) → E orta=(150,90) -->
+      <!-- B(290,30) D(10,150) → E orta=(150,90) ✓ -->
+      <polygon points="30,30 290,30 270,150 10,150" fill="none" stroke="#222" stroke-width="1.5"/>
+      <line x1="30" y1="30" x2="270" y2="150" stroke="#1b3a5c" stroke-width="1.3"/>
+      <line x1="290" y1="30" x2="10" y2="150" stroke="#1b3a5c" stroke-width="1.3"/>
+      <circle cx="150" cy="90" r="3.5" fill="#c00"/>
+      <text x="18" y="24" font-size="13" font-weight="bold">A</text>
+      <text x="294" y="24" font-size="13" font-weight="bold">B</text>
+      <text x="274" y="168" font-size="13" font-weight="bold">C</text>
+      <text x="0" y="168" font-size="13" font-weight="bold">D</text>
+      <text x="155" y="84" font-size="12" font-weight="bold" fill="#c00">E</text>
+      <!-- AE=EC çift çizgi: AE ortası=(90,60), EC ortası=(210,120) -->
+      <line x1="86" y1="56" x2="93" y2="63" stroke="#c00" stroke-width="1.8"/>
+      <line x1="90" y1="56" x2="97" y2="63" stroke="#c00" stroke-width="1.8"/>
+      <line x1="206" y1="116" x2="213" y2="123" stroke="#c00" stroke-width="1.8"/>
+      <line x1="210" y1="116" x2="217" y2="123" stroke="#c00" stroke-width="1.8"/>
+      <!-- BE=ED tek çizgi: BE ortası=(220,60), ED ortası=(80,120) -->
+      <line x1="218" y1="56" x2="212" y2="65" stroke="#07a" stroke-width="1.8"/>
+      <line x1="78" y1="116" x2="72" y2="125" stroke="#07a" stroke-width="1.8"/>
+    </svg>
+    <div class="sub-parts">
+      <p><b>a)</b> △AEB ≅ △CED olduğunu uygun eşlik koşulunu belirterek ispatlayanız. <i>(6p)</i></p>
+      <p><b>b)</b> Bu eşlikten |AB| = |CD| ve AB // CD olduğunu çıkarınız. <i>(4p)</i></p>
+    </div>
+    <div class="work-area large"></div>
+  </div>
+
+  <!-- ========== SORU 2 ========== -->
+  <div class="question-block">
+    <h3>Soru 2 <span class="points">10 puan</span></h3>
+    <p class="question-text">Aşağıdaki şekilde |AB| = |AC|, [AD] açıortay ve D ∈ [BC]'dir.</p>
+    <svg width="280" height="180" viewBox="0 0 280 180">
+      <!-- A(140,15) B(30,165) C(250,165) D(140,165) -->
+      <polygon points="140,15 30,165 250,165" fill="none" stroke="#222" stroke-width="1.8"/>
+      <line x1="140" y1="15" x2="140" y2="165" stroke="#c00" stroke-width="1.3" stroke-dasharray="6,3"/>
+      <text x="133" y="10" font-size="13" font-weight="bold">A</text>
+      <text x="10" y="175" font-size="13" font-weight="bold">B</text>
+      <text x="254" y="175" font-size="13" font-weight="bold">C</text>
+      <text x="144" y="178" font-size="12" font-weight="bold" fill="#c00">D</text>
+      <!-- AB=AC: AB ortası=(85,90), AC ortası=(195,90) -->
+      <line x1="80" y1="85" x2="87" y2="93" stroke="#07a" stroke-width="1.8"/>
+      <line x1="84" y1="85" x2="91" y2="93" stroke="#07a" stroke-width="1.8"/>
+      <line x1="193" y1="85" x2="186" y2="93" stroke="#07a" stroke-width="1.8"/>
+      <line x1="189" y1="85" x2="182" y2="93" stroke="#07a" stroke-width="1.8"/>
+      <!-- Açıortay yayı -->
+      <path d="M128,32 Q140,45 152,32" fill="none" stroke="#c00" stroke-width="1.2"/>
+      <!-- Dik açı D'de -->
+      <polyline points="132,165 132,157 140,157" fill="none" stroke="#555" stroke-width="1.2"/>
+    </svg>
+    <div class="sub-parts">
+      <p><b>a)</b> △ABD ≅ △ACD olduğunu ispatlayanız (eşlik koşulunu belirtiniz). <i>(5p)</i></p>
+      <p><b>b)</b> Bu eşlikten [AD] ⊥ [BC] ve |BD| = |DC| olduğunu gösteriniz. <i>(3p)</i></p>
+      <p><b>c)</b> "İkizkenar üçgende açıortay aynı zamanda kenarortay ve yüksekliktir" genellemesini yapınız. <i>(2p)</i></p>
+    </div>
+    <div class="work-area"></div>
+  </div>
+
+  <!-- ========== SORU 3 ========== -->
+  <div class="question-block">
+    <h3>Soru 3 <span class="points">10 puan</span></h3>
+    <p class="question-text">Aşağıdaki şekilde M, [AB]'nin orta noktasıdır. |CM| = |DM|, |AM| = |MB| ve ∠CMA = ∠DMB'dir.</p>
+    <svg width="320" height="160" viewBox="0 0 320 160">
+      <!-- A(30,100) B(290,100) M(160,100) C(80,20) D(240,20) -->
+      <line x1="30" y1="100" x2="290" y2="100" stroke="#222" stroke-width="1.8"/>
+      <circle cx="160" cy="100" r="3.5" fill="#c00"/>
+      <line x1="30" y1="100" x2="80" y2="20" stroke="#1b3a5c" stroke-width="1.3"/>
+      <line x1="160" y1="100" x2="80" y2="20" stroke="#1b3a5c" stroke-width="1.3"/>
+      <line x1="290" y1="100" x2="240" y2="20" stroke="#1b3a5c" stroke-width="1.3"/>
+      <line x1="160" y1="100" x2="240" y2="20" stroke="#1b3a5c" stroke-width="1.3"/>
+      <text x="14" y="108" font-size="13" font-weight="bold">A</text>
+      <text x="292" y="108" font-size="13" font-weight="bold">B</text>
+      <text x="152" y="118" font-size="12" font-weight="bold" fill="#c00">M</text>
+      <text x="65" y="15" font-size="13" font-weight="bold">C</text>
+      <text x="244" y="15" font-size="13" font-weight="bold">D</text>
+      <!-- CM=DM: CM ortası=(120,60), DM ortası=(200,60) -->
+      <line x1="116" y1="56" x2="122" y2="64" stroke="#c00" stroke-width="1.8"/>
+      <line x1="200" y1="56" x2="194" y2="64" stroke="#c00" stroke-width="1.8"/>
+      <!-- AM=MB: AM ortası=(95,100), MB ortası=(225,100) -->
+      <line x1="90" y1="94" x2="90" y2="106" stroke="#07a" stroke-width="1.5"/>
+      <line x1="94" y1="94" x2="94" y2="106" stroke="#07a" stroke-width="1.5"/>
+      <line x1="220" y1="94" x2="220" y2="106" stroke="#07a" stroke-width="1.5"/>
+      <line x1="224" y1="94" x2="224" y2="106" stroke="#07a" stroke-width="1.5"/>
+    </svg>
+    <div class="sub-parts">
+      <p><b>a)</b> △CMA ≅ △DMB olduğunu ispatlayanız. <i>(5p)</i></p>
+      <p><b>b)</b> Bu eşlikten |AC| = |BD| ve ∠CAM = ∠DBM olduğu sonucunu çıkarınız. <i>(3p)</i></p>
+      <p><b>c)</b> AC // BD olduğunu gösterebilir misiniz? Açıklayınız. <i>(2p)</i></p>
+    </div>
+    <div class="work-area"></div>
+  </div>
+
+</div>
+
+<!-- ==================== SAYFA 2 ==================== -->
+<div style="text-align:right;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#c9a84c;margin-bottom:8px;border-bottom:1px solid #e0d8c8;padding-bottom:6px;">Sonuşmaz Matematik</div>
+<div class="page">
+
+  <div class="section-title">KISIM B – Üçgenlerde Benzerlik ve Tales (35 puan)</div>
+
+  <!-- ========== SORU 4 ========== -->
+  <div class="question-block">
+    <h3>Soru 4 <span class="points">10 puan</span></h3>
+    <p class="question-text">Aşağıdaki şekilde DE // FG // BC olup |AD| = 3, |DF| = 2, |FB| = 5 cm ve |DE| = 6 cm'dir.</p>
+    <svg width="360" height="220" viewBox="0 0 360 220">
+      <!-- A(180,10) B(20,210) C(340,210) AB=10 birim -->
+      <!-- D: t=3/10 → D=(180+3/10*(20-180), 10+3/10*200)=(132,70) -->
+      <!-- E: t=3/10 → E=(180+3/10*(340-180), 10+3/10*200)=(228,70) -->
+      <!-- F: t=5/10 → F=(180+5/10*(20-180), 10+5/10*200)=(100,110) -->
+      <!-- G: t=5/10 → G=(180+5/10*(340-180), 10+5/10*200)=(260,110) -->
+      <polygon points="180,10 20,210 340,210" fill="none" stroke="#222" stroke-width="1.8"/>
+      <line x1="132" y1="70" x2="228" y2="70" stroke="#07a" stroke-width="1.5"/>
+      <line x1="100" y1="110" x2="260" y2="110" stroke="#c00" stroke-width="1.5"/>
+      <text x="174" y="7" font-size="13" font-weight="bold">A</text>
+      <text x="4" y="215" font-size="13" font-weight="bold">B</text>
+      <text x="342" y="215" font-size="13" font-weight="bold">C</text>
+      <text x="114" y="66" font-size="12" font-weight="bold" fill="#07a">D</text>
+      <text x="232" y="66" font-size="12" font-weight="bold" fill="#07a">E</text>
+      <text x="80" y="112" font-size="12" font-weight="bold" fill="#c00">F</text>
+      <text x="264" y="112" font-size="12" font-weight="bold" fill="#c00">G</text>
+      <text x="148" y="38" font-size="11" fill="#333">3</text>
+      <text x="108" y="93" font-size="11" fill="#333">2</text>
+      <text x="46" y="165" font-size="11" fill="#333">5</text>
+      <text x="172" y="64" font-size="11" fill="#07a">6</text>
+    </svg>
+    <div class="sub-parts">
+      <p><b>a)</b> |FG| uzunluğunu bulunuz. <i>(4p)</i></p>
+      <p><b>b)</b> |BC| uzunluğunu bulunuz. <i>(3p)</i></p>
+      <p><b>c)</b> S(ADE) / S(ABC) oranını bulunuz. <i>(3p)</i></p>
+    </div>
+    <div class="work-area large"></div>
+  </div>
+
+  <!-- ========== SORU 5 ========== -->
+  <div class="question-block">
+    <h3>Soru 5 <span class="points">15 puan</span></h3>
+    <p class="question-text">Aşağıdaki şekilde ABC dik üçgeninde ∠B = 90°, [BH] ⊥ [AC], |AB| = 6 cm ve |BC| = 8 cm'dir.</p>
+    <svg width="320" height="195" viewBox="0 0 320 195">
+      <!-- B(50,40) sol üst dik açı, A(50,170) sol alt, C(290,40) sağ üst -->
+      <!-- AB dikey=130px, BC yatay=240px -->
+      <!-- AC: A(50,170)→C(290,40) yön=(240,-130) |AC|=√(57600+16900)=273.1px -->
+      <!-- H: B'den AC'ye dikme. t=(B-A)·(C-A)/|C-A|² -->
+      <!-- B-A=(0,-130), C-A=(240,-130). (B-A)·(C-A)=0+16900=16900 -->
+      <!-- |C-A|²=57600+16900=74500. t=16900/74500=0.2268 -->
+      <!-- H = A + t*(C-A) = (50+54.4, 170-29.5) = (104.4, 140.5) ≈ (104,141) -->
+      <polygon points="50,170 50,40 290,40" fill="none" stroke="#222" stroke-width="1.8"/>
+      <!-- Dik açı B -->
+      <polyline points="50,52 62,52 62,40" fill="none" stroke="#555" stroke-width="1.2"/>
+      <!-- BH yüksekliği -->
+      <line x1="50" y1="40" x2="104" y2="141" stroke="#c00" stroke-width="1.4"/>
+      <circle cx="104" cy="141" r="3" fill="#c00"/>
+      <!-- Dik açı H: AC yönü=(240,-130)/273≈(0.879,-0.476), dikme yönü=(0.476,0.879) -->
+      <!-- Kare köşeleri: H, H+7*(0.879,-0.476), önceki+7*(0.476,0.879), H+7*(0.476,0.879) -->
+      <!-- =(104,141),(110.2,137.7),(113.5,143.8),(107.3,147.2) -->
+      <polygon points="110,138 114,144 107,147 104,141" fill="none" stroke="#c00" stroke-width="1"/>
+      <text x="32" y="178" font-size="13" font-weight="bold">A</text>
+      <text x="34" y="34" font-size="13" font-weight="bold">B</text>
+      <text x="294" y="34" font-size="13" font-weight="bold">C</text>
+      <text x="108" y="152" font-size="12" font-weight="bold" fill="#c00">H</text>
+      <text x="24" y="110" font-size="12" fill="#333">6</text>
+      <text x="160" y="32" font-size="12" fill="#333">8</text>
+    </svg>
+    <div class="sub-parts">
+      <p><b>a)</b> |AC| hipotenüsünü Pisagor teoremi ile bulunuz. <i>(2p)</i></p>
+      <p><b>b)</b> △ABH ~ △BCA olduğunu açı eşitliklerini göstererek ispatlayanız. <i>(4p)</i></p>
+      <p><b>c)</b> Öklid bağıntılarını kullanarak |AH|, |HC| ve |BH| değerlerini bulunuz. <i>(5p)</i></p>
+      <p><b>d)</b> S(ABH) / S(BHC) oranını bulunuz. <i>(4p)</i></p>
+    </div>
+    <div class="work-area large"></div>
+  </div>
+
+  <!-- ========== SORU 6 ========== -->
+  <div class="question-block">
+    <h3>Soru 6 <span class="points">10 puan</span></h3>
+    <p class="question-text">Aşağıdaki şekilde iki doğru E noktasında kesişmekte olup AB // CD'dir. |EA| = 4, |ED| = 6, |AB| = 10 ve |EB| = 5 cm'dir.</p>
+    <svg width="320" height="200" viewBox="0 0 320 200">
+      <!-- Kelebek modeli: E ortada, A-D aynı doğruda, B-C aynı doğruda -->
+      <!-- E(160,90). AE doğrusu: A sol üst, D sağ alt -->
+      <!-- BE doğrusu: B sağ üst, C sol alt -->
+      <!-- A: E + 4birim yukarı-sol → A(70,40) AE yönü=(90,50) |AE|=√(8100+2500)=103px →birim=25.7px -->
+      <!-- D: E + 6birim aşağı-sağ → D = E + 1.5*(90,50) = (295,165) →biraz büyük, (280,158) -->
+      <!-- B: E + 5birim yukarı-sağ → B(260,40). BE yönü=(-100,50) |BE|=√(10000+2500)=111.8px →birim=22.4 -->
+      <!-- Ölçekler uyumsuz ama görsel olarak anlaşılır -->
+      <!-- Basit tutuyorum: çapraz çizgiler, etiketler ve ölçüler net -->
+      <line x1="60" y1="35" x2="280" y2="165" stroke="#222" stroke-width="1.5"/>
+      <line x1="265" y1="35" x2="55" y2="165" stroke="#222" stroke-width="1.5"/>
+      <!-- Kesişim: L1: P=(60+220t, 35+130t), L2: Q=(265-210s, 35+130s) -->
+      <!-- 35+130t = 35+130s → t=s. 60+220t = 265-210t → 430t=205 → t=0.4767 -->
+      <!-- E=(60+104.9, 35+62.0)=(165,97) ≈ (165,97) -->
+      <circle cx="165" cy="97" r="3.5" fill="#c00"/>
+      <text x="60" y="28" font-size="13" font-weight="bold">A</text>
+      <text x="268" y="28" font-size="13" font-weight="bold">B</text>
+      <text x="38" y="178" font-size="13" font-weight="bold">C</text>
+      <text x="282" y="178" font-size="13" font-weight="bold">D</text>
+      <text x="170" y="92" font-size="12" font-weight="bold" fill="#c00">E</text>
+      <!-- Ölçüler: A-E arasında -->
+      <text x="100" y="58" font-size="11" fill="#c00">4</text>
+      <text x="230" y="140" font-size="11" fill="#c00">6</text>
+      <text x="225" y="56" font-size="11" fill="#c00">5</text>
+      <!-- AB ölçüsü üstte yatay -->
+      <line x1="60" y1="22" x2="265" y2="22" stroke="#07a" stroke-width="0.8" stroke-dasharray="3,3"/>
+      <text x="145" y="18" font-size="11" fill="#07a">AB = 10</text>
+    </svg>
+    <div class="sub-parts">
+      <p><b>a)</b> △AEB ~ △DEC olduğunu gösteriniz (benzerlik koşulunu belirtiniz). <i>(4p)</i></p>
+      <p><b>b)</b> |DC| ve |EC| uzunluklarını bulunuz. <i>(4p)</i></p>
+      <p><b>c)</b> S(AEB) / S(DEC) oranını bulunuz. <i>(2p)</i></p>
+    </div>
+    <div class="work-area"></div>
+  </div>
+
+</div>
+
+<!-- ==================== SAYFA 3 ==================== -->
+<div class="page">
+
+  <div class="section-title">KISIM C – İspat ve Problem Çözme (35 puan)</div>
+
+  <!-- ========== SORU 7 ========== -->
+  <div class="question-block">
+    <h3>Soru 7 <span class="points">10 puan</span></h3>
+    <p class="question-text">Bir ABC üçgeninde D, [BC] üzerinde bir nokta olup |BD| = 4, |DC| = 5 ve |AD| = 6 cm'dir.</p>
+    <svg width="300" height="175" viewBox="0 0 300 175">
+      <!-- A(120,15) B(20,160) C(280,160) -->
+      <!-- D: BD/BC=4/9 → D = B+4/9*(C-B) = (20+115.6, 160) ≈ (136,160) -->
+      <polygon points="120,15 20,160 280,160" fill="none" stroke="#222" stroke-width="1.8"/>
+      <line x1="120" y1="15" x2="136" y2="160" stroke="#c00" stroke-width="1.3"/>
+      <circle cx="136" cy="160" r="3" fill="#c00"/>
+      <text x="112" y="10" font-size="13" font-weight="bold">A</text>
+      <text x="4" y="170" font-size="13" font-weight="bold">B</text>
+      <text x="283" y="170" font-size="13" font-weight="bold">C</text>
+      <text x="128" y="178" font-size="12" font-weight="bold" fill="#c00">D</text>
+      <text x="65" y="170" font-size="11" fill="#333">4</text>
+      <text x="200" y="170" font-size="11" fill="#333">5</text>
+      <text x="122" y="92" font-size="11" fill="#c00">6</text>
+    </svg>
+    <div class="sub-parts">
+      <p><b>a)</b> △ABD ve △ACD üçgenlerinin alanları oranını |BD| ve |DC| cinsinden ifade ediniz. Gerekçenizi açıklayınız. <i>(4p)</i></p>
+      <p><b>b)</b> Pisagor teoremini kullanarak |AB|² ve |AC|² ile |AD|, |BD|, |DC| arasında bağıntılar kurunuz. (İpucu: A'dan BC'ye dikme çiziniz.) <i>(6p)</i></p>
+    </div>
+    <div class="work-area xlarge"></div>
+  </div>
+
+  <!-- ========== SORU 8 ========== -->
+  <div class="question-block">
+    <h3>Soru 8 <span class="points">10 puan</span></h3>
+    <p class="question-text">Aşağıdaki şekilde ABCD bir kare olup kenar uzunluğu 12 cm'dir. E, [BC] üzerinde |BE| = 4 cm olacak şekilde alınmıştır. [AE] ile [BD] köşegeni F noktasında kesişmektedir.</p>
+    <svg width="240" height="250" viewBox="0 0 240 250">
+      <!-- A(20,20) B(220,20) C(220,220) D(20,220) kenar=200px -->
+      <!-- E: BC üzerinde BE=4/12 → t=1/3 → E=(220, 20+200/3)=(220,87) -->
+      <!-- AE: A(20,20)→E(220,87) yön=(200,67) P=(20+200s, 20+67s) -->
+      <!-- BD: B(220,20)→D(20,220) yön=(-200,200) Q=(220-200t, 20+200t) -->
+      <!-- 20+67s = 20+200t → 67s=200t → s=200t/67 -->
+      <!-- 20+200s = 220-200t → 200s=200-200t → s=1-t -->
+      <!-- 200t/67=1-t → 200t=67-67t → 267t=67 → t=67/267=0.251 -->
+      <!-- F = (220-200*0.251, 20+200*0.251) = (220-50.2, 20+50.2) = (169.8, 70.2) ≈ (170,70) -->
+      <rect x="20" y="20" width="200" height="200" fill="none" stroke="#222" stroke-width="1.8"/>
+      <line x1="20" y1="20" x2="220" y2="87" stroke="#07a" stroke-width="1.3"/>
+      <line x1="220" y1="20" x2="20" y2="220" stroke="#1b3a5c" stroke-width="1.3"/>
+      <circle cx="220" cy="87" r="3" fill="#c00"/>
+      <circle cx="170" cy="70" r="3" fill="#c00"/>
+      <text x="6" y="15" font-size="13" font-weight="bold">A</text>
+      <text x="224" y="15" font-size="13" font-weight="bold">B</text>
+      <text x="224" y="234" font-size="13" font-weight="bold">C</text>
+      <text x="4" y="234" font-size="13" font-weight="bold">D</text>
+      <text x="226" y="92" font-size="12" font-weight="bold" fill="#c00">E</text>
+      <text x="174" y="64" font-size="12" font-weight="bold" fill="#c00">F</text>
+      <text x="110" y="14" font-size="11" fill="#333">12</text>
+      <text x="226" y="58" font-size="11" fill="#c00">4</text>
+      <text x="226" y="160" font-size="11" fill="#333">8</text>
+    </svg>
+    <div class="sub-parts">
+      <p><b>a)</b> △ABE ve △ACD üçgenlerini inceleyerek aralarındaki ilişkiyi belirleyiniz. <i>(3p)</i></p>
+      <p><b>b)</b> |BF| / |FD| oranını bulunuz. <i>(4p)</i></p>
+      <p><b>c)</b> |AF| / |FE| oranını bulunuz. <i>(3p)</i></p>
+    </div>
+    <div class="work-area large"></div>
+  </div>
+
+  <!-- ========== SORU 9 ========== -->
+  <div class="question-block">
+    <h3>Soru 9 <span class="points">10 puan</span></h3>
+    <p class="question-text">ABC üçgeninde |AB| = 15 cm, |AC| = 20 cm ve |BC| = 25 cm'dir.</p>
+    <div class="sub-parts">
+      <p><b>a)</b> Bu üçgenin bir dik üçgen olduğunu gösteriniz. Dik açı hangi köşededir? <i>(3p)</i></p>
+      <p><b>b)</b> A'dan [BC]'ye çizilen yükseklik [AH] olmak üzere, Öklid bağıntılarını kullanarak |AH|, |BH| ve |HC| değerlerini bulunuz. <i>(4p)</i></p>
+      <p><b>c)</b> △ABH ile △ABC arasındaki benzerlik oranını bularak S(ABH) değerini hesaplayınız. <i>(3p)</i></p>
+    </div>
+    <div class="work-area large"></div>
+  </div>
+
+  <!-- ========== SORU 10 (BONUS) ========== -->
+  <div class="question-block">
+    <h3>Soru 10 <span class="points">5 puan</span></h3>
+    <p class="question-text"><b>(Bonus – Düşünme Sorusu)</b> ABC üçgeninde [DE] // [BC] ve D ∈ [AB], E ∈ [AC] olmak üzere, BCED yamuğunun alanı ABC üçgeninin alanının <b>3/4</b>'üne eşittir. Buna göre AD/AB oranını bulunuz.</p>
+    <svg width="260" height="170" viewBox="0 0 260 170">
+      <!-- A(130,10) B(20,160) C(240,160) -->
+      <!-- k=1/2: D=A+0.5*(B-A)=(75,85) E=A+0.5*(C-A)=(185,85) -->
+      <polygon points="130,10 20,160 240,160" fill="none" stroke="#222" stroke-width="1.8"/>
+      <line x1="75" y1="85" x2="185" y2="85" stroke="#07a" stroke-width="1.5" stroke-dasharray="6,3"/>
+      <polygon points="75,85 185,85 240,160 20,160" fill="#07a" fill-opacity="0.08" stroke="none"/>
+      <text x="123" y="7" font-size="13" font-weight="bold">A</text>
+      <text x="4" y="170" font-size="13" font-weight="bold">B</text>
+      <text x="243" y="170" font-size="13" font-weight="bold">C</text>
+      <text x="57" y="82" font-size="12" font-weight="bold" fill="#07a">D</text>
+      <text x="189" y="82" font-size="12" font-weight="bold" fill="#07a">E</text>
+      <text x="108" y="135" font-size="10" fill="#07a">BCED</text>
+    </svg>
+    <div class="work-area large"></div>
+  </div>
+
+</div>
+
+<!-- ==================== CEVAP ANAHTARI ==================== -->
+<div id="answerKey" class="answer-key-page">
+  <h2>CEVAP ANAHTARI</h2>
+
+  <div class="ak-item">
+    <strong>Soru 1 (10p)</strong>
+    <div class="ak-detail">
+      <b>a)</b> |AE| = |EC| (verilen), |BE| = |ED| (verilen), ∠AEB = ∠CED (ters açılar). <b>KAK eşlik koşulu</b> ile △AEB ≅ △CED. <i>(6p)</i><br>
+      <b>b)</b> Eş üçgenlerden → |AB| = |CD|. Ayrıca ∠EAB = ∠ECD (eş üçgenlerin karşılıklı açıları) ve bunlar [AC] doğrultucusunun ters taraflarındaki iç ters açılardır → AB // CD. <i>(4p)</i>
+    </div>
+  </div>
+
+  <div class="ak-item">
+    <strong>Soru 2 (10p)</strong>
+    <div class="ak-detail">
+      <b>a)</b> |AB| = |AC| (verilen), |AD| ortak kenar, ∠BAD = ∠CAD (açıortay). <b>KAK eşlik koşulu</b> ile △ABD ≅ △ACD. <i>(5p)</i><br>
+      <b>b)</b> Eş üçgenlerden: |BD| = |DC| ve ∠ADB = ∠ADC. Toplamları 180° → her biri 90° → [AD] ⊥ [BC]. <i>(3p)</i><br>
+      <b>c)</b> AD hem açıortay, hem kenarortay (BD=DC), hem yükseklik (AD⊥BC). Tüm ikizkenar üçgenlerde tepe açıortayı için geçerlidir. <i>(2p)</i>
+    </div>
+  </div>
+
+  <div class="ak-item">
+    <strong>Soru 3 (10p)</strong>
+    <div class="ak-detail">
+      <b>a)</b> |CM| = |DM| (verilen), |AM| = |MB| (M orta nokta), ∠CMA = ∠DMB (verilen). <b>KAK eşlik koşulu</b> ile △CMA ≅ △DMB. <i>(5p)</i><br>
+      <b>b)</b> Eş üçgenlerden: |AC| = |BD| ve ∠CAM = ∠DBM. <i>(3p)</i><br>
+      <b>c)</b> ∠CAM = ∠DBM → iç ters açılar eşit → AC // BD. <i>(2p)</i>
+    </div>
+  </div>
+
+  <div class="ak-item">
+    <strong>Soru 4 (10p)</strong>
+    <div class="ak-detail">
+      <b>a)</b> AD=3, AF=5, AB=10. △ADE~△AFG: 3/5 = 6/FG → FG = <b>10 cm</b> <i>(4p)</i><br>
+      <b>b)</b> △ADE~△ABC: 3/10 = 6/BC → BC = <b>20 cm</b> <i>(3p)</i><br>
+      <b>c)</b> S(ADE)/S(ABC) = (3/10)² = <b>9/100</b> <i>(3p)</i>
+    </div>
+  </div>
+
+  <div class="ak-item">
+    <strong>Soru 5 (15p)</strong>
+    <div class="ak-detail">
+      <b>a)</b> AC = √(36+64) = <b>10 cm</b> <i>(2p)</i><br>
+      <b>b)</b> ∠AHB = ∠ABC = 90° ve ∠BAH ortak → <b>AA benzerliği</b> ile △ABH ~ △CBA. <i>(4p)</i><br>
+      <b>c)</b> AH = AB²/AC = 36/10 = <b>3,6 cm</b>. HC = 10−3,6 = <b>6,4 cm</b>. BH² = 3,6·6,4 = 23,04 → BH = <b>4,8 cm</b>. <i>(5p)</i><br>
+      <b>d)</b> S(ABH)/S(BHC) = AH/HC = 3,6/6,4 = <b>9/16</b> <i>(4p)</i>
+    </div>
+  </div>
+
+  <div class="ak-item">
+    <strong>Soru 6 (10p)</strong>
+    <div class="ak-detail">
+      <b>a)</b> AB//CD → ∠EAB=∠EDC, ∠EBA=∠ECD (iç ters açılar). <b>AA benzerliği</b> ile △AEB~△DEC. <i>(4p)</i><br>
+      <b>b)</b> 4/6 = 10/DC → DC = <b>15 cm</b>. 4/6 = 5/EC → EC = <b>7,5 cm</b>. <i>(4p)</i><br>
+      <b>c)</b> S(AEB)/S(DEC) = (4/6)² = <b>4/9</b> <i>(2p)</i>
+    </div>
+  </div>
+
+  <div class="ak-item">
+    <strong>Soru 7 (10p)</strong>
+    <div class="ak-detail">
+      <b>a)</b> Ortak yükseklik AK ile: S(ABD)/S(ACD) = BD/DC = <b>4/5</b> <i>(4p)</i><br>
+      <b>b)</b> AK dikme, BK=x: AB²=AK²+x², 36=AK²+(4−x)², AC²=AK²+(9−x)².<br>
+      AB² = 20+8x, AC² = 45+8x → AC²−AB² = 25. <i>(6p)</i>
+    </div>
+  </div>
+
+  <div class="ak-item">
+    <strong>Soru 8 (10p)</strong>
+    <div class="ak-detail">
+      <b>a)</b> |AB|=|AD|=12, ∠ABE=∠ADC=90°, ancak BE=4≠DC=12 → eş değil, ikisi de dik üçgen. <i>(3p)</i><br>
+      <b>b)</b> Koordinat: A(0,12), B(12,12), C(12,0), D(0,0), E(12,8).<br>
+      AE: y=12−x/3. BD: y=x. Kesişim x=9 → F(9,9).<br>
+      BF=3√2, FD=9√2 → <b>BF/FD = 1/3</b> <i>(4p)</i><br>
+      <b>c)</b> AF=√(81+9)=3√10, FE=√(9+1)=√10 → <b>AF/FE = 3</b> <i>(3p)</i>
+    </div>
+  </div>
+
+  <div class="ak-item">
+    <strong>Soru 9 (10p)</strong>
+    <div class="ak-detail">
+      <b>a)</b> 15²+20²=625=25² → dik üçgen, dik açı <b>A köşesinde</b>. <i>(3p)</i><br>
+      <b>b)</b> AH=AB·AC/BC=300/25=<b>12 cm</b>. BH=225/25=<b>9 cm</b>. HC=400/25=<b>16 cm</b>. <i>(4p)</i><br>
+      <b>c)</b> k=AB/BC=3/5. S(ABC)=150. S(ABH)=(9/25)·150=<b>54 cm²</b>. <i>(3p)</i>
+    </div>
+  </div>
+
+  <div class="ak-item">
+    <strong>Soru 10 – Bonus (5p)</strong>
+    <div class="ak-detail">
+      k=AD/AB. S(ADE)=k²·S(ABC). S(BCED)=(1−k²)·S(ABC)=¾·S(ABC).<br>
+      1−k²=3/4 → k²=1/4 → <b>AD/AB = 1/2</b>. <i>(5p)</i>
+    </div>
+  </div>
+</div>
+
+<button class="toggle-btn" onclick="toggleKey()">Cevap Anahtarı</button>
+
+<script>
+function toggleKey() {
+  const ak = document.getElementById('answerKey');
+  const btn = document.querySelector('.toggle-btn');
+  if (ak.style.display === 'none' || ak.style.display === '') {
+    ak.style.display = 'block';
+    btn.textContent = 'Cevapları Gizle';
+  } else {
+    ak.style.display = 'none';
+    btn.textContent = 'Cevap Anahtarı';
+  }
+}
+</script>
+
+</body>
+</html>
