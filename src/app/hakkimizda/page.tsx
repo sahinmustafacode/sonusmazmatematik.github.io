@@ -14,4 +14,4 @@ export default function Hakkimizda() {
       title="Hakkımızda"
     />
   );
-}
+} 
