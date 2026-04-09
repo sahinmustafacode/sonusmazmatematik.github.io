@@ -2,7 +2,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
 
 const links = [
   { href: '/', label: 'Ana Sayfa' },
@@ -15,8 +14,6 @@ const links = [
 
 export default function Navbar() {
   const pathname = usePathname();
-  const [open, setOpen] = useState(false);
-
   return (
     <nav className="navbar">
       <div className="nav-inner">
@@ -24,7 +21,6 @@ export default function Navbar() {
           <Image src="/logo.png" alt="Sonuşmaz Matematik" width={38} height={38} />
           <span>Sonuşmaz <strong>Matematik</strong></span>
         </Link>
-
         <ul className="nav-links">
           {links.map(l => (
             <li key={l.href}>
