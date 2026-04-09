@@ -3,6 +3,8 @@ import { client } from '@/sanity/client';
 import { PortableText } from '@portabletext/react';
 import { notFound } from 'next/navigation';
 import Comments from '@/components/Comments';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 import styles from './post.module.css';
 
 async function getPost(slug: string) {
@@ -16,32 +18,35 @@ async function getPost(slug: string) {
 export default async function BlogPost({ params }: { params: { slug: string } }) {
   const post = await getPost(params.slug);
   if (!post) notFound();
-
   return (
-    <div className={styles.page}>
-      <article className={styles.article}>
-        <div className="container">
-          <div className={styles.meta}>
-            {post.category && <span className={styles.cat}>{post.category.toUpperCase()}</span>}
-            {post.publishedAt && (
-              <span className={styles.date}>
-                {new Date(post.publishedAt).toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' })}
-              </span>
-            )}
+    <>
+      <Navbar />
+      <div style={{paddingTop: '68px'}}>
+        <article className={styles.article}>
+          <div className="container">
+            <div className={styles.meta}>
+              {post.category && <span className={styles.cat}>{post.category.toUpperCase()}</span>}
+              {post.publishedAt && (
+                <span className={styles.date}>
+                  {new Date(post.publishedAt).toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' })}
+                </span>
+              )}
+            </div>
+            <h1 className={styles.title}>{post.title}</h1>
+            {post.excerpt && <p className={styles.excerpt}>{post.excerpt}</p>}
+            <div className={styles.body}>
+              {post.body && <PortableText value={post.body} />}
+            </div>
           </div>
-          <h1 className={styles.title}>{post.title}</h1>
-          {post.excerpt && <p className={styles.excerpt}>{post.excerpt}</p>}
-          <div className={styles.body}>
-            {post.body && <PortableText value={post.body} />}
+        </article>
+        <section className={styles.comments_section}>
+          <div className="container">
+            <h3>Yorumlar</h3>
+            <Comments />
           </div>
-        </div>
-      </article>
-      <section className={styles.comments_section}>
-        <div className="container">
-          <h3>Yorumlar</h3>
-          <Comments />
-        </div>
-      </section>
-    </div>
+        </section>
+        <Footer />
+      </div>
+    </>
   );
 }
