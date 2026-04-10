@@ -1,17 +1,17 @@
-export const dynamic = 'force-dynamic';
-import { client } from '@/sanity/client';
-import { PortableText } from '@portabletext/react';
-import { notFound } from 'next/navigation';
-import Comments from '@/components/Comments';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import styles from './post.module.css';
+export const dynamic = "force-dynamic";
+import { client } from "@/sanity/client";
+import { PortableText } from "@portabletext/react";
+import { notFound } from "next/navigation";
+import Comments from "@/components/Comments";
 
 async function getPost(slug: string) {
   try {
-    return await client.fetch(`*[_type == "blogPost" && slug.current == $slug][0] {
-      _id, title, excerpt, category, publishedAt, body
-    }`, { slug });
+    return await client.fetch(
+      `*[_type == "blogPost" && slug.current == $slug][0] {
+        _id, title, excerpt, category, publishedAt, body
+      }`,
+      { slug }
+    );
   } catch { return null; }
 }
 
@@ -19,34 +19,18 @@ export default async function BlogPost({ params }: { params: { slug: string } })
   const post = await getPost(params.slug);
   if (!post) notFound();
   return (
-    <>
-      <Navbar />
-      <div style={{paddingTop: '68px'}}>
-        <article className={styles.article}>
-          <div className="container">
-            <div className={styles.meta}>
-              {post.category && <span className={styles.cat}>{post.category.toUpperCase()}</span>}
-              {post.publishedAt && (
-                <span className={styles.date}>
-                  {new Date(post.publishedAt).toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' })}
-                </span>
-              )}
-            </div>
-            <h1 className={styles.title}>{post.title}</h1>
-            {post.excerpt && <p className={styles.excerpt}>{post.excerpt}</p>}
-            <div className={styles.body}>
-              {post.body && <PortableText value={post.body} />}
-            </div>
-          </div>
-        </article>
-        <section className={styles.comments_section}>
-          <div className="container">
-            <h3>Yorumlar</h3>
-            <Comments />
-          </div>
-        </section>
-        <Footer />
+    <div style={{minHeight:"100vh",background:"#070e20",padding:"60px 0"}}>
+      <div style={{maxWidth:"800px",margin:"0 auto",padding:"0 24px"}}>
+        <h1 style={{fontFamily:"Playfair Display,serif",fontSize:"2.5rem",color:"#c8a84b",marginBottom:"24px"}}>{post.title}</h1>
+        {post.excerpt && <p style={{color:"rgba(255,255,255,0.7)",fontSize:"1.1rem",marginBottom:"40px"}}>{post.excerpt}</p>}
+        <div style={{color:"rgba(255,255,255,0.85)",lineHeight:"1.8"}}>
+          {post.body && <PortableText value={post.body} />}
+        </div>
+        <div style={{marginTop:"64px"}}>
+          <h3 style={{color:"white",fontFamily:"Playfair Display,serif",marginBottom:"24px"}}>Yorumlar</h3>
+          <Comments />
+        </div>
       </div>
-    </>
+    </div>
   );
 }
